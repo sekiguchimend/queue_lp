@@ -14,7 +14,7 @@ export default function VisionMissionSection() {
           <div className="grid grid-cols-[260px_1fr] items-start gap-12">
             <div>
               <p className="text-[44px] font-semibold">Vision</p>
-              <div className="mt-2 h-[3px] w-[88px] bg-[#9b4dff]" />
+              <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />
               <p className="mt-4 text-sm text-[#cbd5f5]">ビジョン</p>
             </div>
             <div className="text-[18px] leading-relaxed text-[#e5e9ff]">
@@ -27,7 +27,7 @@ export default function VisionMissionSection() {
           <div className="grid grid-cols-[260px_1fr] items-start gap-12">
             <div>
               <p className="text-[44px] font-semibold">Mission</p>
-              <div className="mt-2 h-[3px] w-[88px] bg-[#9b4dff]" />
+              <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />
               <p className="mt-4 text-sm text-[#cbd5f5]">ミッション</p>
             </div>
             <div className="text-[18px] leading-relaxed text-[#e5e9ff]">

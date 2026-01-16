@@ -3,8 +3,11 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#f8f8fa]">
-      {/* ヘッダー */}
-      <header className="relative z-10 mx-auto flex w-full max-w-[1400px] items-center justify-between px-8 py-6 lg:px-16">
+      {/* ヘッダー - トップ画面の一部として配置 */}
+      <header
+        className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-3 lg:px-8"
+        style={{ background: 'linear-gradient(90deg, rgba(244, 247, 251, 0) 0%, #F4F7FB 75.48%)' }}
+      >
         <div className="flex items-center">
           <Image
             src="/asset/Group 1225.png"
@@ -15,7 +18,7 @@ export default function HeroSection() {
             priority
           />
         </div>
-        <nav className="flex items-center gap-10 text-[15px] font-medium text-[#1a1a1a]">
+        <nav className="flex items-center gap-10 text-[15px] font-bold text-[#333333]">
           <a href="#company" className="transition-colors hover:text-[#2563eb]">
             会社概要
           </a>
@@ -28,7 +31,7 @@ export default function HeroSection() {
       {/* メインコンテンツ */}
       <div className="relative mx-auto w-full max-w-[1400px] px-8 pb-24 pt-12 lg:px-16">
         {/* 右側イラスト（背景の一部として重ねる） */}
-        <div className="pointer-events-none absolute right-[-140px] top-[-10px] h-[620px] w-[900px]">
+        <div className="pointer-events-none absolute left-[43%] top-0 bottom-0 right-0">
           <Image
             src="/asset/FV右イラスト.png"
             alt="AI illustration"
@@ -39,23 +42,38 @@ export default function HeroSection() {
         </div>
 
         {/* 左側テキスト */}
-        <div className="relative z-10 max-w-[620px] pt-8">
-          {/* メインタイトル1行目 */}
-          <h1 className="text-[48px] leading-[1.3]">
-            <span className="font-bold text-[#1e3a8a]">AI検索時代</span>
-            <span className="font-normal text-[#1e3a8a]">に、</span>
-          </h1>
-          
-          {/* メインタイトル2行目 */}
-          <h2 className="mt-2 text-[48px] font-bold leading-[1.3]">
-            <span className="bg-gradient-to-r from-[#7c3aed] via-[#5b21b6] to-[#3b82f6] bg-clip-text text-transparent">
-              "AIに選ばれる企業"
-            </span>
-            <span className="text-[#1e3a8a]">をつくる。</span>
-          </h2>
+        <div className="relative z-10 pt-[80px] pl-[16px]">
+          {/* メインタイトルブロック */}
+          <div className="w-[715px] flex flex-col gap-[28px]">
+            {/* メインタイトル1行目 */}
+            <h1
+              className="text-[48px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
+              style={{
+                fontFamily: 'var(--font-zen-kaku), sans-serif',
+                background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              AI検索時代に、
+            </h1>
+
+            {/* メインタイトル2行目 */}
+            <h2
+              className="text-[56px] font-semibold leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+              style={{
+                fontFamily: 'var(--font-lexend), sans-serif',
+                background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              "AIに選ばれる企業"をつくる。
+            </h2>
+          </div>
 
           {/* 説明文 */}
-          <div className="mt-12 text-[15px] leading-[2.4] text-[#1a1a1a]">
+          <div className="mt-12 text-[15px] leading-[2.4] text-[#333333]">
             <p>Queue株式会社は、</p>
             <p>
               <span className="font-bold text-[#2563eb]">
