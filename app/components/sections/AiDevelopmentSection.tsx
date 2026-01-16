@@ -4,7 +4,8 @@ export default function AiDevelopmentSection() {
   return (
     <section className="bg-[#f5f6f8] pb-16">
       <div className="mx-auto w-full max-w-[1200px] px-10">
-        <div className="rounded-[24px] border border-[#1f3f8f] bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
+        <div className="relative rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none border border-[#1f3f8f] bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-[10px] bg-[#1f3f8f]" />
           <div className="grid grid-cols-[1.1fr_1fr] items-start gap-10">
             <div>
               <p className="text-[28px] font-semibold text-[#1f5bb9]">AI受託開発</p>

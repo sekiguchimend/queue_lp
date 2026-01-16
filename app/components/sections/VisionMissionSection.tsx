@@ -1,6 +1,14 @@
 export default function VisionMissionSection() {
   return (
-    <section className="section-tech text-white">
+    <section
+      className="text-white"
+      style={{
+        backgroundImage: "url('/asset/Vision背景.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="mx-auto w-full max-w-[1200px] px-10 py-20">
         <div className="grid gap-16">
           <div className="grid grid-cols-[260px_1fr] items-start gap-12">

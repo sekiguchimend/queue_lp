@@ -2,8 +2,18 @@ import Image from "next/image";
 
 export default function ProblemSection() {
   return (
-    <section className="problem-bg relative">
-      <div className="mx-auto w-full max-w-[1200px] px-10 py-20">
+    <section className="problem-bg relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[220px]">
+        <Image
+          src="/asset/Problem背景上　縦線.png"
+          alt=""
+          fill
+          className="object-cover object-top"
+          priority
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-10 py-20">
         <div className="text-center text-[#3a3a3a]">
           <p className="text-[28px] font-semibold">Problem</p>
           <p className="mt-3 text-sm text-[#4a4a4a]">こんな課題はありませんか</p>
@@ -65,8 +75,13 @@ export default function ProblemSection() {
       </div>
 
       <div className="absolute inset-x-0 bottom-8 flex flex-col items-center">
-        <div className="h-0 w-0 border-l-[16px] border-r-[16px] border-t-[16px] border-l-transparent border-r-transparent border-t-[#6c7386]" />
-        <div className="mt-2 h-0 w-0 border-l-[16px] border-r-[16px] border-t-[16px] border-l-transparent border-r-transparent border-t-[#f4c545]" />
+        <Image
+          src="/asset/矢印.png"
+          alt=""
+          width={50}
+          height={38}
+          className="h-auto w-[50px]"
+        />
       </div>
     </section>
   );

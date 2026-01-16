@@ -68,7 +68,7 @@ export default function LlmoSection() {
                 </p>
               </div>
               <Image
-                src="/asset/FV右イラスト.png"
+                src="/asset/img.png"
                 alt="LLMO illustration"
                 width={220}
                 height={150}
