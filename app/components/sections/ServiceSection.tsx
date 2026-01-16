@@ -7,7 +7,7 @@ export default function ServiceSection() {
         <div className="text-center">
           <p className="text-[24px] font-semibold text-[#3b3b3b]">Service</p>
           <div className="mx-auto mt-2 h-[2px] w-10 bg-[#1f5bb9]" />
-          <p className="mt-2 text-[12px] text-[#6c6c6c]">サービス</p>
+          <p className="mt-2 text-[16px] font-bold text-[#6c6c6c]">サービス</p>
         </div>
 
         <div className="relative mt-10 rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none border border-[#1f3f8f] bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]">

@@ -59,7 +59,7 @@ export default function ContactSection() {
           {/* 電話番号 */}
           <div className="flex items-center gap-8">
             <div className="flex w-[180px] items-center gap-3">
-              <span className="rounded px-2 py-1 text-[11px] font-bold text-white bg-[#5a9a6e]">
+              <span className="rounded px-2 py-1 text-[11px] font-bold text-white bg-[#5E6C84]">
                 任意
               </span>
               <span className="text-[14px] text-[#333333]">電話番号</span>
@@ -111,8 +111,8 @@ export default function ContactSection() {
           <div className="flex justify-center pt-4">
             <button
               type="submit"
-              className="flex items-center gap-4 rounded-full px-12 py-4 text-[15px] font-bold text-white shadow-lg"
-              style={{ background: 'linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%)' }}
+              className="flex items-center justify-center gap-4 w-[230px] h-[64px] rounded-[3px] text-[15px] font-bold text-white"
+              style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
             >
               送信する
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/30">

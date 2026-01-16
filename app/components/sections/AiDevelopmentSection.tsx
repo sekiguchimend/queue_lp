@@ -101,11 +101,11 @@ export default function AiDevelopmentSection() {
         </div>
 
         <div className="mt-14 text-center">
-          <p className="text-[20px] font-semibold text-[#3b3b3b]">
+          <p className="text-[32px] font-bold text-[#3b3b3b]">
             Achievements & Applications
           </p>
-          <p className="mt-2 text-[12px] text-[#6b6b6b]">実績・活用領域</p>
-          <div className="mt-8 flex items-center justify-center gap-8">
+          <p className="mt-3 text-[16px] font-bold text-[#6b6b6b]">実績・活用領域</p>
+          <div className="mt-10 flex items-center justify-center gap-10">
             {[
               { number: "1", label: "BtoB\nSaaS" },
               { number: "2", label: "採用\n人材" },
@@ -114,12 +114,12 @@ export default function AiDevelopmentSection() {
             ].map((item) => (
               <div
                 key={item.number}
-                className="flex h-[90px] w-[90px] flex-col items-center justify-center rounded-full border-2 border-[#6a3ec8] text-center text-[12px] text-[#3b3b3b]"
+                className="flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border-3 border-[#6a3ec8] text-center text-[14px] font-bold text-[#3b3b3b]"
               >
-                <span className="text-[16px] font-semibold text-[#1f5bb9]">
+                <span className="text-[20px] font-bold text-[#1f5bb9]">
                   {item.number}
                 </span>
-                <span className="whitespace-pre-line">{item.label}</span>
+                <span className="whitespace-pre-line font-bold">{item.label}</span>
               </div>
             ))}
           </div>
