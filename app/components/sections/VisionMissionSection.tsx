@@ -16,9 +16,9 @@ export default function VisionMissionSection() {
               <div>
                 <p className="text-[44px] font-semibold">Vision</p>
                 <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />
-                <p className="mt-4 text-sm text-[#cbd5f5]">ビジョン</p>
+                <p className="mt-4 text-sm text-white">ビジョン</p>
               </div>
-              <div className="text-[18px] leading-relaxed text-[#e5e9ff]">
+              <div className="text-[18px] leading-[200%] text-[#e5e9ff]">
                 <p>AIが世界の意思決定を担う時代に、</p>
                 <p>企業の本当の価値が正しく理解され、</p>
                 <p>選ばれる世界をつくる</p>
@@ -29,9 +29,9 @@ export default function VisionMissionSection() {
               <div>
                 <p className="text-[44px] font-semibold">Mission</p>
                 <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />
-                <p className="mt-4 text-sm text-[#cbd5f5]">ミッション</p>
+                <p className="mt-4 text-sm text-white">ミッション</p>
               </div>
-              <div className="text-[18px] leading-relaxed text-[#e5e9ff]">
+              <div className="text-[18px] leading-[200%] text-[#e5e9ff]">
                 <p>AI検索・生成AIにおいて、</p>
                 <p>企業の価値が正しく認識・引用・推薦される状態を</p>
                 <p>テクノロジーで実装する</p>

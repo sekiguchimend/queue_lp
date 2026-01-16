@@ -16,7 +16,7 @@ export default function FooterSection() {
         </div>
 
         {/* ナビゲーションリンク */}
-        <div className="mt-8 flex items-center justify-center gap-10 text-[13px] text-[#666666]">
+        <div className="mt-8 flex items-center justify-center gap-10 text-[13px] font-bold text-[#666666]">
           <a href="#company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
         </div>

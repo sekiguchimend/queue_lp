@@ -22,7 +22,7 @@ export default function ContactSection() {
             <input
               type="text"
               placeholder="株式会社テキストテキスト"
-              className="flex-1 h-[44px] rounded-md border border-[#d0d5dd] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              className="flex-1 h-[44px] rounded-md border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
             />
           </div>
 
@@ -37,7 +37,7 @@ export default function ContactSection() {
             <input
               type="text"
               placeholder="山田　太郎"
-              className="flex-1 h-[44px] rounded-md border border-[#d0d5dd] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              className="flex-1 h-[44px] rounded-md border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
             />
           </div>
 
@@ -52,7 +52,7 @@ export default function ContactSection() {
             <input
               type="email"
               placeholder="info@mail.co.jp"
-              className="flex-1 h-[44px] rounded-md border border-[#d0d5dd] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              className="flex-1 h-[44px] rounded-md border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
             />
           </div>
 
@@ -67,7 +67,7 @@ export default function ContactSection() {
             <input
               type="tel"
               placeholder="03-1234-5678"
-              className="flex-1 h-[44px] rounded-md border border-[#d0d5dd] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              className="flex-1 h-[44px] rounded-md border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function ContactSection() {
               </span>
               <span className="text-[14px] text-[#333333]">お問い合わせ項目</span>
             </div>
-            <select className="w-[200px] h-[44px] rounded-md border border-[#d0d5dd] px-4 text-[14px] text-[#999999] outline-none focus:border-[#1f5bb9] bg-white">
+            <select className="w-[200px] h-[44px] rounded-md border border-[#5E6C84] px-4 text-[14px] text-[#999999] outline-none focus:border-[#1f5bb9] bg-white">
               <option>選択してください</option>
             </select>
           </div>
@@ -94,7 +94,7 @@ export default function ContactSection() {
             </div>
             <textarea
               placeholder="お問い合わせ内容をご入力ください。"
-              className="flex-1 h-[120px] rounded-md border border-[#d0d5dd] px-4 py-3 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9] resize-none"
+              className="flex-1 h-[120px] rounded-md border border-[#5E6C84] px-4 py-3 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9] resize-none"
             />
           </div>
 
@@ -102,22 +102,22 @@ export default function ContactSection() {
           <div className="flex items-center justify-center gap-2 pt-4">
             <input
               type="checkbox"
-              className="h-4 w-4 rounded border-[#d0d5dd]"
+              className="h-4 w-4 rounded border-[#5E6C84]"
             />
-            <span className="text-[13px] text-[#666666]">個人情報保護方針に同意する</span>
+            <span className="text-[13px] text-[#333333]">個人情報保護方針に同意する</span>
           </div>
 
           {/* 送信ボタン */}
           <div className="flex justify-center pt-4">
             <button
               type="submit"
-              className="flex items-center justify-center gap-4 w-[230px] h-[64px] rounded-[3px] text-[15px] font-bold text-white"
+              className="relative flex items-center justify-center w-[230px] h-[64px] rounded-[3px] text-[15px] font-bold text-white"
               style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
             >
               送信する
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/30">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 flex h-6 w-6 items-center justify-center rounded-full bg-white">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="#3144BD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
             </button>

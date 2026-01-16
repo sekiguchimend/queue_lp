@@ -23,26 +23,28 @@ export default function ServiceSection() {
         >
           <div className="grid grid-cols-[1.1fr_1fr] items-start gap-8">
             <div>
-              <p
-                className="text-[40px] font-light leading-[140%] tracking-[0.03em] bg-clip-text text-transparent"
-                style={{
-                  fontFamily: 'var(--font-lexend), sans-serif',
-                  background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >(AI SEO)</p>
-              <p
-                className="mt-2 text-[128px] font-light leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
-                style={{
-                  fontFamily: 'var(--font-lexend), sans-serif',
-                  background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                LLMO
-              </p>
+              <div className="inline-flex flex-col items-center">
+                <p
+                  className="text-[40px] font-light leading-[140%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{
+                    fontFamily: 'var(--font-lexend), sans-serif',
+                    background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >(AI SEO)</p>
+                <p
+                  className="text-[128px] font-light leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{
+                    fontFamily: 'var(--font-lexend), sans-serif',
+                    background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  LLMO
+                </p>
+              </div>
               <span
                 className="mt-3 inline-flex items-center justify-center text-[56px] font-light text-white leading-[100%] tracking-[0.02em]"
                 style={{
@@ -201,7 +203,7 @@ export default function ServiceSection() {
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >導入推奨企業</p>
               <div
-                  className="mt-4 grid grid-cols-4 gap-4 text-[18px] font-medium text-white leading-[100%]"
+                  className="mt-4 grid grid-cols-4 gap-4 text-[18px] font-medium text-white leading-[180%]"
                   style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
                 >
                 {[

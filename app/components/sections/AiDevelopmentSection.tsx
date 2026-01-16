@@ -158,7 +158,7 @@ export default function AiDevelopmentSection() {
               style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >導入推奨企業</p>
             <div
-              className="mt-4 flex justify-between text-[18px] font-medium text-white leading-[100%]"
+              className="mt-4 flex justify-between text-[18px] font-medium text-white leading-[180%]"
               style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
             >
               {[
@@ -169,7 +169,7 @@ export default function AiDevelopmentSection() {
                 <div
                   key={label}
                   className="rounded-[4px] bg-[#0B60BB] whitespace-pre-line text-center flex items-center justify-center"
-                  style={{ width: '300px', height: '120px', padding: '16px' }}
+                  style={{ width: '340px', height: '140px', padding: '16px' }}
                 >
                   {label}
                 </div>
