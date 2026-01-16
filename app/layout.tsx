@@ -29,7 +29,7 @@ const zenKaku = Zen_Kaku_Gothic_New({
 const lexend = Lexend({
   variable: "--font-lexend",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 const notoSansJp = Noto_Sans_JP({

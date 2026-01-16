@@ -74,15 +74,6 @@ export default function ProblemSection() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-8 flex flex-col items-center">
-        <Image
-          src="/asset/矢印.png"
-          alt=""
-          width={50}
-          height={38}
-          className="h-auto w-[50px]"
-        />
-      </div>
     </section>
   );
 }
