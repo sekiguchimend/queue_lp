@@ -5,7 +5,7 @@ export default function ProblemSection() {
     <section className="problem-bg relative overflow-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[220px]">
         <Image
-          src="/asset/Problem背景上　縦線.png"
+          src="/asset/Problem.png"
           alt=""
           fill
           className="object-cover object-top"

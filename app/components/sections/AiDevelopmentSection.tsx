@@ -8,8 +8,20 @@ export default function AiDevelopmentSection() {
           <div className="pointer-events-none absolute right-0 top-0 h-full w-[10px] bg-[#1f3f8f]" />
           <div className="grid grid-cols-[1.1fr_1fr] items-start gap-10">
             <div>
-              <p className="text-[28px] font-semibold text-[#1f5bb9]">AI受託開発</p>
-              <p className="mt-3 text-xs text-[#6b6b6b]">
+              <p className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span
+                  className="text-[110px] font-light leading-[120%] tracking-[0.03em]"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                >AI</span>
+                <span
+                  className="text-[48px] font-medium leading-[120%] tracking-[0.03em]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >受託開発</span>
+              </p>
+              <p
+                className="mt-10 text-[20px] font-medium leading-[175%] text-[#333333] whitespace-nowrap"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
                 「AIだから構築」ではなく、業務課題ベースで確実に形にする
               </p>
             </div>
@@ -17,25 +29,46 @@ export default function AiDevelopmentSection() {
               <Image
                 src="/asset/FV右イラスト.png"
                 alt="AI development"
-                width={260}
-                height={180}
-                className="h-auto w-[260px]"
+                width={290}
+                height={207}
+                className="h-auto w-[290px] rounded-[8px]"
               />
             </div>
           </div>
 
-          <div className="mt-8 rounded-[12px] bg-[#f4f6fa] px-6 py-6">
-            <div className="flex items-center justify-between border-b border-[#d9dee7] pb-3 text-xs text-[#5f6c85]">
-              <span>サービス</span>
-              <span>Service</span>
+          <div className="mt-8 rounded-[12px] bg-[#f4f6fa] px-10 py-10 shadow-[4px_4px_4px_0px_#22222233]">
+            <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
+              <span
+                className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >サービス</span>
+              <span
+                className="text-[24px] font-light leading-[100%] text-[#5E6C84]"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Service</span>
             </div>
-            <div className="mt-4 grid grid-cols-[1fr_auto] items-center gap-4">
-              <ul className="space-y-2 text-[13px] text-[#3c3c3c]">
-                <li>AIエージェント / 業務自動化 / PoC開発</li>
-                <li>LLM・RAG・スクレイピング・自動化など</li>
-                <li>AI技術を用いた業務改善提案と、その実装提供</li>
+            <div className="mt-5 grid grid-cols-[1fr_auto] items-center gap-8">
+              <ul
+                className="space-y-5 text-[18px] font-medium text-[#333333]"
+                style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
+              >
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>AIエージェント / 業務自動化 / PoC開発</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>LLM・RAG・スクレイピング・自動化など</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>AI技術を用いた業務改善提案と、その実装提供</span>
+                </li>
               </ul>
-              <div className="rounded-[8px] bg-[#f6c543] px-4 py-3 text-xs font-semibold text-[#3c3c3c]">
+              <div
+                className="rounded-[8px] bg-[#FDCA39] px-4 py-3 text-center text-[18px] font-bold leading-[200%] text-[#3c3c3c] shadow-[0px_2px_4px_0px_#22222233]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
                 LLMO事業で蓄積した
                 <br />
                 最新トレンド・実装ノウハウを
@@ -46,44 +79,88 @@ export default function AiDevelopmentSection() {
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-6">
-            <div className="rounded-[12px] bg-[#f4f6fa] px-6 py-6">
-              <div className="flex items-center justify-between border-b border-[#d9dee7] pb-3 text-xs text-[#5f6c85]">
-                <span>受託開発例</span>
-                <span>development Examples</span>
+            <div className="rounded-[12px] bg-[#f4f6fa] px-10 py-10 shadow-[4px_4px_4px_0px_#22222233]">
+              <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
+                <span
+                  className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >受託開発例</span>
+                <span
+                  className="text-[16px] font-light leading-[100%] text-[#5E6C84]"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                >Development Examples</span>
               </div>
-              <ul className="mt-4 space-y-2 text-[13px] text-[#3c3c3c]">
-                <li>AIチャットボット開発</li>
-                <li>社内AIツール・業務自動化</li>
-                <li>AI/WEBアプリ開発</li>
-                <li>PoC〜本番開発（社内にAIエンジニアがいなくても安心）</li>
+              <ul
+                className="mt-5 space-y-5 text-[18px] font-medium text-[#333333]"
+                style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
+              >
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>AIチャットボット開発</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>社内AIツール・業務自動化</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span>AI/WEBアプリ開発</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                  <span className="whitespace-pre-line">PoC〜本番開発<br />（社内にAIエンジニアがいなくても安心）</span>
+                </li>
               </ul>
             </div>
 
-            <div className="rounded-[12px] bg-[#f4f6fa] px-6 py-6">
-              <div className="flex items-center justify-between border-b border-[#d9dee7] pb-3 text-xs text-[#5f6c85]">
-                <span>進行フロー</span>
-                <span>Progress Flow</span>
+            <div className="rounded-[12px] bg-[#f4f6fa] px-10 py-10 shadow-[4px_4px_4px_0px_#22222233]">
+              <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
+                <span
+                  className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >進行フロー</span>
+                <span
+                  className="text-[16px] font-light leading-[100%] text-[#5E6C84]"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                >Progress Flow</span>
               </div>
-              <div className="mt-4 flex items-center gap-2 text-[11px] text-white">
+              <div
+                className="mt-5 flex flex-wrap items-center gap-2 text-[16px] font-medium text-white"
+                style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
+              >
                 {["1. ヒアリング", "2. 要件定義", "3. 設計", "4. 実装", "5. テスト", "6. 納品"].map(
-                  (step) => (
-                    <span key={step} className="rounded-[6px] bg-[#6a3ec8] px-2 py-1">
-                      {step}
-                    </span>
+                  (step, index) => (
+                    <div key={step} className="flex items-center gap-2">
+                      <span
+                        className="flex items-center justify-center bg-[#5E6C84] px-3 py-2"
+                      >
+                        {step}
+                      </span>
+                      {index < 5 && <Image src="/asset/Vector.png" alt="→" width={8} height={8} />}
+                    </div>
                   )
                 )}
               </div>
-              <p className="mt-4 text-[12px] text-[#3c3c3c]">
-                要件定義から実装・納品まで一気通貫！
+              <p
+                className="mt-10 text-[20px] leading-[180%] text-[#333333]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                <span className="font-bold">要件定義から実装・納品まで一気通貫！</span>
                 <br />
-                通常の受託開発と同じ進め方で安心です。
+                <span className="font-medium"><span className="text-[#0B60BB]">通常の受託開発と同じ進め方で安心</span>です。</span>
               </p>
             </div>
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-[12px] font-semibold text-[#6b6b6b]">導入推奨企業</p>
-            <div className="mt-4 grid grid-cols-3 gap-4 text-[11px] text-white">
+            <p
+              className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >導入推奨企業</p>
+            <div
+              className="mt-4 flex justify-between text-[18px] font-medium text-white leading-[100%]"
+              style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
+            >
               {[
                 "AIを使った業務効率化・新規事業を\n検討している企業",
                 "PoC〜本番開発を\n任せたい企業",
@@ -91,7 +168,8 @@ export default function AiDevelopmentSection() {
               ].map((label) => (
                 <div
                   key={label}
-                  className="rounded-[8px] bg-[#1f5bb9] px-3 py-2 whitespace-pre-line"
+                  className="rounded-[4px] bg-[#0B60BB] whitespace-pre-line text-center flex items-center justify-center"
+                  style={{ width: '300px', height: '120px', padding: '16px' }}
                 >
                   {label}
                 </div>
@@ -104,7 +182,8 @@ export default function AiDevelopmentSection() {
           <p className="text-[32px] font-bold text-[#3b3b3b]">
             Achievements & Applications
           </p>
-          <p className="mt-3 text-[16px] font-bold text-[#6b6b6b]">実績・活用領域</p>
+          <div className="mx-auto mt-2" style={{ width: '80px', height: '3px', background: '#0B60BB' }} />
+          <p className="mt-3 text-[16px] font-bold text-[#333333]">実績・活用領域</p>
           <div className="mt-10 flex items-center justify-center gap-10">
             {[
               { number: "1", label: "BtoB\nSaaS" },
@@ -114,12 +193,17 @@ export default function AiDevelopmentSection() {
             ].map((item) => (
               <div
                 key={item.number}
-                className="flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border-3 border-[#6a3ec8] text-center text-[14px] font-bold text-[#3b3b3b]"
+                className="flex h-[250px] w-[250px] flex-col items-center justify-center rounded-full text-center text-[32px] font-normal text-[#3b3b3b] leading-[150%] gap-2"
+                style={{
+                  fontFamily: 'var(--font-lexend), sans-serif',
+                  background: 'linear-gradient(white, white) padding-box, linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%) border-box',
+                  border: '4px solid transparent'
+                }}
               >
-                <span className="text-[20px] font-bold text-[#1f5bb9]">
+                <span className="text-[32px] font-normal text-[#1f5bb9]">
                   {item.number}
                 </span>
-                <span className="whitespace-pre-line font-bold">{item.label}</span>
+                <span className="whitespace-pre-line font-normal">{item.label}</span>
               </div>
             ))}
           </div>

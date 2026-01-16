@@ -9,15 +9,21 @@ export default function CompanySection() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="mx-auto w-full max-w-[1200px] px-10 py-20">
-        <div className="grid grid-cols-[280px_1fr] items-start gap-10">
+      <div className="mx-auto w-full max-w-[1200px] px-10 py-28">
+        <div className="flex items-start justify-between gap-20">
           <div className="text-white">
-            <p className="text-[48px] font-semibold">Company</p>
+            <p
+              className="text-[64px] font-medium leading-[100%] tracking-normal"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+            >Company</p>
             <div className="mt-3 h-[2px] w-[70px] bg-white" />
-            <p className="mt-4 text-sm text-[#d9e2ff]">会社概要</p>
+            <p
+              className="mt-4 text-[20px] font-medium leading-[100%] tracking-[0.03em] text-white"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >会社概要</p>
           </div>
 
-          <div className="text-sm text-[#3b3b3b]">
+          <div className="text-sm text-[#3b3b3b] flex flex-col items-end">
             <div className="space-y-4">
               {[
                 { label: "会社名", value: "Queue株式会社" },
@@ -26,12 +32,13 @@ export default function CompanySection() {
               ].map((row) => (
                 <div
                   key={row.label}
-                  className="flex items-center gap-4 rounded-[6px] bg-white px-4 py-2.5 shadow-[0_2px_6px_rgba(0,0,0,0.12)]"
+                  className="flex items-center gap-4 rounded-[4px] bg-white px-4 shadow-[0_2px_6px_rgba(0,0,0,0.12)]"
+                  style={{ width: '621px', height: '36px', paddingTop: '8px', paddingBottom: '8px' }}
                 >
                   <span className="min-w-[80px] font-semibold text-[#2f2f2f]">
                     {row.label}
                   </span>
-                  <span className="text-[#3b3b3b]">{row.value}</span>
+                  <span className="font-medium text-[#3b3b3b]">{row.value}</span>
                 </div>
               ))}
             </div>

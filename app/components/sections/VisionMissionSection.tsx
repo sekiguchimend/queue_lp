@@ -12,7 +12,7 @@ export default function VisionMissionSection() {
       <div className="mx-auto w-full max-w-[800px] px-10 py-20">
         <div className="px-12 py-10">
           <div className="flex flex-col gap-16">
-            <div className="grid grid-cols-[200px_1fr] items-start gap-12">
+            <div className="grid grid-cols-[200px_1fr] items-start gap-28">
               <div>
                 <p className="text-[44px] font-semibold">Vision</p>
                 <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />
@@ -25,7 +25,7 @@ export default function VisionMissionSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[200px_1fr] items-start gap-12">
+            <div className="grid grid-cols-[200px_1fr] items-start gap-28">
               <div>
                 <p className="text-[44px] font-semibold">Mission</p>
                 <div className="mt-2 h-[2px] w-[88px] bg-[#9b4dff]" />

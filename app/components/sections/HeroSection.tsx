@@ -44,7 +44,7 @@ export default function HeroSection() {
         {/* 左側テキスト */}
         <div className="relative z-10 pt-[80px] pl-[16px]">
           {/* メインタイトルブロック */}
-          <div className="w-[715px] flex flex-col gap-[28px]">
+          <div className="w-[850px] flex flex-col gap-[28px]">
             {/* メインタイトル1行目 */}
             <h1
               className="text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
@@ -79,7 +79,7 @@ export default function HeroSection() {
           >
             <p>Queue株式会社は、</p>
             <p>
-              <span className="text-[28px] font-bold text-[#2563eb]">
+              <span className="text-[28px] font-bold text-[#8120AF]">
                 LLMO（AI SEO）事業「umoren.ai」
               </span>
               <span>を主軸に、</span>
