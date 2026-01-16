@@ -47,15 +47,15 @@ export default function HeroSection() {
           <div className="w-[715px] flex flex-col gap-[28px]">
             {/* メインタイトル1行目 */}
             <h1
-              className="text-[48px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
+              className="text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
               style={{
-                fontFamily: 'var(--font-zen-kaku), sans-serif',
+                fontFamily: 'var(--font-lexend), sans-serif',
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              AI検索時代に、
+              AI検索時代<span className="text-[44px]">に、</span>
             </h1>
 
             {/* メインタイトル2行目 */}
@@ -68,15 +68,18 @@ export default function HeroSection() {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              "AIに選ばれる企業"をつくる。
+              “AIに選ばれる企業”<span className="text-[44px]">をつくる。</span>
             </h2>
           </div>
 
           {/* 説明文 */}
-          <div className="mt-12 text-[15px] leading-[2.4] text-[#333333]">
+          <div
+            className="mt-12 text-[18px] font-semibold leading-[200%] tracking-[0.07em] text-[#333333]"
+            style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
+          >
             <p>Queue株式会社は、</p>
             <p>
-              <span className="font-bold text-[#2563eb]">
+              <span className="text-[28px] font-bold text-[#2563eb]">
                 LLMO（AI SEO）事業「umoren.ai」
               </span>
               <span>を主軸に、</span>
@@ -89,13 +92,15 @@ export default function HeroSection() {
           <div className="mt-16 flex gap-4">
             <a
               href="#contact"
-              className="rounded-md bg-gradient-to-r from-[#7c3aed] to-[#6366f1] px-10 py-4 text-[15px] font-bold text-white transition-all hover:opacity-90"
+              className="flex h-[72px] w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-4 py-6 text-center text-[24px] font-medium leading-[100%] tracking-[0.05em] text-white transition-all hover:opacity-90 whitespace-nowrap"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >
               無料診断を受ける
             </a>
             <a
               href="#contact"
-              className="rounded-md bg-gradient-to-r from-[#4f46e5] to-[#3b82f6] px-10 py-4 text-[15px] font-bold text-white transition-all hover:opacity-90"
+              className="flex h-[72px] w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-12 py-6 text-center text-[24px] font-medium leading-[100%] tracking-[0.05em] text-white transition-all hover:opacity-90"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >
               相談する
             </a>

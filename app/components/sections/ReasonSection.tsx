@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ReasonSection() {
   return (
     <section className="bg-white py-20">
@@ -15,25 +17,25 @@ export default function ReasonSection() {
               title: "設計力",
               subtitle: "Design capability",
               description: "AI検索の挙動を\n前提にした",
-              icon: "AI",
+              ball: "/asset/ball1.png",
             },
             {
               title: "一体設計",
               subtitle: "Integrated design",
               description: "プロンプト・構造化データ・\nコンテンツの",
-              icon: "UX",
+              ball: "/asset/ball2.png",
             },
             {
               title: "検証",
               subtitle: "Verification",
               description: "「理論」ではなく\nAI上の実測結果で",
-              icon: "QC",
+              ball: "/asset/ball3.png",
             },
             {
               title: "運用体制",
               subtitle: "Utilize the system",
               description: "PoC → 改善 → 再検証を\n高速で回す",
-              icon: "OPS",
+              ball: "/asset/ball4.png",
             },
           ].map((item) => (
             <div
@@ -48,9 +50,13 @@ export default function ReasonSection() {
               </p>
               <p className="mt-2 text-xs text-[#7a7a7a]">{item.subtitle}</p>
               <div className="mt-6 flex justify-center">
-                <div className="flex h-[88px] w-[88px] items-center justify-center rounded-full bg-[#1f5bb9] text-[20px] font-semibold text-white">
-                  {item.icon}
-                </div>
+                <Image
+                  src={item.ball}
+                  alt={item.title}
+                  width={88}
+                  height={88}
+                  className="h-[88px] w-[88px] object-contain"
+                />
               </div>
             </div>
           ))}
