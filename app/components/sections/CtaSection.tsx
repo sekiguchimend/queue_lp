@@ -13,9 +13,9 @@ export default function CtaSection() {
        
           <div className="h-[188px] rounded-[3px] bg-white px-10 py-8 shadow-[0_10px_20px_rgba(0,0,0,0.18)] flex flex-row justify-center items-center">
             <div>
-              <div className="flex flex-row items-center gap-2 items-end"> 
-                <p className="text-[50px] font-semibold text-[#FDCA39]">LLMO</p>
-                <p className="text-[24px] text-[#FDCA39]">無料診断</p>
+              <div className="flex flex-row gap-2 items-end"> 
+                <p className="text-[50px] font-semibold text-[#FDCA39] leading-none">LLMO</p>
+                <p className="text-[24px] text-[#FDCA39] leading-none">無料診断</p>
               </div>
            
             <p className="mt-4 text-[13px] leading-[1.7] text-[#3b3b3b]">
