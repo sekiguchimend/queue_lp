@@ -38,8 +38,31 @@ export default function CompanyPage() {
         </nav>
       </header>
 
-      {/* ヒーローセクション */}
-      <section className="pt-[60px] md:pt-[80px]">
+      {/* ヒーローセクション - モバイル */}
+      <section
+        className="md:hidden pt-[60px]"
+        style={{
+          backgroundImage: "url('/asset/Company背景.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="flex flex-col items-center py-12">
+          <p
+            className="text-[40px] font-medium leading-[100%] tracking-normal text-white"
+            style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+          >Company</p>
+          <div className="mt-4 h-[2px] w-[50px] bg-[#f6c543]" />
+          <p
+            className="mt-4 text-[16px] font-medium leading-[100%] tracking-[0.03em] text-white"
+            style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+          >会社概要</p>
+        </div>
+      </section>
+
+      {/* ヒーローセクション - デスクトップ */}
+      <section className="hidden md:block pt-[80px]">
         <Image
           src="/image.png"
           alt="Company"
@@ -50,28 +73,78 @@ export default function CompanyPage() {
         />
       </section>
 
-      {/* 会社情報セクション */}
-      <section className="bg-[#f5f6f8] py-12 md:py-20">
-        <div className="mx-auto w-full max-w-[800px] px-4 md:px-8">
+      {/* 会社情報セクション - モバイル */}
+      <section className="md:hidden bg-white py-8">
+        <div className="mx-auto w-full px-6">
           <div className="space-y-0">
             {companyInfo.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col md:flex-row md:items-start gap-4"
+                className="py-6"
+                style={{
+                  borderBottom: '2px solid transparent',
+                  borderImage: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%) 1',
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="h-[8px] w-[8px] rounded-full bg-[#1f5bb9]"></span>
+                  <span className="text-[14px] font-medium text-[#333333]">
+                    {item.label}
+                  </span>
+                </div>
+                <div className="mt-2 ml-5">
+                  {item.isLogo ? (
+                    <div className="flex items-end gap-1">
+                      <span
+                        className="text-[28px] font-semibold leading-[100%] tracking-[0.05em]"
+                        style={{
+                          fontFamily: 'var(--font-lexend), sans-serif',
+                          background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                          WebkitBackgroundClip: 'text',
+                          WebkitTextFillColor: 'transparent',
+                          backgroundClip: 'text',
+                        }}
+                      >
+                        QUEUE
+                      </span>
+                      <span className="text-[14px] font-medium text-[#333333] ml-1">
+                        株式会社
+                      </span>
+                    </div>
+                  ) : (
+                    <p className="text-[14px] font-medium text-[#333333] whitespace-pre-line">
+                      {item.value}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 会社情報セクション - デスクトップ */}
+      <section className="hidden md:block bg-[#f5f6f8] py-20">
+        <div className="mx-auto w-full max-w-[800px] px-8">
+          <div className="space-y-0">
+            {companyInfo.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-row items-start gap-4"
               >
                 <div
-                  className="flex items-center gap-4 w-[160px] md:w-[200px] shrink-0 py-6 md:py-8 pl-4"
+                  className="flex items-center gap-4 w-[200px] shrink-0 py-8 pl-4"
                   style={{
                     borderBottom: '2px solid transparent',
                     borderImage: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%) 1',
                   }}
                 >
                   <span className="h-[10px] w-[10px] rounded-full bg-[#1f5bb9]"></span>
-                  <span className="text-[13px] md:text-[15px] font-medium text-[#333333]">
+                  <span className="text-[15px] font-medium text-[#333333]">
                     {item.label}
                   </span>
                 </div>
-                <div className="ml-[30px] md:ml-6 flex-1 py-6 md:py-8">
+                <div className="ml-6 flex-1 py-8">
                   {item.isLogo ? (
                     <div className="flex items-center gap-2">
                       <span
@@ -82,18 +155,16 @@ export default function CompanyPage() {
                           WebkitBackgroundClip: 'text',
                           WebkitTextFillColor: 'transparent',
                           backgroundClip: 'text',
-                          width: '114px',
-                          height: '32px',
                         }}
                       >
                         QUEUE
                       </span>
-                      <span
-                        className="text-[13px] md:text-[15px] font-medium text-[#333333]"
-                      >株式会社</span>
+                      <span className="text-[15px] font-medium text-[#333333]">
+                        株式会社
+                      </span>
                     </div>
                   ) : (
-                    <p className="text-[13px] md:text-[15px] font-medium text-[#333333] whitespace-pre-line">
+                    <p className="text-[15px] font-medium text-[#333333] whitespace-pre-line">
                       {item.value}
                     </p>
                   )}
@@ -114,18 +185,48 @@ export default function CompanyPage() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="mx-auto w-full max-w-[1040px] px-4 md:px-8 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+        <div className="mx-auto w-full max-w-[1040px] px-10 md:px-8 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+          {/* カード1 - モバイル */}
           <div
-            className="relative h-auto min-h-[150px] md:h-[188px] rounded-[3px] bg-white px-4 md:px-10 py-6 md:py-8 flex flex-row justify-center items-center"
+            className="md:hidden relative rounded-[3px] bg-white px-6 py-6"
+            style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
+          >
+            <p
+              className="text-[36px] font-semibold text-[#FDCA39] leading-none"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+            >LLMO</p>
+            <p
+              className="text-[20px] font-bold text-[#FDCA39] leading-none mt-1"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >無料診断</p>
+            <p
+              className="mt-4 text-[14px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >
+              ChatGPTで御社が<br />
+              どう評価されているか<br />
+              診断します。
+            </p>
+            <div className="flex justify-end mt-4">
+              <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#FDCA39] text-white">
+                →
+              </span>
+            </div>
+          </div>
+
+          {/* カード1 - デスクトップ */}
+          <div
+            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <div>
               <div className="flex flex-row gap-2 items-end">
-                <p className="text-[32px] md:text-[50px] font-semibold text-[#FDCA39] leading-none">LLMO</p>
-                <p className="text-[18px] md:text-[24px] text-[#FDCA39] leading-none">無料診断</p>
+                <p className="text-[50px] font-semibold text-[#FDCA39] leading-none">LLMO</p>
+                <p className="text-[24px] text-[#FDCA39] leading-none">無料診断</p>
               </div>
               <p
-                className="mt-3 md:mt-4 text-[14px] md:text-[16px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
+                className="mt-4 text-[16px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
                 ChatGPTで御社が
@@ -133,34 +234,73 @@ export default function CompanyPage() {
                 どう評価されているか診断します。
               </p>
             </div>
-            <span className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 flex h-[40px] w-[40px] md:h-[48px] md:w-[48px] items-center justify-center rounded-full bg-[#FDCA39] text-white">
+            <span className="absolute right-10 top-1/2 -translate-y-1/2 flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#FDCA39] text-white">
               →
             </span>
           </div>
 
+          {/* カード2 - モバイル */}
           <div
-            className="relative h-auto min-h-[150px] md:h-[188px] rounded-[3px] bg-white px-4 md:px-10 py-6 md:py-8 flex flex-row justify-center items-center"
+            className="md:hidden relative rounded-[3px] bg-white px-6 py-6"
+            style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
+          >
+            <div className="flex flex-row items-end gap-0">
+              <span
+                className="text-[32px] font-bold text-[#1f5bb9] leading-none"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >AI</span>
+              <span
+                className="text-[20px] font-bold text-[#1f5bb9] leading-none"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >検索</span>
+              <span
+                className="text-[16px] font-medium text-[#333333] leading-none"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >での</span>
+            </div>
+            <p
+              className="text-[20px] font-bold text-[#1f5bb9] leading-none mt-2"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >表示状況チェック</p>
+            <p
+              className="mt-4 text-[14px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >
+              AI検索した際の、御社の<br />
+              「露出有無」と「引用状況」を<br />
+              調査します。
+            </p>
+            <div className="flex justify-end mt-4">
+              <span className="flex h-[40px] w-[40px] items-center justify-center rounded-full bg-[#1f5bb9] text-white">
+                →
+              </span>
+            </div>
+          </div>
+
+          {/* カード2 - デスクトップ */}
+          <div
+            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <div>
-              <div className="flex flex-col gap-2 md:gap-3">
+              <div className="flex flex-col gap-3">
                 <div className="flex flex-row gap-1 items-end">
                   <span
-                    className="text-[28px] md:text-[40px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
+                    className="text-[40px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
                     style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
                   >AI</span>
                   <span
-                    className="text-[20px] md:text-[28px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
+                    className="text-[28px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >検索での</span>
                 </div>
                 <span
-                  className="text-[20px] md:text-[28px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
+                  className="text-[28px] font-medium text-[#1f5bb9] leading-[100%] tracking-[0.03em]"
                   style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                 >表示状況チェック</span>
               </div>
               <p
-                className="mt-3 md:mt-4 text-[14px] md:text-[16px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
+                className="mt-4 text-[16px] font-medium leading-[180%] tracking-[0.03em] text-[#333333]"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
                 AI検索した際の、御社の
@@ -168,15 +308,19 @@ export default function CompanyPage() {
                 「露出有無」と「引用状況」を調査します。
               </p>
             </div>
-            <span className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 flex h-[40px] w-[40px] md:h-[48px] md:w-[48px] items-center justify-center rounded-full bg-[#1f5bb9] text-white">
+            <span className="absolute right-10 top-1/2 -translate-y-1/2 flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#1f5bb9] text-white">
               →
             </span>
           </div>
+
         </div>
       </section>
 
       {/* フッター */}
-      <footer className="relative bg-[#f5f6f8] pb-8 md:pb-12 pt-10 md:pt-16">
+      <footer
+        className="relative bg-[#f5f6f8] pt-10 md:pt-16"
+        style={{ paddingBottom: 'max(80px, calc(32px + env(safe-area-inset-bottom)))' }}
+      >
         <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
           <div className="flex justify-center">
             <Image

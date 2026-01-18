@@ -60,7 +60,7 @@ export default function ServiceSection() {
                 umoren.ai
               </span>
               <div
-                className="mt-6 md:mt-10 text-[16px] md:text-[22px] font-medium leading-[175%] tracking-normal text-[#333333]"
+                className="mt-6 md:mt-10 text-[16px] md:text-[22px] font-medium leading-[175%] tracking-normal text-[#333333] text-left"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
                 <p>AI時代の検索市場で、貴社を「信頼される回答」へ。</p>
@@ -109,20 +109,27 @@ export default function ServiceSection() {
                 </ul>
                 <div className="flex justify-center">
                   <Image
+                    src="/asset/矢印.png"
+                    alt="arrow"
+                    width={40}
+                    height={40}
+                    className="h-auto w-[30px] md:hidden"
+                  />
+                  <Image
                     src="/asset/矢印 (1).png"
                     alt="arrow"
                     width={40}
                     height={40}
-                    className="h-auto w-[30px] md:w-[40px]"
+                    className="h-auto hidden md:block md:w-[40px]"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-4 md:gap-6">
                   <div
-                    className="flex flex-wrap justify-center gap-2 md:gap-4 text-[20px] md:text-[28px] font-bold text-[#3c3c3c] leading-[180%]"
+                    className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-2 md:gap-4 text-[20px] md:text-[28px] font-bold text-[#3c3c3c] leading-[180%]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >
                     {["診断", "設計", "改善", "監視"].map((label) => (
-                      <span key={label} className="rounded-[6px] bg-[#FDCA39] px-3 md:px-4 py-1 shadow-[0px_2px_4px_0px_#22222233]">
+                      <span key={label} className="rounded-[6px] bg-[#FDCA39] px-3 md:px-4 py-1 shadow-[0px_2px_4px_0px_#22222233] text-center">
                         {label}
                       </span>
                     ))}
@@ -132,7 +139,7 @@ export default function ServiceSection() {
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >
                     <span className="text-[24px] md:text-[32px]">4つの</span>
-                    <br />
+                    <br className="hidden md:block" />
                     <span className="text-[20px] md:text-[28px]">明確なサイクル</span>
                   </p>
                 </div>
@@ -170,11 +177,18 @@ export default function ServiceSection() {
                 </ul>
                 <div className="flex justify-center">
                   <Image
+                    src="/asset/矢印.png"
+                    alt="arrow"
+                    width={40}
+                    height={40}
+                    className="h-auto w-[30px] md:hidden"
+                  />
+                  <Image
                     src="/asset/矢印 (1).png"
                     alt="arrow"
                     width={40}
                     height={40}
-                    className="h-auto w-[30px] md:w-[40px]"
+                    className="h-auto hidden md:block md:w-[40px]"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-2">
@@ -204,7 +218,7 @@ export default function ServiceSection() {
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >導入推奨企業</p>
               <div
-                className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 text-[14px] md:text-[18px] font-medium text-white leading-[180%]"
+                className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 text-[14px] md:text-[18px] font-medium text-white leading-[180%]"
                 style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
               >
                 {[

@@ -19,7 +19,7 @@ export default function HeroSection() {
           />
         </div>
         <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]">
-          <a href="#company" className="transition-colors hover:text-[#2563eb]">
+          <a href="/company" className="transition-colors hover:text-[#2563eb]">
             会社概要
           </a>
           <a href="#contact" className="transition-colors hover:text-[#2563eb]">

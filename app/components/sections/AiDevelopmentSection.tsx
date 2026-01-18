@@ -8,18 +8,18 @@ export default function AiDevelopmentSection() {
           <div className="pointer-events-none absolute right-0 top-0 h-full w-[6px] md:w-[10px] bg-[#1f3f8f]" />
           <div className="flex flex-col md:grid md:grid-cols-[1.1fr_1fr] items-center md:items-start gap-6 md:gap-10">
             <div className="text-center md:text-left">
-              <p className="bg-clip-text text-transparent" style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <div className="flex flex-col md:block items-center md:items-start">
                 <span
-                  className="text-[60px] md:text-[110px] font-light leading-[120%] tracking-[0.03em]"
-                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                  className="text-[60px] md:text-[110px] font-light leading-[120%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif', background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                 >AI</span>
                 <span
-                  className="text-[28px] md:text-[48px] font-medium leading-[120%] tracking-[0.03em]"
-                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                  className="text-[28px] md:text-[48px] font-medium leading-[120%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif', background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                 >受託開発</span>
-              </p>
+              </div>
               <p
-                className="mt-6 md:mt-10 text-[14px] md:text-[20px] font-medium leading-[175%] text-[#333333]"
+                className="mt-6 md:mt-10 text-[14px] md:text-[20px] font-medium leading-[175%] text-[#333333] text-left md:text-left"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
                 「AIだから構築」ではなく、業務課題ベースで確実に形にする
@@ -66,14 +66,21 @@ export default function AiDevelopmentSection() {
                 </li>
               </ul>
               <Image
+                src="/asset/矢印.png"
+                alt="→"
+                width={40}
+                height={40}
+                className="md:hidden w-[30px] h-auto"
+              />
+              <Image
                 src="/asset/矢印 (1).png"
                 alt="→"
                 width={40}
                 height={40}
-                className="hidden md:block w-[30px] md:w-[40px] h-auto"
+                className="hidden md:block w-[40px] h-auto"
               />
               <div
-                className="rounded-[8px] bg-[#FDCA39] px-3 md:px-4 py-2 md:py-3 text-left text-[14px] md:text-[18px] font-bold leading-[200%] text-[#3c3c3c] shadow-[0px_2px_4px_0px_#22222233]"
+                className="rounded-[8px] bg-[#FDCA39] px-3 md:px-4 py-2 md:py-3 text-center md:text-left text-[14px] md:text-[18px] font-bold leading-[200%] text-[#3c3c3c] shadow-[0px_2px_4px_0px_#22222233]"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
                 LLMO事業で蓄積した
@@ -132,18 +139,18 @@ export default function AiDevelopmentSection() {
                 >Progress Flow</span>
               </div>
               <div
-                className="mt-4 md:mt-5 flex flex-wrap items-center gap-2 text-[12px] md:text-[16px] font-medium text-white"
+                className="mt-4 md:mt-5 flex flex-col md:flex-row md:flex-wrap items-center gap-2 text-[14px] md:text-[16px] font-medium text-white max-w-[200px] md:max-w-none mx-auto md:mx-0"
                 style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
               >
                 {["1. ヒアリング", "2. 要件定義", "3. 設計", "4. 実装", "5. テスト", "6. 納品"].map(
                   (step, index) => (
-                    <div key={step} className="flex items-center gap-1 md:gap-2">
+                    <div key={step} className="flex flex-col md:flex-row items-center gap-1 md:gap-2 w-full md:w-auto">
                       <span
-                        className="flex items-center justify-center bg-[#5E6C84] px-2 md:px-3 py-1 md:py-2"
+                        className="flex items-center justify-center bg-[#5E6C84] px-6 md:px-3 py-3 md:py-2 w-full md:w-auto rounded-[4px]"
                       >
                         {step}
                       </span>
-                      {index < 5 && <Image src="/asset/Vector.png" alt="→" width={8} height={8} className="w-[6px] md:w-[8px] h-auto" />}
+                      {index < 5 && <Image src="/asset/Vector.png" alt="→" width={8} height={8} className="w-[12px] md:w-[8px] h-auto rotate-90 md:rotate-0 my-1 md:my-0" />}
                     </div>
                   )
                 )}
@@ -186,7 +193,11 @@ export default function AiDevelopmentSection() {
 
         <div className="mt-10 md:mt-14 text-center">
           <p className="text-[24px] md:text-[32px] font-bold text-[#3b3b3b]">
-            Achievements & Applications
+            <span className="md:inline">Achievements</span>
+            <br className="md:hidden" />
+            <span className="md:inline"> &</span>
+            <br className="md:hidden" />
+            <span className="md:inline"> Applications</span>
           </p>
           <div className="mx-auto mt-2" style={{ width: '80px', height: '3px', background: '#0B60BB' }} />
           <p className="mt-3 text-[14px] md:text-[16px] font-bold text-[#333333]">実績・活用領域</p>

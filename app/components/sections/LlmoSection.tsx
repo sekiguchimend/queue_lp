@@ -75,9 +75,10 @@ export default function LlmoSection() {
 
             {/* 中央: 矢印とテキスト */}
             <div className="flex flex-col items-center mx-4 md:mx-8">
-              <Image src="/asset/矢印 (1).png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto" />
-              <p className="text-[14px] md:text-[16px] font-bold text-[#333333] mt-2 md:mt-3 text-center">
-                そこで<br />必要なのが
+              <Image src="/asset/矢印.png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
+              <Image src="/asset/矢印 (1).png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
+              <p className="text-[14px] md:text-[16px] font-bold text-[#333333] mt-2 md:mt-3 text-center whitespace-nowrap md:whitespace-normal">
+                そこで必要なのが
               </p>
             </div>
 

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FooterSection() {
   return (
-    <footer className="relative bg-[#f5f6f8] pb-8 md:pb-12 pt-10 md:pt-16">
+    <footer className="relative pb-8 md:pb-12 pt-10 md:pt-16" style={{ background: 'linear-gradient(180deg, #F4F7FB 0%, #E9EEF9 40%, #BEC8E2 100%)' }}>
       <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
         {/* ロゴ */}
         <div className="flex justify-center">
@@ -17,7 +17,7 @@ export default function FooterSection() {
 
         {/* ナビゲーションリンク */}
         <div className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]">
-          <a href="#company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
+          <a href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
         </div>
 
