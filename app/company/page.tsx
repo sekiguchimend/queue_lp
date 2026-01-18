@@ -20,7 +20,7 @@ export default function CompanyPage() {
       >
         <a href="/" className="flex items-center">
           <Image
-            src="/asset/Group 1225.png"
+            src="/asset/logo.png"
             alt="QUEUE"
             width={90}
             height={72}
@@ -324,7 +324,7 @@ export default function CompanyPage() {
         <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
           <div className="flex justify-center">
             <Image
-              src="/asset/Group 1225.png"
+              src="/asset/logo.png"
               alt="QUEUE"
               width={80}
               height={64}

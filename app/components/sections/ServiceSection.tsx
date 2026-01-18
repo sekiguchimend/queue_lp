@@ -109,14 +109,14 @@ export default function ServiceSection() {
                 </ul>
                 <div className="flex justify-center">
                   <Image
-                    src="/asset/矢印.png"
+                    src="/asset/矢印 (4).png"
                     alt="arrow"
                     width={40}
                     height={40}
                     className="h-auto w-[30px] md:hidden"
                   />
                   <Image
-                    src="/asset/矢印 (1).png"
+                    src="/asset/矢印 (3).png"
                     alt="arrow"
                     width={40}
                     height={40}
@@ -177,14 +177,14 @@ export default function ServiceSection() {
                 </ul>
                 <div className="flex justify-center">
                   <Image
-                    src="/asset/矢印.png"
+                    src="/asset/矢印 (4).png"
                     alt="arrow"
                     width={40}
                     height={40}
                     className="h-auto w-[30px] md:hidden"
                   />
                   <Image
-                    src="/asset/矢印 (1).png"
+                    src="/asset/矢印 (3).png"
                     alt="arrow"
                     width={40}
                     height={40}

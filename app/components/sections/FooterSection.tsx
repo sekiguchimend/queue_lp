@@ -7,7 +7,7 @@ export default function FooterSection() {
         {/* ロゴ */}
         <div className="flex justify-center">
           <Image
-            src="/asset/Group 1225.png"
+            src="/asset/logo.png"
             alt="QUEUE"
             width={80}
             height={64}

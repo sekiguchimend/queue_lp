@@ -66,14 +66,14 @@ export default function AiDevelopmentSection() {
                 </li>
               </ul>
               <Image
-                src="/asset/矢印.png"
+                src="/asset/矢印 (4).png"
                 alt="→"
                 width={40}
                 height={40}
                 className="md:hidden w-[30px] h-auto"
               />
               <Image
-                src="/asset/矢印 (1).png"
+                src="/asset/矢印 (3).png"
                 alt="→"
                 width={40}
                 height={40}

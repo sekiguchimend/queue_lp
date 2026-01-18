@@ -5,7 +5,7 @@ export default function LlmoSection() {
     <section className="relative bg-[#f5f6f8] py-12 md:py-20">
       {/* セクション境界の上に配置する矢印 */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-        <Image src="/asset/矢印.png" alt="arrow" width={60} height={60} className="w-[40px] md:w-[60px] h-auto" />
+        <Image src="/asset/矢印 (4).png" alt="arrow" width={60} height={60} className="w-[40px] md:w-[60px] h-auto" />
       </div>
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-8">
         {/* 黄色いバッジ */}
@@ -75,8 +75,8 @@ export default function LlmoSection() {
 
             {/* 中央: 矢印とテキスト */}
             <div className="flex flex-col items-center mx-4 md:mx-8">
-              <Image src="/asset/矢印.png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
-              <Image src="/asset/矢印 (1).png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
+              <Image src="/asset/矢印 (4).png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
+              <Image src="/asset/矢印 (3).png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
               <p className="text-[14px] md:text-[16px] font-bold text-[#333333] mt-2 md:mt-3 text-center whitespace-nowrap md:whitespace-normal">
                 そこで必要なのが
               </p>
