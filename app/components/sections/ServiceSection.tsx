@@ -2,30 +2,30 @@ import Image from "next/image";
 
 export default function ServiceSection() {
   return (
-    <section className="bg-[#f5f6f8] py-16">
-      <div className="mx-auto w-full max-w-[1200px] px-10">
+    <section className="bg-[#f5f6f8] py-10 md:py-16">
+      <div className="mx-auto w-full max-w-[1200px] px-4 md:px-10">
         <div className="text-center">
           <p
-            className="text-[64px] font-medium text-[#3b3b3b] leading-[100%] tracking-normal"
+            className="text-[40px] md:text-[64px] font-medium text-[#3b3b3b] leading-[100%] tracking-normal"
             style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
           >Service</p>
           <div className="mx-auto mt-2 h-[2px] w-10 bg-[#1f5bb9]" />
-          <p className="mt-2 text-[16px] font-bold text-[#333333]">サービス</p>
+          <p className="mt-2 text-[14px] md:text-[16px] font-bold text-[#333333]">サービス</p>
         </div>
 
         <div
-          className="relative mt-10 rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none bg-white p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
+          className="relative mt-6 md:mt-10 rounded-tl-[50px] md:rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none bg-white p-4 md:p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
           style={{
-            borderWidth: '2px 18px 2px 2px',
+            borderWidth: '2px 10px 2px 2px',
             borderStyle: 'solid',
             borderColor: '#29498D'
           }}
         >
-          <div className="grid grid-cols-[1.1fr_1fr] items-start gap-8">
-            <div>
+          <div className="flex flex-col md:grid md:grid-cols-[1.1fr_1fr] items-center md:items-start gap-6 md:gap-8">
+            <div className="text-center md:text-left">
               <div className="inline-flex flex-col items-center">
                 <p
-                  className="text-[40px] font-light leading-[140%] tracking-[0.03em] bg-clip-text text-transparent"
+                  className="text-[24px] md:text-[40px] font-light leading-[140%] tracking-[0.03em] bg-clip-text text-transparent"
                   style={{
                     fontFamily: 'var(--font-lexend), sans-serif',
                     background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
@@ -34,7 +34,7 @@ export default function ServiceSection() {
                   }}
                 >(AI SEO)</p>
                 <p
-                  className="text-[128px] font-light leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+                  className="text-[64px] md:text-[128px] font-light leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
                   style={{
                     fontFamily: 'var(--font-lexend), sans-serif',
                     background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
@@ -46,52 +46,53 @@ export default function ServiceSection() {
                 </p>
               </div>
               <span
-                className="mt-3 inline-flex items-center justify-center text-[56px] font-light text-white leading-[100%] tracking-[0.02em]"
+                className="mt-3 inline-flex items-center justify-center text-[32px] md:text-[56px] font-light text-white leading-[100%] tracking-[0.02em]"
                 style={{
                   fontFamily: 'var(--font-lexend), sans-serif',
-                  width: '367px',
-                  height: '88px',
+                  width: '100%',
+                  maxWidth: '367px',
+                  height: 'auto',
+                  padding: '12px 24px',
                   borderRadius: '50px',
-                  padding: '16px',
                   background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)'
                 }}
               >
                 umoren.ai
               </span>
               <div
-                className="mt-10 text-[22px] font-medium leading-[175%] tracking-normal text-[#333333]"
+                className="mt-6 md:mt-10 text-[16px] md:text-[22px] font-medium leading-[175%] tracking-normal text-[#333333]"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >
-                <p className="whitespace-nowrap">AI時代の検索市場で、貴社を「信頼される回答」へ。</p>
-                <p className="whitespace-nowrap">生成AIによる推論シェアを「可視化」「実装」し露出を実現します。</p>
+                <p>AI時代の検索市場で、貴社を「信頼される回答」へ。</p>
+                <p>生成AIによる推論シェアを「可視化」「実装」し露出を実現します。</p>
               </div>
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-center md:justify-end">
               <Image
                 src="/asset/Mask group.png"
                 alt="LLMO service"
                 width={400}
                 height={280}
-                className="h-auto w-[400px]"
+                className="h-auto w-[280px] md:w-[400px]"
               />
             </div>
           </div>
 
-          <div className="mt-10 space-y-6">
-            <div className="rounded-[12px] bg-[#f4f6fa] px-10 py-10 text-sm text-[#3c3c3c] shadow-[4px_4px_4px_0px_#22222233]">
+          <div className="mt-6 md:mt-10 space-y-6">
+            <div className="rounded-[12px] bg-[#f4f6fa] px-4 md:px-10 py-6 md:py-10 text-sm text-[#3c3c3c] shadow-[4px_4px_4px_0px_#22222233]">
               <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
                 <span
-                  className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                  className="text-[18px] md:text-[24px] font-bold leading-[180%] text-[#0B60BB]"
                   style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                 >サービス</span>
                 <span
-                  className="text-[24px] font-light leading-[100%] text-[#5E6C84]"
+                  className="text-[16px] md:text-[24px] font-light leading-[100%] text-[#5E6C84]"
                   style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
                 >Service</span>
               </div>
-              <div className="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+              <div className="mt-5 flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-4">
                 <ul
-                  className="space-y-5 text-[18px] font-medium text-[#333333]"
+                  className="space-y-4 md:space-y-5 text-[14px] md:text-[18px] font-medium text-[#333333]"
                   style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
                 >
                   {[
@@ -101,7 +102,7 @@ export default function ServiceSection() {
                     "継続的な改善サイクル\n（Before / After）",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                       <span className="whitespace-pre-line">{item}</span>
                     </li>
                   ))}
@@ -112,16 +113,16 @@ export default function ServiceSection() {
                     alt="arrow"
                     width={40}
                     height={40}
-                    className="h-auto w-[40px]"
+                    className="h-auto w-[30px] md:w-[40px]"
                   />
                 </div>
-                <div className="flex flex-col items-center gap-6">
+                <div className="flex flex-col items-center gap-4 md:gap-6">
                   <div
-                    className="flex flex-wrap justify-center gap-4 text-[28px] font-bold text-[#3c3c3c] leading-[180%]"
+                    className="flex flex-wrap justify-center gap-2 md:gap-4 text-[20px] md:text-[28px] font-bold text-[#3c3c3c] leading-[180%]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >
                     {["診断", "設計", "改善", "監視"].map((label) => (
-                      <span key={label} className="rounded-[6px] bg-[#FDCA39] px-4 py-1 shadow-[0px_2px_4px_0px_#22222233]">
+                      <span key={label} className="rounded-[6px] bg-[#FDCA39] px-3 md:px-4 py-1 shadow-[0px_2px_4px_0px_#22222233]">
                         {label}
                       </span>
                     ))}
@@ -130,28 +131,28 @@ export default function ServiceSection() {
                     className="text-center font-medium leading-[150%] text-[#333333]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >
-                    <span className="text-[32px]">4つの</span>
+                    <span className="text-[24px] md:text-[32px]">4つの</span>
                     <br />
-                    <span className="text-[28px]">明確なサイクル</span>
+                    <span className="text-[20px] md:text-[28px]">明確なサイクル</span>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-[12px] bg-[#f4f6fa] px-10 py-10 text-sm text-[#3c3c3c] shadow-[4px_4px_4px_0px_#22222233]">
+            <div className="rounded-[12px] bg-[#f4f6fa] px-4 md:px-10 py-6 md:py-10 text-sm text-[#3c3c3c] shadow-[4px_4px_4px_0px_#22222233]">
               <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
                 <span
-                  className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                  className="text-[18px] md:text-[24px] font-bold leading-[180%] text-[#0B60BB]"
                   style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                 >提供価値</span>
                 <span
-                  className="text-[24px] font-light leading-[100%] text-[#5E6C84]"
+                  className="text-[14px] md:text-[24px] font-light leading-[100%] text-[#5E6C84]"
                   style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
                 >Value Proposition</span>
               </div>
-              <div className="mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+              <div className="mt-5 flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-4">
                 <ul
-                  className="space-y-5 text-[18px] font-medium text-[#333333]"
+                  className="space-y-4 md:space-y-5 text-[14px] md:text-[18px] font-medium text-[#333333]"
                   style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
                 >
                   {[
@@ -162,7 +163,7 @@ export default function ServiceSection() {
                     "AI検索上の変化を\nBefore / Afterで確認",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0" />
+                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                       <span className="whitespace-pre-line">{item}</span>
                     </li>
                   ))}
@@ -173,16 +174,16 @@ export default function ServiceSection() {
                     alt="arrow"
                     width={40}
                     height={40}
-                    className="h-auto w-[40px]"
+                    className="h-auto w-[30px] md:w-[40px]"
                   />
                 </div>
                 <div className="flex flex-col items-center gap-2">
                   <p
-                    className="text-[18px] font-medium leading-[200%] text-center text-[#333333]"
+                    className="text-[14px] md:text-[18px] font-medium leading-[200%] text-center text-[#333333]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >「対策」ではなく</p>
                   <span
-                    className="rounded-[8px] bg-[#f6c543] px-4 py-3 text-center text-[32px] font-bold leading-[150%] text-[#3c3c3c]"
+                    className="rounded-[8px] bg-[#f6c543] px-3 md:px-4 py-2 md:py-3 text-center text-[20px] md:text-[32px] font-bold leading-[150%] text-[#3c3c3c]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >
                     「AIに実際に出てくる」
@@ -190,7 +191,7 @@ export default function ServiceSection() {
                     状態を成果に
                   </span>
                   <p
-                    className="text-center text-[18px] font-medium leading-[200%] text-[#333333]"
+                    className="text-center text-[14px] md:text-[18px] font-medium leading-[200%] text-[#333333]"
                     style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
                   >として効果します</p>
                 </div>
@@ -199,13 +200,13 @@ export default function ServiceSection() {
 
             <div className="text-center">
               <p
-                className="text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                className="text-[18px] md:text-[24px] font-bold leading-[180%] text-[#0B60BB]"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
               >導入推奨企業</p>
               <div
-                  className="mt-4 grid grid-cols-4 gap-4 text-[18px] font-medium text-white leading-[180%]"
-                  style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
-                >
+                className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 text-[14px] md:text-[18px] font-medium text-white leading-[180%]"
+                style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
+              >
                 {[
                   "BtoB SaaS企業",
                   "IT・DX・AI関連企業",
@@ -214,8 +215,7 @@ export default function ServiceSection() {
                 ].map((label) => (
                   <div
                     key={label}
-                    className="rounded-[4px] bg-[#0B60BB] whitespace-pre-line text-center flex items-center justify-center"
-                    style={{ width: '230px', height: '102px', padding: '8px' }}
+                    className="rounded-[4px] bg-[#0B60BB] whitespace-pre-line text-center flex items-center justify-center p-2 md:p-2 min-h-[80px] md:min-h-[102px]"
                   >
                     {label}
                   </div>
