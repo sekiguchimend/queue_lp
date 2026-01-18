@@ -39,36 +39,19 @@ export default function CompanyPage() {
       </header>
 
       {/* ヒーローセクション */}
-      <section
-        className="relative"
-        style={{
-          backgroundImage: "url('/asset/Company背景.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="flex h-[280px] md:h-[360px] items-center justify-center pt-[60px] md:pt-[80px]">
-          <div className="text-center">
-            <h1
-              className="text-[40px] md:text-[56px] font-medium text-white leading-[100%] tracking-normal"
-              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
-            >
-              Company
-            </h1>
-            <div className="mx-auto mt-4 md:mt-6 h-[3px] w-[56px] bg-[#FDCA39]"></div>
-            <p
-              className="mt-4 md:mt-6 text-[14px] md:text-[18px] font-medium text-white leading-[100%] tracking-[0.03em]"
-              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
-            >
-              会社概要
-            </p>
-          </div>
-        </div>
+      <section className="pt-[60px] md:pt-[80px]">
+        <Image
+          src="/image.png"
+          alt="Company"
+          width={1717}
+          height={361}
+          className="h-auto w-full"
+          priority
+        />
       </section>
 
       {/* 会社情報セクション */}
-      <section className="bg-white py-12 md:py-20">
+      <section className="bg-[#f5f6f8] py-12 md:py-20">
         <div className="mx-auto w-full max-w-[800px] px-4 md:px-8">
           <div className="space-y-0">
             {companyInfo.map((item, index) => (
