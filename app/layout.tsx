@@ -34,19 +34,19 @@ const lexend = Lexend({
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
-  subsets: ["latin", "japanese"],
+  subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
 });
 
 const mPlus1p = M_PLUS_1p({
   variable: "--font-m-plus-1p",
-  subsets: ["latin", "japanese"],
+  subsets: ["latin"],
   weight: ["500", "700", "800", "900"],
 });
 
 const gothicA1 = Gothic_A1({
   variable: "--font-gothic-a1",
-  subsets: ["latin", "korean"],
+  subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
