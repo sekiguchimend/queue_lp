@@ -28,18 +28,19 @@ export default function HeroSection() {
         </nav>
       </header>
 
+      {/* 右側イラスト（背景の一部として重ねる） */}
+      <div className="pointer-events-none absolute top-0 bottom-0 right-0 w-[50%] hidden md:block">
+        <Image
+          src="/asset/FV右イラスト.png"
+          alt="AI illustration"
+          fill
+          className="object-cover object-right"
+          priority
+        />
+      </div>
+
       {/* メインコンテンツ */}
       <div className="relative mx-auto w-full max-w-[1400px] px-4 md:px-8 pb-24 pt-12 lg:px-16">
-        {/* 右側イラスト（背景の一部として重ねる） */}
-        <div className="pointer-events-none absolute left-[43%] top-0 bottom-0 right-0 hidden md:block">
-          <Image
-            src="/asset/FV右イラスト.png"
-            alt="AI illustration"
-            fill
-            className="object-contain object-right-top"
-            priority
-          />
-        </div>
 
         {/* 左側テキスト */}
         <div className="relative z-10 pt-[80px] md:pt-[80px] pl-0 md:pl-[16px]">

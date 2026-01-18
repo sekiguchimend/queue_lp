@@ -2,21 +2,20 @@ import Image from "next/image";
 
 export default function ProblemSection() {
   return (
-    <section className="problem-bg relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[150px] md:h-[220px]">
-        <Image
-          src="/asset/Problem.png"
-          alt=""
-          fill
-          className="object-cover object-top"
-          priority
-        />
-      </div>
+    <section
+      className="relative overflow-hidden"
+      style={{
+        backgroundImage: "url('/asset/Problem.png'), linear-gradient(180deg, #c8cfe0 0%, #b8c4d8 100%)",
+        backgroundSize: "100% auto, 100% 100%",
+        backgroundPosition: "top center, center",
+        backgroundRepeat: "no-repeat, no-repeat",
+      }}
+    >
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 md:px-10 py-12 md:py-20">
         <div className="text-center text-[#3a3a3a]">
           <p className="text-[20px] md:text-[28px] font-semibold">Problem</p>
-          <p className="mt-2 md:mt-3 text-[12px] md:text-sm text-[#4a4a4a]">こんな課題はありませんか</p>
+          <p className="mt-2 md:mt-3 text-[12px] md:text-sm font-medium text-[#4a4a4a]">こんな課題はありませんか</p>
         </div>
 
         {/* モバイル用レイアウト */}
