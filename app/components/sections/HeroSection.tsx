@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#f8f8fa]">
+    <section className="relative min-h-screen 2xl:min-h-0 overflow-hidden bg-[#f8f8fa]">
       {/* ヘッダー - トップ画面の一部として配置 */}
       <header
         className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-3 lg:px-8"
@@ -40,7 +40,7 @@ export default function HeroSection() {
       </div>
 
       {/* メインコンテンツ */}
-      <div className="relative mx-auto w-full max-w-[1400px] px-4 md:px-8 pb-24 pt-12 lg:px-16">
+      <div className="relative mx-auto 2xl:mx-0 2xl:ml-[8%] w-full max-w-[1400px] px-4 md:px-8 pb-24 pt-12 lg:px-16">
 
         {/* 左側テキスト */}
         <div className="relative z-10 pt-[80px] md:pt-[80px] pl-0 md:pl-[16px]">
