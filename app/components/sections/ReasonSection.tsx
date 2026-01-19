@@ -4,26 +4,28 @@ export default function ReasonSection() {
   return (
     <section className="bg-white py-16 md:py-28">
       <div className="mx-auto w-full max-w-[1400px] px-4 md:px-10 text-center">
-        <p className="text-center">
-          <span
-            className="text-[28px] md:text-[40px] font-medium bg-clip-text text-transparent"
-            style={{
-              fontFamily: 'var(--font-lexend), sans-serif',
-              background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
-          >Queue</span>
-          <span
-            className="text-[18px] md:text-[24px] font-bold text-[#333333]"
-            style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
-          > が選ばれる理由</span>
-        </p>
-        <p className="mt-4 md:mt-6 text-[28px] md:text-[42px] font-medium text-[#2f2f2f] flex flex-col md:flex-row items-center justify-center">
-          <span className="reason-highlight-blue">技術起点</span>
-          <span className="my-1 md:my-0 mx-2 md:mx-4 text-[#2f2f2f]">×</span>
-          <span className="reason-highlight-purple">実装力</span>
-        </p>
+        <header className="text-center">
+          <h2>
+            <span
+              className="text-[28px] md:text-[40px] font-medium bg-clip-text text-transparent"
+              style={{
+                fontFamily: 'var(--font-lexend), sans-serif',
+                background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >Queue</span>
+            <span
+              className="text-[18px] md:text-[24px] font-bold text-[#333333]"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            > が選ばれる理由</span>
+          </h2>
+          <p className="mt-4 md:mt-6 text-[28px] md:text-[42px] font-medium text-[#2f2f2f] flex flex-col md:flex-row items-center justify-center">
+            <span className="reason-highlight-blue">技術起点</span>
+            <span className="my-1 md:my-0 mx-2 md:mx-4 text-[#2f2f2f]">×</span>
+            <span className="reason-highlight-purple">実装力</span>
+          </p>
+        </header>
 
         <div className="mt-10 md:mt-16 grid grid-cols-1 gap-6 md:gap-5 md:grid-cols-2 lg:grid-cols-4 max-w-[280px] md:max-w-none mx-auto">
           {[

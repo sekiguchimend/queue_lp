@@ -8,7 +8,7 @@ export default function AiDevelopmentSection() {
           <div className="pointer-events-none absolute right-0 top-0 h-full w-[6px] md:w-[10px] bg-[#1f3f8f]" />
           <div className="flex flex-col md:grid md:grid-cols-[1.1fr_1fr] items-center md:items-start gap-6 md:gap-10">
             <div className="text-center md:text-left">
-              <div className="flex flex-col md:block items-center md:items-start">
+              <h2 className="flex flex-col md:block items-center md:items-start">
                 <span
                   className="text-[60px] md:text-[110px] font-light leading-[120%] tracking-[0.03em] bg-clip-text text-transparent"
                   style={{ fontFamily: 'var(--font-lexend), sans-serif', background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
@@ -17,7 +17,7 @@ export default function AiDevelopmentSection() {
                   className="text-[28px] md:text-[48px] font-medium leading-[120%] tracking-[0.03em] bg-clip-text text-transparent"
                   style={{ fontFamily: 'var(--font-zen-kaku), sans-serif', background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                 >受託開発</span>
-              </div>
+              </h2>
               <p
                 className="mt-6 md:mt-10 text-[14px] md:text-[20px] font-medium leading-[175%] text-[#333333] text-left md:text-left"
                 style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}

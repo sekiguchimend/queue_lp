@@ -12,15 +12,17 @@ export default function CompanySection() {
       <div className="mx-auto w-full max-w-[1200px] px-4 md:px-10 py-16 md:py-28">
         {/* モバイル用 */}
         <div className="md:hidden flex flex-col items-center">
-          <p
-            className="text-[40px] font-medium leading-[100%] tracking-normal text-white"
-            style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
-          >Company</p>
-          <div className="mt-4 h-[2px] w-[50px] bg-white" />
-          <p
-            className="mt-4 text-[16px] font-medium leading-[100%] tracking-[0.03em] text-white"
-            style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
-          >会社概要</p>
+          <header className="text-center">
+            <h2
+              className="text-[40px] font-medium leading-[100%] tracking-normal text-white"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+            >Company</h2>
+            <div className="mt-4 h-[2px] w-[50px] bg-white mx-auto" />
+            <p
+              className="mt-4 text-[16px] font-medium leading-[100%] tracking-[0.03em] text-white"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+            >会社概要</p>
+          </header>
 
           <div className="mt-8 space-y-4 w-full">
             {[
@@ -38,29 +40,30 @@ export default function CompanySection() {
             ))}
           </div>
 
-          <button
+          <a
+            href="/company"
             className="mt-8 relative flex items-center justify-center bg-[#f6c543] px-10 py-4 text-sm font-semibold text-[#3b3b3b] shadow-[0_6px_12px_rgba(0,0,0,0.2)] rounded-[5px]"
           >
             詳しく見る
             <span className="ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#3b3b3b]">
               →
             </span>
-          </button>
+          </a>
         </div>
 
         {/* デスクトップ用 */}
         <div className="hidden md:flex flex-row items-start justify-between gap-20">
-          <div className="text-white">
-            <p
+          <header className="text-white">
+            <h2
               className="text-[64px] font-medium leading-[100%] tracking-normal"
               style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
-            >Company</p>
+            >Company</h2>
             <div className="mt-3 h-[2px] w-[70px] bg-white" />
             <p
               className="mt-4 text-[20px] font-medium leading-[100%] tracking-[0.03em] text-white"
               style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >会社概要</p>
-          </div>
+          </header>
 
           <div className="text-sm text-[#3b3b3b] flex flex-col items-end">
             <div className="space-y-4">
@@ -82,7 +85,8 @@ export default function CompanySection() {
             </div>
 
             <div className="mt-6 flex justify-end w-full">
-              <button
+              <a
+                href="/company"
                 className="relative flex items-center justify-center bg-[#f6c543] px-14 py-4 text-sm font-semibold text-[#3b3b3b] shadow-[0_6px_12px_rgba(0,0,0,0.2)]"
                 style={{ borderRadius: '5px' }}
               >
@@ -90,7 +94,7 @@ export default function CompanySection() {
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-[#3b3b3b]">
                   →
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </div>

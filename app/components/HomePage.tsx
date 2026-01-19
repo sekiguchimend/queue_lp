@@ -12,7 +12,7 @@ import FooterSection from "./sections/FooterSection";
 
 export default function HomePage() {
   return (
-    <div className="bg-[#f5f6f8] text-[#333333]">
+    <main className="bg-[#f5f6f8] text-[#333333]">
       <HeroSection />
       <VisionMissionSection />
       <ProblemSection />
@@ -24,6 +24,6 @@ export default function HomePage() {
       <CtaSection />
       <ContactSection />
       <FooterSection />
-    </div>
+    </main>
   );
 }

@@ -22,7 +22,7 @@ export default function ProblemSection() {
 
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-4 md:px-10 py-12 md:py-20">
         <div className="text-center text-[#3a3a3a]">
-          <p className="text-[28px] md:text-[28px] font-bold">Problem</p>
+          <h2 className="text-[28px] md:text-[28px] font-bold">Problem</h2>
           <p className="mt-2 md:mt-3 text-[14px] md:text-sm font-medium text-[#4a4a4a]">こんな課題はありませんか</p>
         </div>
 
@@ -91,7 +91,7 @@ export default function ProblemSection() {
         {/* デスクトップ用レイアウト */}
         <div className="hidden md:block relative mx-auto mt-10 h-[420px] w-full max-w-[1000px]">
           <Image
-            src="/asset/悩む人のイラスト.png"
+            src="/asset/worried-person.png"
             alt="悩む人"
             width={280}
             height={260}

@@ -3,11 +3,11 @@ export default function ContactSection() {
     <section id="contact" className="bg-[#f5f6f8] py-12 md:py-20">
       <div className="mx-auto w-full max-w-[800px] px-4 md:px-8">
         {/* タイトル */}
-        <div className="text-center">
+        <header className="text-center">
           <h2 className="text-[32px] md:text-[42px] font-semibold text-[#333333]">Contact</h2>
           <div className="mx-auto mt-2 h-[3px] w-[40px] bg-[#1f5bb9]"></div>
           <p className="mt-2 md:mt-3 text-[12px] md:text-[14px] font-bold text-[#666666]">お問い合わせ</p>
-        </div>
+        </header>
 
         {/* フォーム */}
         <form className="mt-8 md:mt-12 space-y-6 md:space-y-6">

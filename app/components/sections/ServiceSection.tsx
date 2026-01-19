@@ -4,14 +4,14 @@ export default function ServiceSection() {
   return (
     <section className="bg-[#f5f6f8] py-10 md:py-16">
       <div className="mx-auto w-full max-w-[1200px] px-4 md:px-10">
-        <div className="text-center">
-          <p
+        <header className="text-center">
+          <h2
             className="text-[40px] md:text-[64px] font-medium text-[#3b3b3b] leading-[100%] tracking-normal"
             style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
-          >Service</p>
+          >Service</h2>
           <div className="mx-auto mt-2 h-[2px] w-10 bg-[#1f5bb9]" />
           <p className="mt-2 text-[14px] md:text-[16px] font-bold text-[#333333]">サービス</p>
-        </div>
+        </header>
 
         <div
           className="relative mt-6 md:mt-10 rounded-tl-[50px] md:rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none bg-white p-4 md:p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]"

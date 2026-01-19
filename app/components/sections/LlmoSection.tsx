@@ -31,7 +31,7 @@ export default function LlmoSection() {
         </div>
 
         {/* タイトル */}
-        <div
+        <h2
           className="mt-6 md:mt-10 text-center font-bold text-[#333333] leading-[150%] tracking-normal"
           style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
         >
@@ -43,7 +43,7 @@ export default function LlmoSection() {
             LLMO (AI SEO)
           </span>
           <span className="text-[18px] md:text-[28px]">なのか !?</span>
-        </div>
+        </h2>
 
         {/* 白いボックス */}
         <div className="mt-6 md:mt-10 rounded-[10px] border-[3px] border-[#5E6C84] bg-white px-4 md:px-16 py-6 md:py-10 shadow-sm">

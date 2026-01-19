@@ -1,6 +1,6 @@
 export default function CtaSection() {
   return (
-    <section
+    <div
       className="cta-bg py-10 md:py-16"
       style={{
         backgroundImage: "url('/asset/gradient-background.png')",
@@ -138,6 +138,6 @@ export default function CtaSection() {
           </div>
 
       </div>
-    </section>
+    </div>
   );
 }
