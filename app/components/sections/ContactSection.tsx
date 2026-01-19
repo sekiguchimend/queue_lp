@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { submitContact, ContactFormData } from '@/app/lib/supabase';
 
 export default function ContactSection() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -30,7 +31,7 @@ export default function ContactSection() {
       await submitContact(data);
       setSubmitStatus('success');
       // フォームをリセット
-      e.currentTarget.reset();
+      formRef.current?.reset();
     } catch (error) {
       setSubmitStatus('error');
       setErrorMessage(error instanceof Error ? error.message : '送信に失敗しました。');
@@ -66,7 +67,7 @@ export default function ContactSection() {
         )}
 
         {/* フォーム */}
-        <form onSubmit={handleSubmit} className="mt-8 md:mt-12 space-y-6 md:space-y-6">
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-8 md:mt-12 space-y-6 md:space-y-6">
           {/* 会社名 */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
             <div className="flex w-full md:w-[180px] shrink-0 items-center gap-2 md:gap-3">
