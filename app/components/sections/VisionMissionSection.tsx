@@ -3,7 +3,7 @@ export default function VisionMissionSection() {
     <section
       className="text-white"
       style={{
-        backgroundImage: "url('/asset/Vision背景.png')",
+        backgroundImage: "url('/asset/vision-background.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

@@ -31,25 +31,25 @@ export default function ReasonSection() {
               title: "設計力",
               subtitle: "Design capability",
               description: "AI検索の挙動を\n前提にした",
-              ball: "/asset/ball1.png",
+              ball: "/asset/reason-ball-1.png",
             },
             {
               title: "一体設計",
               subtitle: "Integrated design",
               description: "プロンプト・構造化データ・\nコンテンツの",
-              ball: "/asset/ball2.png",
+              ball: "/asset/reason-ball-2.png",
             },
             {
               title: "検証",
               subtitle: "Verification",
               description: "「理論」ではなく\nAI上の実測結果で",
-              ball: "/asset/ball3.png",
+              ball: "/asset/reason-ball-3.png",
             },
             {
               title: "運用体制",
               subtitle: "Utilize the system",
               description: "PoC → 改善 → 再検証を\n高速で回す",
-              ball: "/asset/ball4.png",
+              ball: "/asset/reason-ball-4.png",
             },
           ].map((item) => (
             <div

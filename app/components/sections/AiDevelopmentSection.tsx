@@ -27,7 +27,7 @@ export default function AiDevelopmentSection() {
             </div>
             <div className="flex justify-center md:justify-end">
               <Image
-                src="/asset/FV右イラスト.png"
+                src="/asset/ai-development-illustration.png"
                 alt="AI development"
                 width={290}
                 height={207}
@@ -53,27 +53,27 @@ export default function AiDevelopmentSection() {
                 style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
               >
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>AIエージェント / 業務自動化 / PoC開発</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>LLM・RAG・スクレイピング・自動化など</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>AI技術を用いた業務改善提案と、その実装提供</span>
                 </li>
               </ul>
               <Image
-                src="/asset/矢印 (4).png"
+                src="/asset/arrow-down.png"
                 alt="→"
                 width={40}
                 height={40}
                 className="md:hidden w-[30px] h-auto"
               />
               <Image
-                src="/asset/矢印 (3).png"
+                src="/asset/arrow-right.png"
                 alt="→"
                 width={40}
                 height={40}
@@ -109,19 +109,19 @@ export default function AiDevelopmentSection() {
                 style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
               >
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>AIチャットボット開発</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>社内AIツール・業務自動化</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span>AI/WEBアプリ開発</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                  <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                   <span className="whitespace-pre-line">PoC〜本番開発<br />（社内にAIエンジニアがいなくても安心）</span>
                 </li>
               </ul>
@@ -150,7 +150,7 @@ export default function AiDevelopmentSection() {
                       >
                         {step}
                       </span>
-                      {index < 5 && <Image src="/asset/Vector.png" alt="→" width={8} height={8} className="w-[12px] md:w-[8px] h-auto rotate-90 md:rotate-0 my-1 md:my-0" />}
+                      {index < 5 && <Image src="/asset/arrow-small.png" alt="→" width={8} height={8} className="w-[12px] md:w-[8px] h-auto rotate-90 md:rotate-0 my-1 md:my-0" />}
                     </div>
                   )
                 )}

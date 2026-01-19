@@ -3,7 +3,7 @@ export default function CtaSection() {
     <section
       className="cta-bg py-10 md:py-16"
       style={{
-        backgroundImage: "url('/asset/背景セット.png')",
+        backgroundImage: "url('/asset/gradient-background.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

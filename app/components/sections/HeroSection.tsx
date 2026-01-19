@@ -31,7 +31,7 @@ export default function HeroSection() {
       {/* 右側イラスト（背景の一部として重ねる） */}
       <div className="pointer-events-none absolute top-0 bottom-0 right-0 w-[50%] hidden md:block">
         <Image
-          src="/asset/topimg.png"
+          src="/asset/hero-illustration.png"
           alt="AI illustration"
           fill
           className="object-cover object-right"
@@ -77,7 +77,7 @@ export default function HeroSection() {
           <div className="relative mt-0 md:hidden">
             <div className="relative ml-auto mr-[-60px] h-[280px] w-[320px] overflow-hidden rounded-full bg-white">
               <Image
-                src="/asset/topimg.png"
+                src="/asset/hero-illustration.png"
                 alt="AI illustration"
                 fill
                 className="object-cover object-right"

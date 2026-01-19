@@ -69,7 +69,7 @@ export default function ServiceSection() {
             </div>
             <div className="flex justify-center md:justify-end">
               <Image
-                src="/asset/Mask group.png"
+                src="/asset/service-umoren-ai.png"
                 alt="LLMO service"
                 width={400}
                 height={280}
@@ -102,21 +102,21 @@ export default function ServiceSection() {
                     "継続的な改善サイクル\n（Before / After）",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                      <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                       <span className="whitespace-pre-line">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex justify-center">
                   <Image
-                    src="/asset/矢印 (4).png"
+                    src="/asset/arrow-down.png"
                     alt="arrow"
                     width={40}
                     height={40}
                     className="h-auto w-[30px] md:hidden"
                   />
                   <Image
-                    src="/asset/矢印 (3).png"
+                    src="/asset/arrow-right.png"
                     alt="arrow"
                     width={40}
                     height={40}
@@ -170,21 +170,21 @@ export default function ServiceSection() {
                     "AI検索上の変化を\nBefore / Afterで確認",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <Image src="/asset/icon-check.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                      <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
                       <span className="whitespace-pre-line">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="flex justify-center">
                   <Image
-                    src="/asset/矢印 (4).png"
+                    src="/asset/arrow-down.png"
                     alt="arrow"
                     width={40}
                     height={40}
                     className="h-auto w-[30px] md:hidden"
                   />
                   <Image
-                    src="/asset/矢印 (3).png"
+                    src="/asset/arrow-right.png"
                     alt="arrow"
                     width={40}
                     height={40}

@@ -3,7 +3,7 @@ export default function CompanySection() {
     <section
       id="company"
       style={{
-        backgroundImage: "url('/asset/会社.png')",
+        backgroundImage: "url('/asset/company-section-background.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

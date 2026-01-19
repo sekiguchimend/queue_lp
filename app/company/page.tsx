@@ -42,7 +42,7 @@ export default function CompanyPage() {
       <section
         className="md:hidden pt-[60px]"
         style={{
-          backgroundImage: "url('/asset/Company背景.png')",
+          backgroundImage: "url('/asset/company-background.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -179,7 +179,7 @@ export default function CompanyPage() {
       <section
         className="py-10 md:py-16"
         style={{
-          backgroundImage: "url('/asset/背景セット.png')",
+          backgroundImage: "url('/asset/gradient-background.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

@@ -5,7 +5,7 @@ export default function LlmoSection() {
     <section className="relative bg-[#f5f6f8] py-12 md:py-20">
       {/* セクション境界の上に配置する矢印 */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-        <Image src="/asset/矢印 (4).png" alt="arrow" width={60} height={60} className="w-[40px] md:w-[60px] h-auto" />
+        <Image src="/asset/arrow-down.png" alt="arrow" width={60} height={60} className="w-[40px] md:w-[60px] h-auto" />
       </div>
       <div className="mx-auto w-full max-w-[1100px] px-4 md:px-8">
         {/* 黄色いバッジ */}
@@ -51,21 +51,21 @@ export default function LlmoSection() {
             {/* 左側: 3つの項目 */}
             <div className="space-y-6 md:space-y-10 text-[#333333] ml-0 lg:ml-12">
               <div className="flex items-start gap-3">
-                <Image src="/asset/吹き出し.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
+                <Image src="/asset/exclamation-icon.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
                 <p className="text-[16px] md:text-[20px] font-medium leading-[150%] tracking-normal" style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}>
                   検索は「リンクを見る」から<br />
                   <span className="text-[18px] md:text-[24px] font-bold">「AIが答える」</span>時代へ
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Image src="/asset/吹き出し.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
+                <Image src="/asset/exclamation-icon.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
                 <p className="text-[16px] md:text-[20px] font-medium leading-[150%] tracking-normal" style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}>
                   比較・推薦・要約は<br />
                   AIが自動で<span className="text-[18px] md:text-[24px] font-bold">行う</span>
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Image src="/asset/吹き出し.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
+                <Image src="/asset/exclamation-icon.png" alt="!" width={36} height={36} className="flex-shrink-0 mt-1 w-[28px] md:w-[36px] h-auto" />
                 <p className="text-[16px] md:text-[20px] font-medium leading-[150%] tracking-normal" style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}>
                   従来のSEOだけでは<br />
                   <span className="text-[18px] md:text-[24px] font-bold">AIの回答文脈に載らない</span>
@@ -75,8 +75,8 @@ export default function LlmoSection() {
 
             {/* 中央: 矢印とテキスト */}
             <div className="flex flex-col items-center mx-4 md:mx-8">
-              <Image src="/asset/矢印 (4).png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
-              <Image src="/asset/矢印 (3).png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
+              <Image src="/asset/arrow-down.png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
+              <Image src="/asset/arrow-right.png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
               <p className="text-[14px] md:text-[16px] font-bold text-[#333333] mt-2 md:mt-3 text-center whitespace-nowrap md:whitespace-normal">
                 そこで<br className="hidden md:block" />必要なのが
               </p>
@@ -104,7 +104,7 @@ export default function LlmoSection() {
                 (AIに最適化する新しいSEO)
               </p>
               <Image
-                src="/asset/img.png"
+                src="/asset/llmo-illustration.png"
                 alt="LLMO illustration"
                 width={300}
                 height={210}
