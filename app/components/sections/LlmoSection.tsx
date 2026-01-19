@@ -78,7 +78,7 @@ export default function LlmoSection() {
               <Image src="/asset/矢印 (4).png" alt="arrow" width={50} height={50} className="w-[40px] md:w-[50px] h-auto md:hidden" />
               <Image src="/asset/矢印 (3).png" alt="arrow" width={50} height={50} className="hidden md:block w-[50px] h-auto" />
               <p className="text-[14px] md:text-[16px] font-bold text-[#333333] mt-2 md:mt-3 text-center whitespace-nowrap md:whitespace-normal">
-                そこで必要なのが
+                そこで<br className="hidden md:block" />必要なのが
               </p>
             </div>
 
