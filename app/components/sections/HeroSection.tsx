@@ -8,7 +8,7 @@ export default function HeroSection() {
         className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-3 lg:px-8"
         style={{ background: 'linear-gradient(90deg, rgba(244, 247, 251, 0) 0%, #F4F7FB 75.48%)' }}
       >
-        <div className="flex items-center">
+        <a href="/" className="flex items-center" aria-label="ホームへ戻る">
           <Image
             src="/asset/logo.png"
             alt="QUEUE"
@@ -17,8 +17,8 @@ export default function HeroSection() {
             className="h-auto w-[50px] md:w-[70px]"
             priority
           />
-        </div>
-        <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]">
+        </a>
+        <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]" aria-label="メインナビゲーション">
           <a href="/company" className="transition-colors hover:text-[#2563eb]">
             会社概要
           </a>

@@ -1,4 +1,25 @@
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "会社概要 | Queue株式会社",
+  description: "Queue株式会社の会社概要ページ。会社名、事業内容、代表者、所在地、設立年月、従業員数、連絡先電話番号、資本金などの基本情報を掲載しています。",
+  alternates: {
+    canonical: "/company",
+  },
+  openGraph: {
+    title: "会社概要 | Queue株式会社",
+    description: "Queue株式会社の会社概要ページ。会社名、事業内容、代表者、所在地、設立年月、従業員数、連絡先電話番号、資本金などの基本情報を掲載しています。",
+    url: "https://queue-tech.jp/company",
+    type: "website",
+    images: [{
+      url: "https://queue-tech.jp/asset/logo.png",
+      width: 1200,
+      height: 630,
+      alt: "Queue株式会社ロゴ",
+    }],
+  },
+};
 
 export default function CompanyPage() {
   const companyInfo = [
@@ -18,7 +39,7 @@ export default function CompanyPage() {
       <header
         className="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-3 lg:px-8 bg-white"
       >
-        <a href="/" className="flex items-center">
+        <a href="/" className="flex items-center" aria-label="ホームへ戻る">
           <Image
             src="/asset/logo.png"
             alt="QUEUE"
@@ -28,7 +49,7 @@ export default function CompanyPage() {
             priority
           />
         </a>
-        <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]">
+        <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]" aria-label="メインナビゲーション">
           <a href="/#company" className="transition-colors hover:text-[#2563eb]">
             会社概要
           </a>
@@ -323,18 +344,20 @@ export default function CompanyPage() {
       >
         <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
           <div className="flex justify-center">
-            <Image
-              src="/asset/logo.png"
-              alt="QUEUE"
-              width={80}
-              height={64}
-              className="h-auto w-[60px] md:w-[80px]"
-            />
+            <a href="/" aria-label="ホームへ戻る">
+              <Image
+                src="/asset/logo.png"
+                alt="QUEUE"
+                width={80}
+                height={64}
+                className="h-auto w-[60px] md:w-[80px]"
+              />
+            </a>
           </div>
-          <div className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]">
+          <nav className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
             <a href="/#company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
             <a href="/#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
-          </div>
+          </nav>
           <p className="mt-4 md:mt-6 text-[10px] md:text-[12px] text-[#333333]">© Queue Inc</p>
         </div>
         <a

@@ -51,18 +51,31 @@ const gothicA1 = Gothic_A1({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://queue-tech.jp'),
   title: "Queue株式会社 | AI検索時代に、AIに選ばれる企業をつくる",
   description: "Queue株式会社は、LLMO（AI SEO）事業「umoren.ai」を主軸に、AI検索・生成AIにおける認知・比較・意思決定領域を支援するテクノロジーカンパニーです。ChatGPTやAI検索で選ばれる企業づくりをサポートします。",
   keywords: ["Queue", "Queue株式会社", "LLMO", "AI SEO", "umoren.ai", "AI検索", "生成AI", "ChatGPT", "AI検索最適化"],
   authors: [{ name: "Queue株式会社" }],
   creator: "Queue株式会社",
   publisher: "Queue株式会社",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "ja_JP",
+    url: "https://queue-tech.jp",
     title: "Queue株式会社 | AI検索時代に、AIに選ばれる企業をつくる",
     description: "Queue株式会社は、LLMO（AI SEO）事業「umoren.ai」を主軸に、AI検索・生成AIにおける認知・比較・意思決定領域を支援するテクノロジーカンパニーです。",
     siteName: "Queue株式会社",
+    images: [
+      {
+        url: "https://queue-tech.jp/asset/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Queue株式会社ロゴ",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -85,8 +98,50 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Queue株式会社",
+    "url": "https://queue-tech.jp",
+    "logo": "https://queue-tech.jp/asset/logo.png",
+    "description": "LLMO（AI SEO）事業を主軸に、AI検索・生成AIにおける認知・比較・意思決定領域を支援するテクノロジーカンパニー",
+    "foundingDate": "2024-04",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "銀座8丁目17-5 THE HUB 銀座 OCT",
+      "addressLocality": "中央区",
+      "addressRegion": "東京都",
+      "postalCode": "104-0061",
+      "addressCountry": "JP"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+81-3-5324-2678",
+      "contactType": "customer service"
+    },
+    "sameAs": []
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Queue株式会社",
+    "url": "https://queue-tech.jp",
+    "description": "AI検索時代に、AIに選ばれる企業をつくる"
+  };
+
   return (
     <html lang="ja">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${zenKaku.variable} ${lexend.variable} ${notoSansJp.variable} ${mPlus1p.variable} ${gothicA1.variable} antialiased m-0 p-0`}
       >

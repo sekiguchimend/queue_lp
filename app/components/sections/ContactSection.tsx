@@ -17,12 +17,15 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#1f5bb9]">
                 必須
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">会社名</span>
+              <label htmlFor="company" className="text-[12px] md:text-[14px] font-medium text-[#333333]">会社名</label>
             </div>
             <input
               type="text"
+              id="company"
+              name="company"
               placeholder="株式会社テキストテキスト"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              required
             />
           </div>
 
@@ -32,12 +35,15 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#1f5bb9]">
                 必須
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">お名前</span>
+              <label htmlFor="name" className="text-[12px] md:text-[14px] font-medium text-[#333333]">お名前</label>
             </div>
             <input
               type="text"
+              id="name"
+              name="name"
               placeholder="山田　太郎"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              required
             />
           </div>
 
@@ -47,12 +53,15 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#1f5bb9]">
                 必須
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">メールアドレス</span>
+              <label htmlFor="email" className="text-[12px] md:text-[14px] font-medium text-[#333333]">メールアドレス</label>
             </div>
             <input
               type="email"
+              id="email"
+              name="email"
               placeholder="info@mail.co.jp"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              required
             />
           </div>
 
@@ -62,10 +71,12 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#5E6C84]">
                 任意
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">電話番号</span>
+              <label htmlFor="phone" className="text-[12px] md:text-[14px] font-medium text-[#333333]">電話番号</label>
             </div>
             <input
               type="tel"
+              id="phone"
+              name="phone"
               placeholder="03-1234-5678"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
             />
@@ -77,17 +88,20 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#1f5bb9]">
                 必須
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">お問い合わせ項目</span>
+              <label htmlFor="inquiry-type" className="text-[12px] md:text-[14px] font-medium text-[#333333]">お問い合わせ項目</label>
             </div>
             <select
+              id="inquiry-type"
+              name="inquiryType"
               className="w-full md:w-[200px] h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#999999] outline-none focus:border-[#1f5bb9] bg-white appearance-none cursor-pointer"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='none' stroke='%235E6C84' stroke-width='2' stroke-linecap='round' d='M2 3l3 4 3-4'/%3E%3C/svg%3E")`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'right 12px center',
               }}
+              required
             >
-              <option>選択してください</option>
+              <option value="">選択してください</option>
             </select>
           </div>
 
@@ -97,11 +111,14 @@ export default function ContactSection() {
               <span className="rounded px-2 py-1 text-[10px] md:text-[11px] font-bold text-white bg-[#1f5bb9]">
                 必須
               </span>
-              <span className="text-[12px] md:text-[14px] font-medium text-[#333333]">お問い合わせ内容</span>
+              <label htmlFor="message" className="text-[12px] md:text-[14px] font-medium text-[#333333]">お問い合わせ内容</label>
             </div>
             <textarea
+              id="message"
+              name="message"
               placeholder="お問い合わせ内容をご入力ください。"
               className="w-full h-[120px] rounded-[8px] border border-[#5E6C84] px-4 py-3 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9] resize-none"
+              required
             />
           </div>
 
@@ -111,9 +128,12 @@ export default function ContactSection() {
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
+                id="privacy-agreement"
+                name="privacyAgreement"
                 className="h-4 w-4 rounded border-[#5E6C84]"
+                required
               />
-              <span className="text-[11px] md:text-[13px] text-[#333333]">個人情報保護方針に同意する</span>
+              <label htmlFor="privacy-agreement" className="text-[11px] md:text-[13px] text-[#333333]">個人情報保護方針に同意する</label>
             </div>
           </div>
 

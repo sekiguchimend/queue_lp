@@ -6,17 +6,19 @@ export default function FooterSection() {
       <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
         {/* ロゴ */}
         <div className="flex justify-center">
-          <Image
-            src="/asset/logo.png"
-            alt="QUEUE"
-            width={80}
-            height={64}
-            className="h-auto w-[60px] md:w-[80px]"
-          />
+          <a href="/" aria-label="ホームへ戻る">
+            <Image
+              src="/asset/logo.png"
+              alt="QUEUE"
+              width={80}
+              height={64}
+              className="h-auto w-[60px] md:w-[80px]"
+            />
+          </a>
         </div>
 
         {/* ナビゲーションリンク */}
-        <nav className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]">
+        <nav className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
           <a href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
         </nav>
