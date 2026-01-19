@@ -98,7 +98,7 @@ export default function ProblemSection() {
             className="absolute left-1/2 top-[120px] -translate-x-1/2"
           />
 
-          <div className="absolute left-[20px] top-[30px] h-[150px] w-[240px]">
+          <div className="absolute left-[20px] top-[30px] h-[180px] w-[280px]">
             <Image src="/asset/アセット 1@2x 1.png" alt="" fill className="object-contain" />
             <p className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm font-semibold text-[#434343]">
               ChatGPTで
@@ -109,7 +109,7 @@ export default function ProblemSection() {
             </p>
           </div>
 
-          <div className="absolute left-[80px] bottom-[15px] h-[140px] w-[220px]">
+          <div className="absolute left-[80px] bottom-[15px] h-[170px] w-[260px]">
             <Image src="/asset/アセット 2@2x 2.png" alt="" fill className="object-contain" />
             <p className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm font-semibold text-[#434343]">
               競合他社ばかりが
@@ -120,7 +120,7 @@ export default function ProblemSection() {
             </p>
           </div>
 
-          <div className="absolute right-[40px] top-[60px] h-[140px] w-[220px]">
+          <div className="absolute right-[40px] top-[60px] h-[170px] w-[260px]">
             <Image src="/asset/アセット 2@2x 1.png" alt="" fill className="object-contain" />
             <p className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm font-semibold text-[#434343]">
               AI検索での
@@ -131,7 +131,7 @@ export default function ProblemSection() {
             </p>
           </div>
 
-          <div className="absolute right-[20px] bottom-[10px] h-[150px] w-[240px]">
+          <div className="absolute right-[20px] bottom-[10px] h-[180px] w-[280px]">
             <Image src="/asset/アセット 1@2x 1.png" alt="" fill className="object-contain" />
             <p className="absolute inset-0 flex items-center justify-center px-6 text-center text-sm font-semibold text-[#434343]">
               SEOの次に

@@ -50,7 +50,7 @@ export default function HeroSection() {
             <h1
               className="text-[28px] md:text-[40px] lg:text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
               style={{
-                fontFamily: 'var(--font-lexend), sans-serif',
+                fontFamily: 'var(--font-lexend)',
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <h2
               className="text-[28px] md:text-[40px] lg:text-[56px] font-semibold leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
               style={{
-                fontFamily: 'var(--font-lexend), sans-serif',
+                fontFamily: 'var(--font-lexend)',
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
@@ -98,10 +98,9 @@ export default function HeroSection() {
               </span>
               <br className="md:hidden" />
               <span
-                className="text-[40px] md:text-[28px] font-black text-[#8120AF] leading-[130%] tracking-[0.02em] md:leading-[200%] md:tracking-[0.07em]"
-                style={{ 
-                  fontFamily: 'var(--font-gothic-a1), sans-serif',
-                  WebkitTextStroke: '1px #8120AF'
+                className="text-[40px] md:text-[28px] font-black md:font-semibold text-[#8120AF] leading-[130%] tracking-[0.02em] md:leading-[200%] md:tracking-[0.07em]"
+                style={{
+                  fontFamily: 'var(--font-gothic-a1), sans-serif'
                 }}
               >
                 「umoren.ai」
