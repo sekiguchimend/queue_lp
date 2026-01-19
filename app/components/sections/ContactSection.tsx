@@ -1,4 +1,44 @@
+'use client';
+
+import { useState } from 'react';
+import { submitContact, ContactFormData } from '@/app/lib/supabase';
+
 export default function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    
+    const data: ContactFormData = {
+      company: formData.get('company') as string,
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      phone: (formData.get('phone') as string) || undefined,
+      inquiry_type: formData.get('inquiryType') as string,
+      message: formData.get('message') as string,
+      privacy_agreed: formData.get('privacyAgreement') === 'on',
+    };
+
+    try {
+      await submitContact(data);
+      setSubmitStatus('success');
+      // フォームをリセット
+      e.currentTarget.reset();
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : '送信に失敗しました。');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="bg-[#f5f6f8] py-12 md:py-20">
       <div className="mx-auto w-full max-w-[800px] px-4 md:px-8">
@@ -9,8 +49,24 @@ export default function ContactSection() {
           <p className="mt-2 md:mt-3 text-[12px] md:text-[14px] font-bold text-[#666666]">お問い合わせ</p>
         </header>
 
+        {/* 送信成功メッセージ */}
+        {submitStatus === 'success' && (
+          <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
+            <p className="text-green-800 font-medium">お問い合わせを受け付けました。</p>
+            <p className="text-green-600 text-sm mt-1">担当者より折り返しご連絡いたします。</p>
+          </div>
+        )}
+
+        {/* エラーメッセージ */}
+        {submitStatus === 'error' && (
+          <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg text-center">
+            <p className="text-red-800 font-medium">送信に失敗しました。</p>
+            <p className="text-red-600 text-sm mt-1">{errorMessage || 'しばらく経ってから再度お試しください。'}</p>
+          </div>
+        )}
+
         {/* フォーム */}
-        <form className="mt-8 md:mt-12 space-y-6 md:space-y-6">
+        <form onSubmit={handleSubmit} className="mt-8 md:mt-12 space-y-6 md:space-y-6">
           {/* 会社名 */}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
             <div className="flex w-full md:w-[180px] shrink-0 items-center gap-2 md:gap-3">
@@ -26,6 +82,7 @@ export default function ContactSection() {
               placeholder="株式会社テキストテキスト"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -44,6 +101,7 @@ export default function ContactSection() {
               placeholder="山田　太郎"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -62,6 +120,7 @@ export default function ContactSection() {
               placeholder="info@mail.co.jp"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -79,6 +138,7 @@ export default function ContactSection() {
               name="phone"
               placeholder="03-1234-5678"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
+              disabled={isSubmitting}
             />
           </div>
 
@@ -93,15 +153,23 @@ export default function ContactSection() {
             <select
               id="inquiry-type"
               name="inquiryType"
-              className="w-full md:w-[200px] h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#999999] outline-none focus:border-[#1f5bb9] bg-white appearance-none cursor-pointer"
+              className="w-full md:w-[280px] h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] bg-white appearance-none cursor-pointer"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='none' stroke='%235E6C84' stroke-width='2' stroke-linecap='round' d='M2 3l3 4 3-4'/%3E%3C/svg%3E")`,
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'right 12px center',
               }}
               required
+              disabled={isSubmitting}
             >
               <option value="">選択してください</option>
+              <option value="ai-development">AI開発について</option>
+              <option value="llmo">LLMOサービスについて</option>
+              <option value="consultation">導入相談・お見積り</option>
+              <option value="partnership">協業・パートナーシップ</option>
+              <option value="recruit">採用について</option>
+              <option value="media">取材・メディア掲載</option>
+              <option value="other">その他</option>
             </select>
           </div>
 
@@ -119,6 +187,7 @@ export default function ContactSection() {
               placeholder="お問い合わせ内容をご入力ください。"
               className="w-full h-[120px] rounded-[8px] border border-[#5E6C84] px-4 py-3 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9] resize-none"
               required
+              disabled={isSubmitting}
             />
           </div>
 
@@ -132,8 +201,11 @@ export default function ContactSection() {
                 name="privacyAgreement"
                 className="h-4 w-4 rounded border-[#5E6C84]"
                 required
+                disabled={isSubmitting}
               />
-              <label htmlFor="privacy-agreement" className="text-[11px] md:text-[13px] text-[#333333]">個人情報保護方針に同意する</label>
+              <label htmlFor="privacy-agreement" className="text-[11px] md:text-[13px] text-[#333333]">
+                <a href="/privacy" target="_blank" className="text-[#1f5bb9] underline hover:no-underline">個人情報保護方針</a>に同意する
+              </label>
             </div>
           </div>
 
@@ -142,14 +214,22 @@ export default function ContactSection() {
             <div className="hidden md:block w-[180px] shrink-0"></div>
             <button
               type="submit"
-              className="relative flex items-center justify-center w-[230px] h-[52px] md:h-[64px] rounded-[3px] text-[14px] md:text-[15px] font-bold text-white"
+              disabled={isSubmitting}
+              className="relative flex items-center justify-center w-[230px] h-[52px] md:h-[64px] rounded-[3px] text-[14px] md:text-[15px] font-bold text-white transition-opacity disabled:opacity-50"
               style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
             >
-              送信する
+              {isSubmitting ? '送信中...' : '送信する'}
               <span className="absolute right-4 top-1/2 -translate-y-1/2 flex h-5 w-5 md:h-6 md:w-6 items-center justify-center rounded-full bg-white">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="#3144BD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                {isSubmitting ? (
+                  <svg className="animate-spin h-3 w-3 text-[#3144BD]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                ) : (
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 6H10M10 6L6 2M10 6L6 10" stroke="#3144BD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
               </span>
             </button>
           </div>
