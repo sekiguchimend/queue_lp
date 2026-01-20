@@ -48,6 +48,24 @@ const menuItems = [
     ],
   },
   {
+    title: 'ニュース管理',
+    href: '/admin/news',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 20H5C3.89543 20 3 19.1046 3 18V6C3 4.89543 3.89543 4 5 4H15C16.1046 4 17 4.89543 17 6V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M17 7H21V18C21 19.1046 20.1046 20 19 20V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 8H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 12H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M7 16H10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    submenu: [
+      { title: '投稿一覧', href: '/admin/news' },
+      { title: '新規投稿作成', href: '/admin/news/new' },
+      { title: 'カテゴリ/タグ管理', href: '/admin/news/categories' },
+    ],
+  },
+  {
     title: 'ユーザー管理',
     href: '/admin/users',
     icon: (
