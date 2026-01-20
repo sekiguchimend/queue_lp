@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FooterSection() {
   return (
@@ -6,7 +7,7 @@ export default function FooterSection() {
       <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
         {/* ロゴ */}
         <div className="flex justify-center">
-          <a href="/" aria-label="ホームへ戻る">
+          <Link href="/" aria-label="ホームへ戻る">
             <Image
               src="/asset/logo.png"
               alt="QUEUE"
@@ -14,17 +15,17 @@ export default function FooterSection() {
               height={64}
               className="h-auto w-[60px] md:w-[80px]"
             />
-          </a>
+          </Link>
         </div>
 
         {/* ナビゲーションリンク */}
         <nav className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
-          <a href="/service" className="hover:text-[#1f5bb9] transition-colors">LLMOサービス</a>
-          <a href="/faq" className="hover:text-[#1f5bb9] transition-colors">FAQ</a>
-          <a href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
+          <Link href="/service" className="hover:text-[#1f5bb9] transition-colors">サービス</Link>
+          <Link href="/faq" className="hover:text-[#1f5bb9] transition-colors">FAQ</Link>
+          <Link href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</Link>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
-          <a href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</a>
-          <a href="/security" className="hover:text-[#1f5bb9] transition-colors">セキュリティ</a>
+          <Link href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</Link>
+          <Link href="/security" className="hover:text-[#1f5bb9] transition-colors">セキュリティ</Link>
         </nav>
 
         {/* コピーライト */}
