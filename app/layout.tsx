@@ -88,8 +88,11 @@ export const metadata: Metadata = {
     viewportFit: "cover",
   },
   icons: {
-    icon: "/asset/logo.png",
-    apple: "/asset/logo.png",
+    icon: [
+      { url: "/favicon.png", sizes: "any" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/favicon.png",
   },
 };
 
