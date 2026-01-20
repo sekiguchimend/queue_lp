@@ -38,13 +38,13 @@ export default function SettingsPage() {
   return (
     <div className="p-8">
       {/* ヘッダー */}
-      <div className="mb-8">
+      <div className="mb-8 max-w-[900px] mx-auto">
         <h1 className="text-[28px] font-bold text-[#333333]">設定</h1>
         <p className="text-[14px] text-[#666666] mt-1">サイト情報</p>
       </div>
 
       {/* 設定フォーム */}
-      <form onSubmit={handleSubmit} className="max-w-[900px]">
+      <form onSubmit={handleSubmit} className="max-w-[900px] mx-auto">
         {/* サイト情報 */}
         <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-6">
           <div className="p-6 border-b border-[#e5e5e5]">
