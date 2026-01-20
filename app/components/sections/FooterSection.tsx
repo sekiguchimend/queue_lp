@@ -18,10 +18,11 @@ export default function FooterSection() {
         </div>
 
         {/* ナビゲーションリンク */}
-        <nav className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
+        <nav className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
           <a href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
           <a href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</a>
+          <a href="/security" className="hover:text-[#1f5bb9] transition-colors">セキュリティ</a>
         </nav>
 
         {/* コピーライト */}
