@@ -460,42 +460,42 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* よくある課題 */}
+        {/* LLMO対策しないとどうなる？ */}
         <section className="py-16 md:py-24">
           <div className="mx-auto max-w-[900px] px-4 md:px-8">
             <div className="text-center mb-12">
               <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                こんなお悩みありませんか？
+                LLMO対策をしないと<br className="md:hidden" />どうなる？
               </h2>
-              <p className="text-[14px] text-[#666666] mt-3">AI検索で見つからない3つの課題</p>
+              <p className="text-[14px] text-[#666666] mt-3">AI検索時代のリスク</p>
             </div>
 
             <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#e74c3c]">
                 <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  😢 AIに聞いても自社の名前が出てこない
+                  📉 見込み客がAI検索で競合に流れる
                 </h3>
                 <p className="text-[14px] text-[#666666] leading-[180%]">
-                  「〇〇でおすすめの会社は？」とAIに聞いても、御社の名前が出てこない。<br />
-                  Google検索で上位でも、AI検索では存在しないも同然に…
+                  「〇〇でおすすめの会社は？」とAIに聞いたとき、御社が出てこなければ検討すらされません。<br />
+                  LLMO対策済みの競合に、見込み客が自動的に流れていきます。
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#f39c12]">
                 <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  😰 出ていても間違った紹介をされている
+                  ⚠️ 誤った情報でブランドイメージが低下
                 </h3>
                 <p className="text-[14px] text-[#666666] leading-[180%]">
-                  たまに名前が出ても、強みや特徴が正しく伝わっていない。<br />
-                  古い情報や誤った文脈で紹介されて、逆効果になるリスクも…
+                  LLMO対策をしていないと、AIが古い情報や誤った文脈で御社を紹介するリスクがあります。<br />
+                  正しい一次情報を整備しないと、ブランドイメージのコントロールができません。
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#3498db]">
                 <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  😤 競合だけがAIにおすすめされている
+                  🕐 先行者優位を逃す
                 </h3>
                 <p className="text-[14px] text-[#666666] leading-[180%]">
-                  同じ業界の競合ばかりがAIに推薦され、御社は候補にすら入っていない。<br />
-                  このままでは、AI検索時代に取り残されてしまう…
+                  LLMO対策は早く始めた企業が有利です。AIが「この分野ならこの会社」と学習する前に、<br />
+                  ポジションを確立しておくことが、長期的な競争優位につながります。
                 </p>
               </div>
             </div>
