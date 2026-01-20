@@ -80,7 +80,7 @@ export default function ContactSection() {
               type="text"
               id="company"
               name="company"
-              placeholder="株式会社テキストテキスト"
+              placeholder="株式会社〇〇"
               className="w-full h-[44px] rounded-[8px] border border-[#5E6C84] px-4 text-[14px] text-[#333333] placeholder-[#999999] outline-none focus:border-[#1f5bb9]"
               required
               disabled={isSubmitting}
