@@ -291,8 +291,10 @@ export default function CompanyPage() {
 
             {/* カード1 - モバイル */}
             <a
-              href="/#contact"
-              className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block"
+              href="https://umoren.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block hover:shadow-xl transition-shadow"
               style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
             >
               <p
@@ -320,7 +322,9 @@ export default function CompanyPage() {
 
             {/* カード1 - デスクトップ */}
             <a
-              href="/#contact"
+              href="https://umoren.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center hover:shadow-xl transition-shadow"
               style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
             >
@@ -345,8 +349,10 @@ export default function CompanyPage() {
 
             {/* カード2 - モバイル */}
             <a
-              href="/#contact"
-              className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block"
+              href="https://umoren.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block hover:shadow-xl transition-shadow"
               style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
             >
               <div className="flex flex-row items-end gap-0">
@@ -384,7 +390,9 @@ export default function CompanyPage() {
 
             {/* カード2 - デスクトップ */}
             <a
-              href="/#contact"
+              href="https://umoren.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center hover:shadow-xl transition-shadow"
               style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
             >

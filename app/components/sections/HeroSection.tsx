@@ -114,7 +114,9 @@ export default function HeroSection() {
           {/* ボタン */}
           <div className="mt-10 md:mt-16 flex flex-col md:flex-row gap-4">
             <a
-              href="#contact"
+              href="https://umoren.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-[56px] md:h-[72px] w-full md:w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-3 py-6 md:px-4 text-center text-[18px] md:text-[24px] font-medium leading-[100%] tracking-[0.05em] text-white transition-all hover:opacity-90 whitespace-nowrap"
               style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >

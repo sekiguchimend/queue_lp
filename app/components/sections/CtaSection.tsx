@@ -12,8 +12,11 @@ export default function CtaSection() {
       <div className="mx-auto w-full max-w-[1040px] px-10 md:px-8 py-6 md:py-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
           {/* カード1 - モバイル */}
-          <div
-            className="md:hidden relative rounded-[3px] bg-white px-6 py-6"
+          <a
+            href="https://umoren.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block hover:shadow-xl transition-shadow"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <p
@@ -37,11 +40,14 @@ export default function CtaSection() {
                 →
               </span>
             </div>
-          </div>
+          </a>
 
           {/* カード1 - デスクトップ */}
-          <div
-            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center"
+          <a
+            href="https://umoren.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center hover:shadow-xl transition-shadow"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <div>
@@ -61,11 +67,14 @@ export default function CtaSection() {
             <span className="absolute right-10 top-1/2 -translate-y-1/2 flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#FDCA39] text-white">
               →
             </span>
-          </div>
+          </a>
 
           {/* カード2 - モバイル */}
-          <div
-            className="md:hidden relative rounded-[3px] bg-white px-6 py-6"
+          <a
+            href="https://umoren.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden relative rounded-[3px] bg-white px-6 py-6 block hover:shadow-xl transition-shadow"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <div className="flex flex-row items-end gap-0">
@@ -99,11 +108,14 @@ export default function CtaSection() {
                 →
               </span>
             </div>
-          </div>
+          </a>
 
           {/* カード2 - デスクトップ */}
-          <div
-            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center"
+          <a
+            href="https://umoren.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex relative h-[188px] rounded-[3px] bg-white px-10 py-8 flex-row justify-center items-center hover:shadow-xl transition-shadow"
             style={{ boxShadow: '6px 6px 12px 0px #5E6C84E5' }}
           >
             <div>
@@ -135,7 +147,7 @@ export default function CtaSection() {
             <span className="absolute right-10 top-1/2 -translate-y-1/2 flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#1f5bb9] text-white">
               →
             </span>
-          </div>
+          </a>
 
       </div>
     </div>
