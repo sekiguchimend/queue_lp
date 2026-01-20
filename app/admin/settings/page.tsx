@@ -44,9 +44,9 @@ export default function SettingsPage() {
       </div>
 
       {/* 設定フォーム */}
-      <form onSubmit={handleSubmit} className="max-w-[800px]">
+      <form onSubmit={handleSubmit} className="max-w-[900px]">
         {/* サイト情報 */}
-        <div className="bg-white rounded-xl shadow-sm mb-6">
+        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-6">
           <div className="p-6 border-b border-[#e5e5e5]">
             <h2 className="text-[18px] font-bold text-[#333333]">サイト基本情報</h2>
           </div>
@@ -91,7 +91,7 @@ export default function SettingsPage() {
         </div>
 
         {/* 会社情報 */}
-        <div className="bg-white rounded-xl shadow-sm mb-6">
+        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-6">
           <div className="p-6 border-b border-[#e5e5e5]">
             <h2 className="text-[18px] font-bold text-[#333333]">会社情報</h2>
           </div>
