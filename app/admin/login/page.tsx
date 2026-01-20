@@ -1,0 +1,136 @@
+'use client';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { supabase } from '@/app/lib/supabase';
+
+export default function AdminLoginPage() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+
+    try {
+      // パスワード認証（bcryptで検証）
+      const { data, error: queryError } = await supabase
+        .from('admin_users')
+        .select('id, email, name, password_hash')
+        .eq('email', email)
+        .single();
+
+      if (queryError || !data) {
+        setError('メールアドレスまたはパスワードが正しくありません');
+        setIsLoading(false);
+        return;
+      }
+
+      // パスワード検証（サーバーサイドで行うべきですが、簡易実装）
+      const { data: verifyData } = await supabase
+        .rpc('verify_password', { 
+          password_input: password, 
+          password_hash: data.password_hash 
+        });
+
+      if (!verifyData) {
+        setError('メールアドレスまたはパスワードが正しくありません');
+        setIsLoading(false);
+        return;
+      }
+
+      // セッション保存
+      localStorage.setItem('admin_session', JSON.stringify({
+        id: data.id,
+        email: data.email,
+        name: data.name,
+        expires: Date.now() + 24 * 60 * 60 * 1000, // 24時間
+      }));
+
+      router.push('/admin');
+    } catch (err) {
+      console.error('Login error:', err);
+      setError('ログインに失敗しました');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#f5f6f8] flex items-center justify-center p-4">
+      <div className="w-full max-w-[400px]">
+        {/* ロゴ */}
+        <div className="text-center mb-8">
+          <Image
+            src="/asset/logo.png"
+            alt="QUEUE"
+            width={80}
+            height={64}
+            className="mx-auto h-auto w-[60px]"
+          />
+          <h1 className="mt-4 text-[24px] font-bold text-[#333333]">管理画面ログイン</h1>
+        </div>
+
+        {/* ログインフォーム */}
+        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] p-8">
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-[14px] text-red-600">{error}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+                メールアドレス
+              </label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="admin@example.com"
+                className="w-full h-[48px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                required
+                disabled={isLoading}
+              />
+            </div>
+
+            <div>
+              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+                パスワード
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="w-full h-[48px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                required
+                disabled={isLoading}
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full h-[52px] bg-[#1f5bb9] text-white text-[15px] font-bold rounded-lg hover:bg-[#1a4f9e] transition-colors disabled:opacity-50"
+            >
+              {isLoading ? 'ログイン中...' : 'ログイン'}
+            </button>
+          </form>
+        </div>
+
+        {/* フッター */}
+        <p className="mt-6 text-center text-[12px] text-[#999999]">
+          © Queue Inc
+        </p>
+      </div>
+    </div>
+  );
+}
+

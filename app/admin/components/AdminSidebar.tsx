@@ -175,18 +175,30 @@ export default function AdminSidebar() {
       </nav>
 
       {/* フッター */}
-      <div className="p-4 border-t border-[#e5e5e5]">
+      <div className="p-4 border-t border-[#e5e5e5] space-y-1">
         <Link
           href="/"
           className="flex items-center gap-2 px-4 py-2 text-[13px] text-[#666666] hover:text-[#1f5bb9] transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          サイトに戻る
+        </Link>
+        <button
+          onClick={() => {
+            localStorage.removeItem('admin_session');
+            window.location.href = '/admin/login';
+          }}
+          className="flex items-center gap-2 px-4 py-2 text-[13px] text-[#666666] hover:text-red-500 transition-colors w-full"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M16 17L21 12L16 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M21 12H9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          サイトに戻る
-        </Link>
+          ログアウト
+        </button>
       </div>
     </aside>
   );
