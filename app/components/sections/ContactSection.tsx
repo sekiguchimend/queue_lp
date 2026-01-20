@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import { submitContact, ContactFormData } from '@/app/lib/supabase';
 
 export default function ContactSection() {
+  const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -29,13 +31,11 @@ export default function ContactSection() {
 
     try {
       await submitContact(data);
-      setSubmitStatus('success');
-      // フォームをリセット
-      formRef.current?.reset();
+      // 送信成功後、完了ページへリダイレクト
+      router.push('/contact/thanks');
     } catch (error) {
       setSubmitStatus('error');
       setErrorMessage(error instanceof Error ? error.message : '送信に失敗しました。');
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -49,14 +49,6 @@ export default function ContactSection() {
           <div className="mx-auto mt-2 h-[3px] w-[40px] bg-[#1f5bb9]"></div>
           <p className="mt-2 md:mt-3 text-[12px] md:text-[14px] font-bold text-[#666666]">お問い合わせ</p>
         </header>
-
-        {/* 送信成功メッセージ */}
-        {submitStatus === 'success' && (
-          <div className="mt-8 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
-            <p className="text-green-800 font-medium">お問い合わせを受け付けました。</p>
-            <p className="text-green-600 text-sm mt-1">担当者より折り返しご連絡いたします。</p>
-          </div>
-        )}
 
         {/* エラーメッセージ */}
         {submitStatus === 'error' && (
