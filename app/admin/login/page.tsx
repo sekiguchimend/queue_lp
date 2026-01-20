@@ -62,31 +62,31 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f5f6f8] flex items-center justify-center p-4">
-      <div className="w-full max-w-[400px]">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
+      <div className="w-full max-w-[480px]">
         {/* ロゴ */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
           <Image
             src="/asset/logo.png"
             alt="QUEUE"
-            width={80}
-            height={64}
-            className="mx-auto h-auto w-[60px]"
+            width={100}
+            height={80}
+            className="mx-auto h-auto w-[80px]"
           />
-          <h1 className="mt-4 text-[24px] font-bold text-[#333333]">管理画面ログイン</h1>
+          <h1 className="mt-6 text-[28px] font-bold text-[#333333]">管理画面ログイン</h1>
         </div>
 
         {/* ログインフォーム */}
-        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] p-8">
+        <div className="bg-white rounded-xl shadow-lg border border-[#e5e5e5] p-10">
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-[14px] text-red-600">{error}</p>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-8">
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[14px] font-medium text-[#333333] mb-3">
                 メールアドレス
               </label>
               <input
@@ -94,14 +94,14 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@example.com"
-                className="w-full h-[48px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[54px] rounded-lg border border-[#e5e5e5] px-5 text-[15px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
                 required
                 disabled={isLoading}
               />
             </div>
 
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[14px] font-medium text-[#333333] mb-3">
                 パスワード
               </label>
               <input
@@ -109,7 +109,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full h-[48px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[54px] rounded-lg border border-[#e5e5e5] px-5 text-[15px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
                 required
                 disabled={isLoading}
               />
@@ -118,7 +118,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full h-[52px] bg-[#1f5bb9] text-white text-[15px] font-bold rounded-lg hover:bg-[#1a4f9e] transition-colors disabled:opacity-50"
+              className="w-full h-[58px] bg-[#1f5bb9] text-white text-[16px] font-bold rounded-lg hover:bg-[#1a4f9e] transition-colors disabled:opacity-50"
             >
               {isLoading ? 'ログイン中...' : 'ログイン'}
             </button>
