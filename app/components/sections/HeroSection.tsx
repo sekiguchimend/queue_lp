@@ -18,7 +18,10 @@ export default function HeroSection() {
             priority
           />
         </a>
-        <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]" aria-label="メインナビゲーション">
+        <nav className="flex items-center gap-3 md:gap-8 text-[12px] md:text-[15px] font-bold text-[#333333]" aria-label="メインナビゲーション">
+          <a href="/service" className="transition-colors hover:text-[#2563eb]">
+            サービス
+          </a>
           <a href="/company" className="transition-colors hover:text-[#2563eb]">
             会社概要
           </a>
