@@ -338,11 +338,9 @@ export default function CompanyPage() {
       </section>
 
       {/* フッター */}
-      <footer
-        className="relative bg-[#f5f6f8] pt-10 md:pt-16"
-        style={{ paddingBottom: 'max(80px, calc(32px + env(safe-area-inset-bottom)))' }}
-      >
+      <footer className="relative pb-8 md:pb-12 pt-10 md:pt-16" style={{ background: 'linear-gradient(180deg, #F4F7FB 0%, #E9EEF9 40%, #BEC8E2 100%)' }}>
         <div className="mx-auto w-full max-w-[800px] px-4 md:px-8 text-center">
+          {/* ロゴ */}
           <div className="flex justify-center">
             <a href="/" aria-label="ホームへ戻る">
               <Image
@@ -354,12 +352,19 @@ export default function CompanyPage() {
               />
             </a>
           </div>
+
+          {/* ナビゲーションリンク */}
           <nav className="mt-6 md:mt-8 flex items-center justify-center gap-6 md:gap-10 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
-            <a href="/#company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
+            <a href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</a>
             <a href="/#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
+            <a href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</a>
           </nav>
-          <p className="mt-4 md:mt-6 text-[10px] md:text-[12px] text-[#333333]">© Queue Inc</p>
+
+          {/* コピーライト */}
+          <p className="mt-4 md:mt-6 text-[10px] md:text-[12px] text-[#999999]">© Queue Inc</p>
         </div>
+
+        {/* 上に戻るボタン */}
         <a
           href="#"
           className="absolute right-4 md:right-6 bottom-4 md:bottom-6 flex h-[36px] w-[36px] md:h-[44px] md:w-[44px] items-center justify-center rounded-full bg-white text-[#7a869f] shadow-md hover:shadow-lg transition-shadow"
