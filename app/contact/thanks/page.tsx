@@ -94,7 +94,7 @@ export default function ContactThanksPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#1f5bb9] mt-0.5">●</span>
-                  <span>お急ぎの場合は、メール（contact@queue-tech.jp）でご連絡ください</span>
+                  <span>お急ぎの場合は、メール（queue@queue-tech.jp）でご連絡ください</span>
                 </li>
               </ul>
             </div>
