@@ -1,18 +1,27 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://queue-tech.jp'
+  const currentDate = new Date()
+
   return [
     {
-      url: 'https://queue-tech.jp',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: 'https://queue-tech.jp/company',
-      lastModified: new Date(),
+      url: `${baseUrl}/company`,
+      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 }

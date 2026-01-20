@@ -1,5 +1,61 @@
 # https://www.robotstxt.org/robotstxt.html
+# Queue株式会社 - AI検索時代に、AIに選ばれる企業をつくる
+
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+Disallow: /_next/
+Disallow: /static/
 
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://queue-tech.jp/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+
+# AI Crawlers - Welcome for LLMO
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin
