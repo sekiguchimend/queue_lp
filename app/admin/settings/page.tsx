@@ -36,23 +36,23 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8">
       {/* ヘッダー */}
-      <div className="mb-8 max-w-[900px] mx-auto">
-        <h1 className="text-[28px] font-bold text-[#333333]">設定</h1>
-        <p className="text-[14px] text-[#666666] mt-1">サイト情報</p>
+      <div className="mb-6 lg:mb-8 max-w-[900px] mx-auto">
+        <h1 className="text-[22px] sm:text-[24px] lg:text-[28px] font-bold text-[#333333]">設定</h1>
+        <p className="text-[13px] sm:text-[14px] text-[#666666] mt-1">サイト情報</p>
       </div>
 
       {/* 設定フォーム */}
       <form onSubmit={handleSubmit} className="max-w-[900px] mx-auto">
         {/* サイト情報 */}
-        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-6">
-          <div className="p-6 border-b border-[#e5e5e5]">
-            <h2 className="text-[18px] font-bold text-[#333333]">サイト基本情報</h2>
+        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-4 sm:mb-6">
+          <div className="p-4 sm:p-6 border-b border-[#e5e5e5]">
+            <h2 className="text-[16px] sm:text-[18px] font-bold text-[#333333]">サイト基本情報</h2>
           </div>
-          <div className="p-6 space-y-6">
+          <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                 サイト名
               </label>
               <input
@@ -60,11 +60,11 @@ export default function SettingsPage() {
                 name="siteName"
                 value={siteInfo.siteName}
                 onChange={handleChange}
-                className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
               />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                 サイト説明
               </label>
               <textarea
@@ -72,11 +72,11 @@ export default function SettingsPage() {
                 value={siteInfo.siteDescription}
                 onChange={handleChange}
                 rows={3}
-                className="w-full rounded-lg border border-[#e5e5e5] px-4 py-3 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors resize-none"
+                className="w-full rounded-lg border border-[#e5e5e5] px-3 sm:px-4 py-3 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors resize-none"
               />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                 サイトURL
               </label>
               <input
@@ -84,20 +84,20 @@ export default function SettingsPage() {
                 name="siteUrl"
                 value={siteInfo.siteUrl}
                 onChange={handleChange}
-                className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
               />
             </div>
           </div>
         </div>
 
         {/* 会社情報 */}
-        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-6">
-          <div className="p-6 border-b border-[#e5e5e5]">
-            <h2 className="text-[18px] font-bold text-[#333333]">会社情報</h2>
+        <div className="bg-white rounded-xl shadow-sm border border-[#e5e5e5] mb-4 sm:mb-6">
+          <div className="p-4 sm:p-6 border-b border-[#e5e5e5]">
+            <h2 className="text-[16px] sm:text-[18px] font-bold text-[#333333]">会社情報</h2>
           </div>
-          <div className="p-6 space-y-6">
+          <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                 会社名
               </label>
               <input
@@ -105,11 +105,11 @@ export default function SettingsPage() {
                 name="companyName"
                 value={siteInfo.companyName}
                 onChange={handleChange}
-                className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
               />
             </div>
             <div>
-              <label className="block text-[13px] font-medium text-[#333333] mb-2">
+              <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                 所在地
               </label>
               <input
@@ -117,12 +117,12 @@ export default function SettingsPage() {
                 name="companyAddress"
                 value={siteInfo.companyAddress}
                 onChange={handleChange}
-                className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-[13px] font-medium text-[#333333] mb-2">
+                <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                   電話番号
                 </label>
                 <input
@@ -130,11 +130,11 @@ export default function SettingsPage() {
                   name="companyPhone"
                   value={siteInfo.companyPhone}
                   onChange={handleChange}
-                  className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                  className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-medium text-[#333333] mb-2">
+                <label className="block text-[12px] sm:text-[13px] font-medium text-[#333333] mb-2">
                   メールアドレス
                 </label>
                 <input
@@ -142,7 +142,7 @@ export default function SettingsPage() {
                   name="companyEmail"
                   value={siteInfo.companyEmail}
                   onChange={handleChange}
-                  className="w-full h-[44px] rounded-lg border border-[#e5e5e5] px-4 text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
+                  className="w-full h-[42px] sm:h-[44px] rounded-lg border border-[#e5e5e5] px-3 sm:px-4 text-[13px] sm:text-[14px] text-[#333333] outline-none focus:border-[#1f5bb9] transition-colors"
                 />
               </div>
             </div>
@@ -150,20 +150,19 @@ export default function SettingsPage() {
         </div>
 
         {/* 保存ボタン */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             type="submit"
             disabled={isSaving}
-            className="px-6 py-3 bg-[#1f5bb9] text-white text-[14px] font-medium rounded-lg hover:bg-[#1a4f9e] transition-colors disabled:opacity-50"
+            className="w-full sm:w-auto px-6 py-3 bg-[#1f5bb9] text-white text-[13px] sm:text-[14px] font-medium rounded-lg hover:bg-[#1a4f9e] transition-colors disabled:opacity-50"
           >
             {isSaving ? '保存中...' : '設定を保存'}
           </button>
           {saveMessage && (
-            <span className="text-[14px] text-green-600 font-medium">{saveMessage}</span>
+            <span className="text-[13px] sm:text-[14px] text-green-600 font-medium text-center sm:text-left">{saveMessage}</span>
           )}
         </div>
       </form>
     </div>
   );
 }
-
