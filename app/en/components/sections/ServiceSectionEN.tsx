@@ -1,0 +1,178 @@
+import Image from "next/image";
+
+export default function ServiceSectionEN() {
+  return (
+    <section className="bg-[#f5f6f8] py-10 md:py-16">
+      <div className="mx-auto w-full max-w-[1200px] px-4 md:px-10">
+        <header className="text-center">
+          <h2
+            className="text-[40px] md:text-[64px] font-medium text-[#3b3b3b] leading-[100%] tracking-normal"
+            style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+          >Service</h2>
+          <div className="mx-auto mt-2 h-[2px] w-10 bg-[#1f5bb9]" />
+          <p className="mt-2 text-[14px] md:text-[16px] font-bold text-[#333333]">Our Services</p>
+        </header>
+
+        <div
+          className="relative mt-6 md:mt-10 rounded-tl-[50px] md:rounded-tl-[100px] rounded-tr-none rounded-br-none rounded-bl-none bg-white p-4 md:p-10 shadow-[0_10px_20px_rgba(0,0,0,0.05)]"
+          style={{
+            borderWidth: '2px 10px 2px 2px',
+            borderStyle: 'solid',
+            borderColor: '#29498D'
+          }}
+        >
+          <div className="flex flex-col md:grid md:grid-cols-[1.1fr_1fr] items-center md:items-start gap-6 md:gap-8">
+            <div className="text-center md:text-left">
+              <div className="inline-flex flex-col items-center">
+                <p
+                  className="text-[24px] md:text-[40px] font-light leading-[140%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{
+                    fontFamily: 'var(--font-lexend), sans-serif',
+                    background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >(AI SEO)</p>
+                <p
+                  className="text-[64px] md:text-[128px] font-light leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+                  style={{
+                    fontFamily: 'var(--font-lexend), sans-serif',
+                    background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}
+                >
+                  LLMO
+                </p>
+              </div>
+              <span
+                className="mt-3 inline-flex items-center justify-center text-[32px] md:text-[56px] font-light text-white leading-[100%] tracking-[0.02em]"
+                style={{
+                  fontFamily: 'var(--font-lexend), sans-serif',
+                  width: '100%',
+                  maxWidth: '367px',
+                  height: 'auto',
+                  padding: '12px 24px',
+                  borderRadius: '50px',
+                  background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)'
+                }}
+              >
+                umoren.ai
+              </span>
+              <div
+                className="mt-6 md:mt-10 text-[16px] md:text-[22px] font-medium leading-[175%] tracking-normal text-[#333333] text-left"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >
+                <p>Become a &quot;trusted answer&quot; in the AI search era.</p>
+                <p>We visualize, implement, and achieve visibility in generative AI.</p>
+              </div>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <Image
+                src="/asset/service-umoren-ai.png"
+                alt="LLMO service"
+                width={400}
+                height={280}
+                className="h-auto w-[280px] md:w-[400px]"
+              />
+            </div>
+          </div>
+
+          <div className="mt-6 md:mt-10 space-y-6">
+            <div className="rounded-[12px] bg-[#f4f6fa] px-4 md:px-10 py-6 md:py-10 text-sm text-[#3c3c3c] shadow-[4px_4px_4px_0px_#22222233]">
+              <div className="flex items-center justify-between border-b border-[#5E6C84] pb-3">
+                <span
+                  className="text-[18px] md:text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                >Services</span>
+                <span
+                  className="text-[16px] md:text-[24px] font-light leading-[100%] text-[#5E6C84]"
+                  style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                >What We Offer</span>
+              </div>
+              <div className="mt-5 flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-4">
+                <ul
+                  className="space-y-4 md:space-y-5 text-[14px] md:text-[18px] font-medium text-[#333333]"
+                  style={{ fontFamily: 'var(--font-gothic-a1), sans-serif', lineHeight: '28px' }}
+                >
+                  {[
+                    "AI Search Exposure Diagnosis\n(ChatGPT / Gemini analysis)",
+                    "LLMO (AI SEO) Strategy Design\n(Prompt / structure optimization)",
+                    "Content & Structure Improvement",
+                    "Continuous Improvement Cycle\n(Before / After)",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <Image src="/asset/check-icon.png" alt="✓" width={22} height={22} className="flex-shrink-0 w-[18px] md:w-[22px] h-auto" />
+                      <span className="whitespace-pre-line">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex justify-center">
+                  <Image
+                    src="/asset/arrow-down.png"
+                    alt="arrow"
+                    width={40}
+                    height={40}
+                    className="h-auto w-[30px] md:hidden"
+                  />
+                  <Image
+                    src="/asset/arrow-right.png"
+                    alt="arrow"
+                    width={40}
+                    height={40}
+                    className="h-auto hidden md:block md:w-[40px]"
+                  />
+                </div>
+                <div className="flex flex-col items-center gap-4 md:gap-6">
+                  <div
+                    className="grid grid-cols-2 md:flex md:flex-wrap md:justify-center gap-2 md:gap-4 text-[20px] md:text-[28px] font-bold text-[#3c3c3c] leading-[180%]"
+                    style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                  >
+                    {["Diagnose", "Design", "Improve", "Monitor"].map((label) => (
+                      <span key={label} className="rounded-[6px] bg-[#FDCA39] px-3 md:px-4 py-1 shadow-[0px_2px_4px_0px_#22222233] text-center">
+                        {label}
+                      </span>
+                    ))}
+                  </div>
+                  <p
+                    className="text-center font-medium leading-[150%] text-[#333333]"
+                    style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+                  >
+                    <span className="text-[24px] md:text-[32px]">4-Step</span>
+                    <br className="hidden md:block" />
+                    <span className="text-[20px] md:text-[28px]">Clear Cycle</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <p
+                className="text-[18px] md:text-[24px] font-bold leading-[180%] text-[#0B60BB]"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Recommended For</p>
+              <div
+                className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 text-[14px] md:text-[18px] font-medium text-white leading-[180%]"
+                style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
+              >
+                {[
+                  "B2B SaaS Companies",
+                  "IT / DX / AI Companies",
+                  "High-recruitment\norganizations",
+                  "Companies with SEO\nbut no AI strategy",
+                ].map((label) => (
+                  <div
+                    key={label}
+                    className="rounded-[4px] bg-[#0B60BB] whitespace-pre-line text-center flex items-center justify-center p-2 md:p-2 min-h-[80px] md:min-h-[102px]"
+                  >
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Header from "@/app/components/Header";
 
-export default function HeroSection() {
+export default function HeroSectionEN() {
   return (
     <section className="relative min-h-screen 2xl:min-h-0 overflow-hidden bg-[#f8f8fa]">
-      <Header locale="ja" variant="transparent" />
+      <Header locale="en" variant="transparent" />
 
-      {/* 右側イラスト（背景の一部として重ねる） */}
+      {/* Right side illustration */}
       <div className="pointer-events-none absolute top-0 bottom-0 right-0 w-[50%] hidden md:block">
         <Image
           src="/asset/hero-illustration.png"
@@ -19,16 +19,15 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* メインコンテンツ */}
+      {/* Main content */}
       <div className="relative mx-auto 2xl:mx-0 2xl:ml-[8%] w-full max-w-[1400px] px-4 md:px-8 pb-24 pt-12 lg:px-16">
-
-        {/* 左側テキスト */}
+        {/* Left side text */}
         <div className="relative z-10 pt-[80px] md:pt-[80px] pl-0 md:pl-[16px]">
-          {/* メインタイトルブロック */}
+          {/* Main title block */}
           <div className="w-full md:w-[850px] flex flex-col gap-[16px] md:gap-[28px]">
-            {/* メインタイトル1行目 */}
+            {/* Main title line 1 */}
             <h1
-              className="text-[28px] md:text-[40px] lg:text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
+              className="text-[28px] md:text-[40px] lg:text-[52px] font-black leading-[110%] tracking-[0.02em] bg-clip-text text-transparent"
               style={{
                 fontFamily: 'var(--font-lexend)',
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
@@ -36,12 +35,12 @@ export default function HeroSection() {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              AI検索時代<span className="text-[22px] md:text-[32px] lg:text-[44px]">に、</span>
+              In the AI Search Era,
             </h1>
 
-            {/* メインタイトル2行目 */}
+            {/* Main title line 2 */}
             <h2
-              className="text-[28px] md:text-[40px] lg:text-[56px] font-semibold leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+              className="text-[26px] md:text-[38px] lg:text-[50px] font-semibold leading-[110%] tracking-[0.02em] bg-clip-text text-transparent"
               style={{
                 fontFamily: 'var(--font-lexend)',
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
@@ -49,11 +48,11 @@ export default function HeroSection() {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              "AIに選ばれる企業"<span className="text-[22px] md:text-[32px] lg:text-[44px]">をつくる。</span>
+              Building Companies<br />That AI Chooses.
             </h2>
           </div>
 
-          {/* モバイル用イラスト */}
+          {/* Mobile illustration */}
           <div className="relative mt-0 md:hidden">
             <div className="relative ml-auto mr-[-60px] h-[280px] w-[320px] overflow-hidden rounded-full bg-white">
               <Image
@@ -66,52 +65,51 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* 説明文 */}
+          {/* Description */}
           <div
-            className="mt-8 md:mt-12 text-[14px] md:text-[18px] font-semibold leading-[200%] tracking-[0.07em] text-[#333333]"
+            className="mt-8 md:mt-12 text-[14px] md:text-[18px] font-semibold leading-[200%] tracking-[0.03em] text-[#333333]"
             style={{ fontFamily: 'var(--font-gothic-a1), sans-serif' }}
           >
-            <p>Queue株式会社は、</p>
+            <p>Queue Inc. is a technology company</p>
             <p>
+              focused on our{" "}
               <span className="text-[20px] md:text-[28px] font-bold text-[#8120AF]">
-                LLMO（AI SEO）事業
+                LLMO (AI SEO) service
               </span>
-              <br className="md:hidden" />
+            </p>
+            <p>
               <span
-                className="text-[40px] md:text-[28px] font-black md:font-semibold text-[#8120AF] leading-[130%] tracking-[0.02em] md:leading-[200%] md:tracking-[0.07em]"
+                className="text-[36px] md:text-[28px] font-black md:font-semibold text-[#8120AF] leading-[130%] tracking-[0.02em] md:leading-[200%] md:tracking-[0.03em]"
                 style={{
                   fontFamily: 'var(--font-gothic-a1), sans-serif'
                 }}
               >
-                「umoren.ai」
+                "umoren.ai"
               </span>
-              <span>を主軸に、</span>
             </p>
-            <p>AI検索・生成AIにおける認知・比較・意思決定領域を支援する</p>
-            <p>テクノロジーカンパニーです。</p>
+            <p>supporting AI search visibility and recommendations.</p>
           </div>
 
-          {/* ボタン */}
+          {/* Buttons */}
           <div className="mt-10 md:mt-16 flex flex-col md:flex-row gap-4">
             <a
               href="https://umoren.ai/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-[56px] md:h-[72px] w-full md:w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-3 py-6 md:px-4 text-center text-[18px] md:text-[24px] font-medium leading-[100%] tracking-[0.05em] text-white transition-all hover:opacity-90 whitespace-nowrap"
-              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              className="flex h-[56px] md:h-[72px] w-full md:w-[280px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-3 py-6 md:px-4 text-center text-[16px] md:text-[22px] font-medium leading-[100%] tracking-[0.03em] text-white transition-all hover:opacity-90 whitespace-nowrap"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
             >
-              無料診断を受ける
+              Free AI Diagnosis
             </a>
             <a
               href="#contact"
-              className="flex h-[56px] md:h-[72px] w-full md:w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-3 py-6 md:px-12 text-center text-[18px] md:text-[24px] font-medium leading-[100%] tracking-[0.05em] text-white transition-all hover:opacity-90"
-              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              className="flex h-[56px] md:h-[72px] w-full md:w-[260px] items-center justify-center rounded-[12px] bg-[linear-gradient(90deg,#0952A1_0%,#3144BD_49.52%,#6D1D93_100%)] px-3 py-6 md:px-12 text-center text-[16px] md:text-[22px] font-medium leading-[100%] tracking-[0.03em] text-white transition-all hover:opacity-90"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
             >
-              相談する
+              Contact Us
             </a>
           </div>
         </div>
-
       </div>
     </section>
   );

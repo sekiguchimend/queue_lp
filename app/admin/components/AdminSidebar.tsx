@@ -44,8 +44,9 @@ const menuItems = [
     ),
     submenu: [
       { title: '投稿一覧', href: '/admin/blog' },
-      { title: '新規投稿作成', href: '/admin/blog/new' },
-      { title: 'カテゴリ管理', href: '/admin/blog/categories' },
+      { title: '新規投稿作成', href: '/admin/blog/posts/new' },
+      { title: 'ハブ管理', href: '/admin/blog/hubs' },
+      { title: 'サブハブ管理', href: '/admin/blog/sub-hubs' },
     ],
   },
   {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import Header from "@/app/components/Header";
 
 export const metadata: Metadata = {
   title: "LLMO（AI SEO）サービス umoren.ai | AI検索対策・AIO対策 | Queue株式会社",
@@ -162,27 +163,7 @@ export default function ServicePage() {
       />
       
       <div className="min-h-screen bg-[#f5f6f8]">
-        {/* ヘッダー */}
-        <header className="fixed top-0 left-0 right-0 z-20 flex items-center justify-between px-4 py-3 lg:px-8 bg-white shadow-sm">
-          <Link href="/" className="flex items-center" aria-label="ホームへ戻る">
-            <Image
-              src="/asset/logo.png"
-              alt="QUEUE"
-              width={90}
-              height={72}
-              className="h-auto w-[50px] md:w-[70px]"
-              priority
-            />
-          </Link>
-          <nav className="flex items-center gap-4 md:gap-10 text-[12px] md:text-[15px] font-bold text-[#333333]" aria-label="メインナビゲーション">
-            <Link href="/company" className="transition-colors hover:text-[#2563eb]">
-              会社概要
-            </Link>
-            <Link href="/#contact" className="transition-colors hover:text-[#2563eb]">
-              お問い合わせ
-            </Link>
-          </nav>
-        </header>
+        <Header locale="ja" />
 
         {/* ヒーローセクション */}
         <section 

@@ -21,11 +21,13 @@ export default function FooterSection() {
         {/* ナビゲーションリンク */}
         <nav className="mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[12px] md:text-[13px] font-bold text-[#666666]" aria-label="フッターナビゲーション">
           <Link href="/service" className="hover:text-[#1f5bb9] transition-colors">サービス</Link>
+          <Link href="/blog" className="hover:text-[#1f5bb9] transition-colors">ブログ</Link>
           <Link href="/faq" className="hover:text-[#1f5bb9] transition-colors">FAQ</Link>
           <Link href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</Link>
           <a href="#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</a>
           <Link href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</Link>
           <Link href="/security" className="hover:text-[#1f5bb9] transition-colors">セキュリティ</Link>
+          <Link href="/en" className="hover:text-[#1f5bb9] transition-colors">English</Link>
         </nav>
 
         {/* コピーライト */}
