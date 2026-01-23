@@ -368,7 +368,7 @@ export default function EditPostPage({ params }: { params: Promise<{ id: string 
                       value={formData.hub_id || ''}
                       onChange={(e) => setFormData({ ...formData, hub_id: e.target.value || null, sub_hub_id: null })}
                       className="w-full px-4 py-2.5 border border-[#e5e5e5] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#1f5bb9]/20 focus:border-[#1f5bb9]"
-                      required={formData.type !== 'standalone'}
+                      required
                     >
                       <option value="">ハブを選択...</option>
                       {hubs.map((hub) => (
