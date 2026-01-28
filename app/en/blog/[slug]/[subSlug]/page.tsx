@@ -321,6 +321,9 @@ function SubHubPage({ subHub, posts, hubSlug }: { subHub: BlogSubHub; posts: Blo
                 background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
+                wordBreak: 'keep-all',
+                overflowWrap: 'break-word',
+                hyphens: 'auto',
               }}
             >
               {title}
