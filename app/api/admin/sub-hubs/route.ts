@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSubHubs, createSubHub } from '@/app/lib/blog-supabase';
+import { getSubHubs, createSubHub, getHubById } from '@/app/lib/blog-supabase';
 import { BlogSubHubFormData } from '@/app/lib/blog-types';
+import { submitToIndexNow, generateSubHubUrls } from '@/app/lib/indexnow';
 
 export async function GET(request: NextRequest) {
   try {
@@ -33,6 +34,21 @@ export async function POST(request: NextRequest) {
     }
 
     const subHub = await createSubHub(body);
+
+    // Submit to IndexNow if published
+    if (body.status === 'published') {
+      try {
+        const hub = await getHubById(body.hub_id);
+        if (hub) {
+          const urls = generateSubHubUrls(hub.slug, subHub.slug);
+          await submitToIndexNow(urls);
+        }
+      } catch (indexError) {
+        console.error('IndexNow submission failed:', indexError);
+        // Don't fail the request if IndexNow fails
+      }
+    }
+
     return NextResponse.json({ data: subHub }, { status: 201 });
   } catch (error) {
     console.error('Error creating sub-hub:', error);

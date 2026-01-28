@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getHubs, createHub } from '@/app/lib/blog-supabase';
 import { BlogHubFormData } from '@/app/lib/blog-types';
+import { submitToIndexNow, generateHubUrls } from '@/app/lib/indexnow';
 
 export async function GET() {
   try {
@@ -27,6 +28,18 @@ export async function POST(request: NextRequest) {
     }
 
     const hub = await createHub(body);
+
+    // Submit to IndexNow if published
+    if (body.status === 'published') {
+      try {
+        const urls = generateHubUrls(hub.slug);
+        await submitToIndexNow(urls);
+      } catch (indexError) {
+        console.error('IndexNow submission failed:', indexError);
+        // Don't fail the request if IndexNow fails
+      }
+    }
+
     return NextResponse.json({ data: hub }, { status: 201 });
   } catch (error) {
     console.error('Error creating hub:', error);

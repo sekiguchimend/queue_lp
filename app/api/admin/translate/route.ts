@@ -27,6 +27,13 @@ interface TranslationResult {
 }
 
 async function translateToEnglish(fields: TranslationFields): Promise<TranslationResult> {
+  // Calculate approximate content length to determine max_tokens
+  const contentLength = JSON.stringify(fields).length;
+  // Estimate tokens (roughly 4 characters per token), add buffer for response
+  // Use at least 16000 tokens, or more if content is large
+  const estimatedInputTokens = Math.ceil(contentLength / 4);
+  const maxTokens = Math.max(16000, estimatedInputTokens * 2);
+
   const prompt = `You are a professional Japanese to English translator. Translate the following blog post content from Japanese to natural, fluent English. Maintain the same tone, style, and formatting (including HTML tags if present).
 
 Translate each field below:
@@ -63,7 +70,7 @@ For any empty fields, return an empty string. Do not include any explanation or 
     messages: [
       {
         role: 'system',
-        content: 'You are a professional Japanese to English translator. Always respond with valid JSON only.',
+        content: 'You are a professional Japanese to English translator. Always respond with valid JSON only. Ensure all strings are properly escaped.',
       },
       {
         role: 'user',
@@ -71,7 +78,8 @@ For any empty fields, return an empty string. Do not include any explanation or 
       },
     ],
     temperature: 0.3,
-    max_tokens: 8000,
+    max_tokens: maxTokens,
+    response_format: { type: 'json_object' },
   });
 
   const content = response.choices[0]?.message?.content;
@@ -81,6 +89,8 @@ For any empty fields, return an empty string. Do not include any explanation or 
 
   // Parse the JSON response, handling potential markdown code blocks
   let jsonStr = content.trim();
+  
+  // Remove markdown code blocks if present
   if (jsonStr.startsWith('```json')) {
     jsonStr = jsonStr.slice(7);
   }
@@ -92,7 +102,35 @@ For any empty fields, return an empty string. Do not include any explanation or 
   }
   jsonStr = jsonStr.trim();
 
-  const result = JSON.parse(jsonStr) as TranslationResult;
+  // Try to extract JSON object using regex if direct parsing fails
+  let result: TranslationResult;
+  try {
+    result = JSON.parse(jsonStr) as TranslationResult;
+  } catch (parseError) {
+    // If parsing fails, try to extract JSON object from the response
+    const jsonMatch = jsonStr.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      try {
+        result = JSON.parse(jsonMatch[0]) as TranslationResult;
+      } catch (secondParseError) {
+        console.error('Failed to parse JSON response:', jsonStr.substring(0, 500));
+        console.error('Parse error:', parseError);
+        throw new Error(`Failed to parse JSON response: ${parseError instanceof Error ? parseError.message : 'Unknown error'}`);
+      }
+    } else {
+      console.error('No JSON object found in response:', jsonStr.substring(0, 500));
+      throw new Error(`No valid JSON found in response: ${parseError instanceof Error ? parseError.message : 'Unknown error'}`);
+    }
+  }
+
+  // Validate that all required fields are present
+  const requiredFields = ['title_en', 'excerpt_en', 'content_en', 'meta_title_en', 'meta_description_en', 'thumbnail_alt_en', 'thumbnail_description_en'];
+  for (const field of requiredFields) {
+    if (!(field in result)) {
+      throw new Error(`Missing required field in translation result: ${field}`);
+    }
+  }
+
   return result;
 }
 

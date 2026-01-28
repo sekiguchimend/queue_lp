@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPostById, updatePost, deletePost } from '@/app/lib/blog-supabase';
+import { getPostById, updatePost, deletePost, getHubById, getSubHubById } from '@/app/lib/blog-supabase';
 import { BlogPostFormData } from '@/app/lib/blog-types';
+import { submitToIndexNow, generatePostUrls } from '@/app/lib/indexnow';
 
 export async function GET(
   request: NextRequest,
@@ -57,7 +58,36 @@ export async function PUT(
       );
     }
 
+    // Get the current post to check if status is changing to published
+    const currentPost = await getPostById(id);
+    const isBeingPublished = body.status === 'published' && currentPost?.status !== 'published';
+    const isAlreadyPublished = currentPost?.status === 'published';
+
     const post = await updatePost(id, body);
+
+    // Submit to IndexNow if post is being published or was already published (update)
+    if (isBeingPublished || (isAlreadyPublished && body.status !== 'draft')) {
+      try {
+        let hubSlug: string | null = null;
+        let subHubSlug: string | null = null;
+
+        if (post.hub_id) {
+          const hub = await getHubById(post.hub_id);
+          hubSlug = hub?.slug || null;
+        }
+        if (post.sub_hub_id) {
+          const subHub = await getSubHubById(post.sub_hub_id);
+          subHubSlug = subHub?.slug || null;
+        }
+
+        const urls = generatePostUrls(post.slug, hubSlug, subHubSlug);
+        await submitToIndexNow(urls);
+      } catch (indexError) {
+        console.error('IndexNow submission failed:', indexError);
+        // Don't fail the request if IndexNow fails
+      }
+    }
+
     return NextResponse.json({ data: post });
   } catch (error) {
     console.error('Error updating post:', error);

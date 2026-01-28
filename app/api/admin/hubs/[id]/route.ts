@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getHubById, updateHub, deleteHub } from '@/app/lib/blog-supabase';
 import { BlogHubFormData } from '@/app/lib/blog-types';
+import { submitToIndexNow, generateHubUrls } from '@/app/lib/indexnow';
 
 export async function GET(
   request: NextRequest,
@@ -35,7 +36,24 @@ export async function PUT(
     const { id } = await params;
     const body: Partial<BlogHubFormData> = await request.json();
     
+    // Get the current hub to check if status is changing to published
+    const currentHub = await getHubById(id);
+    const isBeingPublished = body.status === 'published' && currentHub?.status !== 'published';
+    const isAlreadyPublished = currentHub?.status === 'published';
+
     const hub = await updateHub(id, body);
+
+    // Submit to IndexNow if hub is being published or was already published (update)
+    if (isBeingPublished || (isAlreadyPublished && body.status !== 'draft')) {
+      try {
+        const urls = generateHubUrls(hub.slug);
+        await submitToIndexNow(urls);
+      } catch (indexError) {
+        console.error('IndexNow submission failed:', indexError);
+        // Don't fail the request if IndexNow fails
+      }
+    }
+
     return NextResponse.json({ data: hub });
   } catch (error) {
     console.error('Error updating hub:', error);

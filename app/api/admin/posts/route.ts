@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPosts, createPost, updatePost } from '@/app/lib/blog-supabase';
+import { getPosts, createPost, updatePost, getHubById, getSubHubById } from '@/app/lib/blog-supabase';
 import { BlogPostFormData } from '@/app/lib/blog-types';
+import { submitToIndexNow, generatePostUrls } from '@/app/lib/indexnow';
 import OpenAI from 'openai';
 
 const openai = new OpenAI({
@@ -179,11 +180,54 @@ export async function POST(request: NextRequest) {
           thumbnail_description_en: translations.thumbnail_description_en,
         });
 
+        // Submit to IndexNow for instant indexing
+        try {
+          let hubSlug: string | null = null;
+          let subHubSlug: string | null = null;
+
+          if (post.hub_id) {
+            const hub = await getHubById(post.hub_id);
+            hubSlug = hub?.slug || null;
+          }
+          if (post.sub_hub_id) {
+            const subHub = await getSubHubById(post.sub_hub_id);
+            subHubSlug = subHub?.slug || null;
+          }
+
+          const urls = generatePostUrls(post.slug, hubSlug, subHubSlug);
+          await submitToIndexNow(urls);
+        } catch (indexError) {
+          console.error('IndexNow submission failed:', indexError);
+          // Don't fail the request if IndexNow fails
+        }
+
         return NextResponse.json({ data: translatedPost, translated: true }, { status: 201 });
       } catch (translationError) {
         console.error('Translation failed, but post was created:', translationError);
         // Return the post without translation if translation fails
         return NextResponse.json({ data: post, translated: false, translationError: 'Translation failed' }, { status: 201 });
+      }
+    }
+
+    // Submit to IndexNow if published (even without translation)
+    if (body.status === 'published') {
+      try {
+        let hubSlug: string | null = null;
+        let subHubSlug: string | null = null;
+
+        if (post.hub_id) {
+          const hub = await getHubById(post.hub_id);
+          hubSlug = hub?.slug || null;
+        }
+        if (post.sub_hub_id) {
+          const subHub = await getSubHubById(post.sub_hub_id);
+          subHubSlug = subHub?.slug || null;
+        }
+
+        const urls = generatePostUrls(post.slug, hubSlug, subHubSlug);
+        await submitToIndexNow(urls);
+      } catch (indexError) {
+        console.error('IndexNow submission failed:', indexError);
       }
     }
 
