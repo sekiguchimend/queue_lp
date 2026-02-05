@@ -78,25 +78,11 @@ export default function ContactThanksPageEN() {
           </h1>
           
           <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md mb-8">
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#333333] leading-relaxed mb-6">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#333333] leading-relaxed">
               We have received your message.<br />
               Our team will review it and get back to you<br className="hidden sm:block" />
               within <span className="font-bold text-[#1f5bb9]">2 business days</span>.
             </p>
-            
-            <div className="bg-[#f8f9fc] rounded-lg p-4 text-left">
-              <p className="text-[13px] text-[#666666] mb-2 font-medium">Please note:</p>
-              <ul className="text-[13px] sm:text-[14px] text-[#555555] space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#1f5bb9] mt-0.5">●</span>
-                  <span>If you don&apos;t receive our auto-reply, please check your spam folder</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#1f5bb9] mt-0.5">●</span>
-                  <span>For urgent matters, please email us at queue@queue-tech.jp</span>
-                </li>
-              </ul>
-            </div>
           </div>
 
           {/* Buttons */}

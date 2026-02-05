@@ -79,25 +79,11 @@ export default function ContactThanksPage() {
           </h1>
           
           <div className="bg-white rounded-xl p-6 sm:p-8 shadow-md mb-8">
-            <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#333333] leading-relaxed mb-6">
+            <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#333333] leading-relaxed">
               お問い合わせ内容を受け付けました。<br />
               内容を確認の上、担当者より<span className="font-bold text-[#1f5bb9]">2営業日以内</span>に<br className="hidden sm:block" />
               折り返しご連絡いたします。
             </p>
-            
-            <div className="bg-[#f8f9fc] rounded-lg p-4 text-left">
-              <p className="text-[13px] text-[#666666] mb-2 font-medium">ご確認ください</p>
-              <ul className="text-[13px] sm:text-[14px] text-[#555555] space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#1f5bb9] mt-0.5">●</span>
-                  <span>自動返信メールが届かない場合は、迷惑メールフォルダをご確認ください</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#1f5bb9] mt-0.5">●</span>
-                  <span>お急ぎの場合は、メール（queue@queue-tech.jp）でご連絡ください</span>
-                </li>
-              </ul>
-            </div>
           </div>
 
           {/* ボタン */}
