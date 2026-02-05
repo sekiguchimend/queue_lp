@@ -33,7 +33,13 @@ async function getPublishedPosts(): Promise<BlogPost[]> {
     console.error('Error fetching posts for sitemap:', error)
     return []
   }
-  return data || []
+
+  // Supabase returns relations as arrays, transform to single objects
+  return (data || []).map((post) => ({
+    ...post,
+    hub: Array.isArray(post.hub) ? post.hub[0] || null : post.hub,
+    sub_hub: Array.isArray(post.sub_hub) ? post.sub_hub[0] || null : post.sub_hub,
+  }))
 }
 
 async function getPublishedHubs(): Promise<BlogHub[]> {
@@ -61,7 +67,12 @@ async function getPublishedSubHubs(): Promise<BlogSubHub[]> {
     console.error('Error fetching sub-hubs for sitemap:', error)
     return []
   }
-  return data || []
+
+  // Supabase returns relations as arrays, transform to single objects
+  return (data || []).map((subHub) => ({
+    ...subHub,
+    hub: Array.isArray(subHub.hub) ? subHub.hub[0] || null : subHub.hub,
+  }))
 }
 
 function getPostUrl(post: BlogPost, lang: 'ja' | 'en'): string {
