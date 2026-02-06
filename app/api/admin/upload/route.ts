@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/app/lib/supabase';
 
+// Configure route to accept larger file uploads
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -22,11 +26,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate file size (max 5MB)
-    const maxSize = 5 * 1024 * 1024; // 5MB
+    // Validate file size (max 10MB)
+    const maxSize = 10 * 1024 * 1024; // 10MB
     if (file.size > maxSize) {
       return NextResponse.json(
-        { error: 'File size exceeds 5MB limit.' },
+        { error: 'File size exceeds 10MB limit.' },
         { status: 400 }
       );
     }
