@@ -3,7 +3,13 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = 'https://tauktlyjhposmxktqdbh.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhdWt0bHlqaHBvc214a3RxZGJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg4MTk2MjIsImV4cCI6MjA4NDM5NTYyMn0.EemTw0xSHtYXWq756ySRzCvNaBFAMMS17eYNE4SXim0';
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  global: {
+    fetch: (url, options = {}) => {
+      return fetch(url, { ...options, cache: 'no-store' });
+    },
+  },
+});
 
 // お問い合わせデータの型
 export interface ContactFormData {
