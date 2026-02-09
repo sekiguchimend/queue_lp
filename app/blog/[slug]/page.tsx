@@ -15,18 +15,35 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  const baseUrl = 'https://queue-tech.jp';
   
   const post = await getPostBySlug(slug);
   if (post) {
+    const ogImage = (post.og_image_url && post.og_image_url.length > 0) ? post.og_image_url : post.thumbnail_url;
+    const canonicalUrl = (post.canonical_url && post.canonical_url.length > 0) ? post.canonical_url : `${baseUrl}/blog/${post.slug}`;
     return {
       title: post.meta_title || `${post.title} | Queue株式会社`,
       description: post.meta_description || post.excerpt || '',
+      alternates: {
+        canonical: canonicalUrl,
+      },
       openGraph: {
         title: post.meta_title || post.title,
         description: post.meta_description || post.excerpt || '',
         type: 'article',
-        images: post.og_image_url || post.thumbnail_url ? [{ url: post.og_image_url || post.thumbnail_url || '' }] : [],
+        url: `${baseUrl}/blog/${post.slug}`,
+        siteName: 'Queue株式会社',
+        locale: 'ja_JP',
+        images: ogImage ? [{ url: ogImage, width: 1200, height: 630, alt: post.thumbnail_alt || post.title }] : [],
         publishedTime: post.published_at || undefined,
+        modifiedTime: post.updated_at || undefined,
+        authors: ['Queue株式会社'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: post.meta_title || post.title,
+        description: post.meta_description || post.excerpt || '',
+        images: ogImage ? [ogImage] : [],
       },
     };
   }
@@ -34,8 +51,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const hub = await getHubBySlug(slug);
   if (hub) {
     return {
-      title: `${hub.title} | Queue株式会社`,
+      title: `${hub.title} | ブログ | Queue株式会社`,
       description: hub.description || `${hub.title}に関する記事一覧`,
+      alternates: {
+        canonical: `${baseUrl}/blog/${hub.slug}`,
+      },
+      openGraph: {
+        title: `${hub.title} | Queue株式会社`,
+        description: hub.description || `${hub.title}に関する記事一覧`,
+        type: 'website',
+        url: `${baseUrl}/blog/${hub.slug}`,
+        siteName: 'Queue株式会社',
+        locale: 'ja_JP',
+      },
+      twitter: {
+        card: 'summary',
+        title: `${hub.title} | Queue株式会社`,
+        description: hub.description || `${hub.title}に関する記事一覧`,
+      },
     };
   }
 
@@ -108,33 +141,85 @@ export default async function BlogSlugPage({ params }: PageProps) {
 }
 
 function PostPage({ post }: { post: BlogPost }) {
-  const jsonLd = {
+  const baseUrl = 'https://queue-tech.jp';
+  const postUrl = `${baseUrl}/blog/${post.slug}`;
+  const ogImage = (post.og_image_url && post.og_image_url.length > 0) ? post.og_image_url : post.thumbnail_url;
+
+  const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': postUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
     headline: post.title,
-    description: post.excerpt,
-    image: post.thumbnail_url,
+    description: post.meta_description || post.excerpt,
+    image: ogImage || undefined,
     datePublished: post.published_at,
     dateModified: post.updated_at,
     author: {
       '@type': 'Organization',
       name: 'Queue株式会社',
+      url: baseUrl,
     },
     publisher: {
       '@type': 'Organization',
       name: 'Queue株式会社',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://queue-tech.jp/asset/logo.png',
+        url: `${baseUrl}/asset/logo.png`,
       },
     },
+    url: postUrl,
+    inLanguage: 'ja',
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'ブログ',
+        item: `${baseUrl}/blog`,
+      },
+      ...(post.hub ? [{
+        '@type': 'ListItem',
+        position: 3,
+        name: post.hub.title,
+        item: `${baseUrl}/blog/${post.hub.slug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: post.title,
+        item: postUrl,
+      }] : [{
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: postUrl,
+      }]),
+    ],
   };
 
   return (
     <div className="min-h-screen bg-[#f5f6f8]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <Header locale="ja" />
@@ -142,19 +227,19 @@ function PostPage({ post }: { post: BlogPost }) {
       {/* パンくず */}
       <div className="pt-[70px] md:pt-[90px] bg-[#f5f6f8]">
         <div className="mx-auto max-w-[900px] px-4 md:px-8 py-3 md:py-4">
-          <nav className="text-[11px] md:text-[13px] text-[#666666]">
+          <nav className="text-[11px] md:text-[13px] text-[#666666]" aria-label="パンくずリスト">
             <ol className="flex items-center gap-1.5 md:gap-2 flex-wrap">
               <li><Link href="/" className="hover:text-[#1f5bb9] transition-colors">ホーム</Link></li>
-              <li>&gt;</li>
+              <li aria-hidden="true">&gt;</li>
               <li><Link href="/blog" className="hover:text-[#1f5bb9] transition-colors">ブログ</Link></li>
               {post.hub && (
                 <>
-                  <li>&gt;</li>
+                  <li aria-hidden="true">&gt;</li>
                   <li><Link href={`/blog/${post.hub.slug}`} className="hover:text-[#1f5bb9] transition-colors">{post.hub.title}</Link></li>
                 </>
               )}
-              <li>&gt;</li>
-              <li className="text-[#333333] truncate max-w-[150px] md:max-w-[200px]">{post.title}</li>
+              <li aria-hidden="true">&gt;</li>
+              <li aria-current="page" className="text-[#333333] truncate max-w-[150px] md:max-w-[200px]">{post.title}</li>
             </ol>
           </nav>
         </div>
@@ -293,8 +378,39 @@ function HubPage({
   posts: BlogPost[];
   subHubs: BlogSubHub[];
 }) {
+  const baseUrl = 'https://queue-tech.jp';
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: baseUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'ブログ',
+        item: `${baseUrl}/blog`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: hub.title,
+        item: `${baseUrl}/blog/${hub.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f6f8]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header locale="ja" />
 
       {/* ヒーロー */}
@@ -303,13 +419,13 @@ function HubPage({
         style={{ background: 'linear-gradient(180deg, #f8f9fc 0%, #e8edf8 100%)' }}
       >
         <div className="mx-auto max-w-[1000px] px-4 md:px-8">
-          <nav className="mb-4 sm:mb-6 text-[11px] sm:text-[12px] md:text-[13px] text-[#666666]">
+          <nav className="mb-4 sm:mb-6 text-[11px] sm:text-[12px] md:text-[13px] text-[#666666]" aria-label="パンくずリスト">
             <ol className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
               <li><Link href="/" className="hover:text-[#1f5bb9]">ホーム</Link></li>
-              <li>&gt;</li>
+              <li aria-hidden="true">&gt;</li>
               <li><Link href="/blog" className="hover:text-[#1f5bb9]">ブログ</Link></li>
-              <li>&gt;</li>
-              <li className="text-[#333333]">{hub.title}</li>
+              <li aria-hidden="true">&gt;</li>
+              <li aria-current="page" className="text-[#333333]">{hub.title}</li>
             </ol>
           </nav>
 

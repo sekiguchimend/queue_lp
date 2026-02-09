@@ -12,10 +12,21 @@ export const metadata: Metadata = {
   title: 'ブログ | LLMO・AI SEO対策の最新情報 | Queue株式会社',
   description: 'Queue株式会社のブログでは、LLMO（AI SEO）対策、ChatGPT・Gemini・Perplexityなど生成AIに関する最新情報、業界トレンド、技術的なナレッジをお届けします。',
   keywords: ['LLMO', 'AI SEO', 'ChatGPT', 'Gemini', 'Perplexity', 'AI検索対策', 'AIO対策', 'ブログ'],
+  alternates: {
+    canonical: 'https://queue-tech.jp/blog',
+  },
   openGraph: {
     title: 'ブログ | LLMO・AI SEO対策の最新情報 | Queue株式会社',
-    description: 'LLMOやAI最適化に関する最新情報をお届けします',
+    description: 'Queue株式会社のブログでは、LLMO（AI SEO）対策、ChatGPT・Gemini・Perplexityなど生成AIに関する最新情報、業界トレンド、技術的なナレッジをお届けします。',
     type: 'website',
+    url: 'https://queue-tech.jp/blog',
+    siteName: 'Queue株式会社',
+    locale: 'ja_JP',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'ブログ | LLMO・AI SEO対策の最新情報 | Queue株式会社',
+    description: 'Queue株式会社のブログでは、LLMO（AI SEO）対策、ChatGPT・Gemini・Perplexityなど生成AIに関する最新情報をお届けします。',
   },
 };
 
@@ -110,8 +121,53 @@ export default async function BlogPage() {
     getPickupPosts(3),
   ]);
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'ホーム',
+        item: 'https://queue-tech.jp',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'ブログ',
+        item: 'https://queue-tech.jp/blog',
+      },
+    ],
+  };
+
+  const collectionJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': 'https://queue-tech.jp/blog',
+    name: 'ブログ | LLMO・AI SEO対策の最新情報',
+    description: 'Queue株式会社のブログでは、LLMO（AI SEO）対策、ChatGPT・Gemini・Perplexityなど生成AIに関する最新情報をお届けします。',
+    url: 'https://queue-tech.jp/blog',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': 'https://queue-tech.jp/#website',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Queue株式会社',
+    },
+    inLanguage: 'ja',
+  };
+
   return (
     <div className="min-h-screen bg-[#f5f6f8]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }}
+      />
       <Header locale="ja" />
 
       {/* ヒーローセクション */}
