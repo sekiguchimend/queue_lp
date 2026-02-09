@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getPostBySlug, getHubBySlug, getPostsForHub, getSubHubs } from '@/app/lib/blog-supabase';
 import { BlogPost, BlogHub, BlogSubHub } from '@/app/lib/blog-types';
 import Header from '@/app/components/Header';
@@ -93,9 +93,14 @@ export default async function BlogSlugPage({ params }: PageProps) {
     return <HubPage hub={hub} posts={hubPosts} subHubs={subHubs} />;
   }
 
-  // Then check for standalone post (posts without a hub)
+  // Then check for a post by slug
   const post = await getPostBySlug(slug);
-  if (post && post.status === 'published' && post.type === 'standalone') {
+  if (post && post.status === 'published') {
+    // If it's a hub_post or sub_hub_post with a hub, redirect to the correct URL
+    if ((post.type === 'hub_post' || post.type === 'sub_hub_post') && post.hub) {
+      redirect(`/blog/${post.hub.slug}/${post.slug}`);
+    }
+    // Standalone posts render here
     return <PostPage post={post} />;
   }
 
