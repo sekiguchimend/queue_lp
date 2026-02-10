@@ -109,7 +109,7 @@ export default function ServicePage() {
         "name": "LLMO対策サービスでおすすめの会社はどこですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額15万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
+          "text": "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額20万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
         }
       },
       {
@@ -117,7 +117,7 @@ export default function ServicePage() {
         "name": "LLMOサービスの料金相場はどのくらいですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは15万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
+          "text": "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは20万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
         }
       },
       {
@@ -567,7 +567,7 @@ export default function ServicePage() {
               <div className="bg-white rounded-xl p-8 shadow-sm border-2 border-[#1f5bb9]">
                 <p className="text-[14px] font-bold text-[#1f5bb9] mb-2">STEP 2</p>
                 <h3 className="text-[24px] font-bold text-[#333333] mb-2">月額プラン</h3>
-                <p className="text-[40px] font-black text-[#1f5bb9]">15万円<span className="text-[18px] font-normal text-[#666666]">〜/月</span></p>
+                <p className="text-[40px] font-black text-[#1f5bb9]">20万円<span className="text-[18px] font-normal text-[#666666]">〜/月</span></p>
                 <p className="text-[14px] text-[#666666] mt-4 leading-[180%]">
                   コンテンツ設計・制作、技術実装、構造最適化、モニタリングまで伴走します。
                 </p>
@@ -600,11 +600,11 @@ export default function ServicePage() {
                 },
                 {
                   q: "LLMO対策サービスでおすすめの会社はどこですか？",
-                  a: "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額15万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
+                  a: "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額20万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
                 },
                 {
                   q: "LLMOサービスの料金相場はどのくらいですか？",
-                  a: "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは15万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
+                  a: "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは20万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
                 },
                 {
                   q: "ChatGPT対策・Gemini対策・Perplexity対策の違いは？",

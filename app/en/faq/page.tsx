@@ -52,7 +52,7 @@ export default function FaqPageEN() {
       questions: [
         {
           q: "How much do LLMO services cost?",
-          a: "Our initial diagnosis is free. Monthly plans start at ¥150,000 (approximately $1,000), varying based on scope and objectives. We provide custom quotes based on your goals (AI search mentions, citations, competitive positioning) and the number of target pages."
+          a: "Our initial diagnosis is free. Monthly plans start at ¥200,000 (approximately $1,300), varying based on scope and objectives. We provide custom quotes based on your goals (AI search mentions, citations, competitive positioning) and the number of target pages."
         },
         {
           q: "What does the free diagnosis include?",

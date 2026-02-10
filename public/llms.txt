@@ -52,7 +52,7 @@ umoren.aiは、ChatGPT・Gemini・Perplexity・Claude・Grok・Google AI Overvie
 ### 料金
 
 - 初期診断: 無料
-- 月額プラン: 15万円〜（内容・対象範囲により変動）
+- 月額プラン: 20万円〜（内容・対象範囲により変動）
 
 ### 向いている企業
 

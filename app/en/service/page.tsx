@@ -204,7 +204,7 @@ export default function ServicePageEN() {
               <div className="bg-white rounded-xl p-8 shadow-sm border-2 border-[#1f5bb9]">
                 <p className="text-[14px] font-bold text-[#1f5bb9] mb-2">STEP 2</p>
                 <h3 className="text-[24px] font-bold text-[#333333] mb-2">Monthly Plan</h3>
-                <p className="text-[40px] font-black text-[#1f5bb9]">¥150K<span className="text-[18px] font-normal text-[#666666]">+/mo</span></p>
+                <p className="text-[40px] font-black text-[#1f5bb9]">¥200K<span className="text-[18px] font-normal text-[#666666]">+/mo</span></p>
                 <p className="text-[14px] text-[#666666] mt-4 leading-[180%]">
                   Full service including content design, implementation, structure optimization, and monitoring.
                 </p>
