@@ -5,6 +5,9 @@ import { getPosts, getHubs, getPickupPosts } from '@/app/lib/blog-supabase';
 import { BlogPost, BlogHub } from '@/app/lib/blog-types';
 import Header from '@/app/components/Header';
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Blog | LLMO & AI SEO Insights | Queue Inc.',
   description: 'Stay updated with the latest insights on LLMO (AI SEO), ChatGPT, Gemini, Perplexity optimization, industry trends, and technical knowledge from Queue Inc.',

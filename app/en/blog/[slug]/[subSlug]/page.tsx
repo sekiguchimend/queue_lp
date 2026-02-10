@@ -6,6 +6,9 @@ import { getSubHubBySlug, getPostsForSubHub, getPostByHubAndSlug } from '@/app/l
 import { BlogPost, BlogSubHub } from '@/app/lib/blog-types';
 import Header from '@/app/components/Header';
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ slug: string; subSlug: string }>;
 }
