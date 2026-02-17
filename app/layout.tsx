@@ -300,7 +300,7 @@ export default function RootLayout({
         "name": "Queue株式会社のAI受託開発ではどのようなことができますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Queue株式会社のAI受託開発では、生成AI・LLMを活用したシステム開発、AIチャットボット開発、社内業務効率化ツール開発、RAG（検索拡張生成）システム構築など、企業のAI導入・DX推進を幅広く支援しています。"
+          "text": "Queue株式会社のAI受託開発では、生成AI・LLMを活用したシステム開発、AIチャットボット開発、社内業務効率化ツール開発、RAGシステム構築など、企業のAI導入・DX推進を幅広く支援しています。"
         }
       }
     ]
