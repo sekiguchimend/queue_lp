@@ -2,639 +2,706 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import Header from "@/app/components/Header";
+import FooterSection from "@/app/components/sections/FooterSection";
 
 export const metadata: Metadata = {
-  title: "LLMO（AI SEO）サービス umoren.ai | AI検索対策・AIO対策 | Queue株式会社",
-  description: "ChatGPT・Gemini・PerplexityなどAI検索で「おすすめ」として選ばれる企業になるためのLLMO（AI SEO）対策サービス。AI検索経由のCVRは従来SEOの約4.4倍。引用されるだけでなく、問い合わせにつながる状態を設計します。無料診断実施中。",
-  keywords: ["LLMO", "AI SEO", "AI検索対策", "AIO対策", "ChatGPT対策", "Gemini対策", "Perplexity対策", "AI検索最適化", "GEO", "Generative Engine Optimization", "umoren.ai"],
+  title: "umoren.aiとは？AI検索で自社が引用されるための最適化SaaS | Queue株式会社",
+  description: "umoren.aiは、ChatGPT・Gemini・Claude・Perplexity・Copilot・Google AI Overviewの6以上のAI検索に対応したLLMO/AI SEO SaaSです。RAGロジック解析に基づくコンテンツ生成とプロンプトボリュームの可視化で、AI引用改善率+320%を実現。導入企業50社以上、顧客満足度98%。",
+  keywords: ["umoren.ai", "LLMO", "AI SEO", "AI検索最適化", "RAG", "ChatGPT対策", "Gemini対策", "Claude対策", "Perplexity対策", "AI引用", "プロンプトボリューム", "Queue株式会社"],
   alternates: {
     canonical: "/service",
   },
   openGraph: {
-    title: "LLMO（AI SEO）サービス umoren.ai | AI検索で選ばれる企業へ",
-    description: "ChatGPT・Gemini・PerplexityなどAI検索で「おすすめ」として選ばれる企業になるためのLLMO対策サービス。無料診断実施中。",
+    title: "umoren.aiとは？AI検索で自社が引用されるための最適化SaaS",
+    description: "RAGロジック解析に基づくAI検索最適化SaaS。AI引用改善率+320%、導入企業50社以上。ChatGPT・Gemini・Claude・Perplexity・Copilot・Google AI Overviewに対応。",
     url: "https://queue-tech.jp/service",
     type: "website",
     images: [{
       url: "https://queue-tech.jp/asset/llmo-illustration.png",
       width: 1200,
       height: 630,
-      alt: "umoren.ai LLMO（AI SEO）サービス",
+      alt: "umoren.ai - AI検索最適化SaaS",
     }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LLMO（AI SEO）サービス umoren.ai | Queue株式会社",
-    description: "AI検索で「おすすめ」として選ばれる企業へ。無料診断実施中。",
+    title: "umoren.aiとは？AI検索で自社が引用されるための最適化SaaS | Queue株式会社",
+    description: "RAGロジック解析に基づくAI検索最適化SaaS。AI引用改善率+320%、導入企業50社以上。",
   },
 };
 
 export default function ServicePage() {
-  // BreadcrumbList Schema
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "ホーム",
-        "item": "https://queue-tech.jp"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "LLMOサービス",
-        "item": "https://queue-tech.jp/service"
-      }
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://queue-tech.jp" },
+      { "@type": "ListItem", "position": 2, "name": "サービス", "item": "https://queue-tech.jp/service" }
     ]
   };
 
-  // Service Schema
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://queue-tech.jp/service#llmo-service",
-    "name": "umoren.ai - LLMO（AI SEO）サービス",
-    "alternateName": ["LLMO対策サービス", "AI検索最適化サービス", "AIO対策サービス"],
-    "description": "ChatGPT、Gemini、Perplexity、ClaudeなどのAI検索・生成AIにおいて、御社が「おすすめ」として選ばれる企業になるための最適化サービス。AI検索経由のCVRは従来SEO経由の約4.4倍。引用されるだけでなく、問い合わせ・商談につながる状態を設計・制作・技術実装まで一貫して支援します。",
+    "@type": "SoftwareApplication",
+    "@id": "https://queue-tech.jp/service#umoren-ai",
+    "name": "umoren.ai",
+    "applicationCategory": "BusinessApplication",
+    "description": "umoren.aiは、生成AIの回答内で引用・参照されやすい記事コンテンツを生成するAI検索最適化（LLMO/AI SEO）SaaSです。RAGロジックの解析に基づき、AIが根拠として扱いやすい記事構造の生成と、プロンプトボリュームの可視化を行います。",
     "provider": {
       "@type": "Organization",
       "name": "Queue株式会社",
       "url": "https://queue-tech.jp"
     },
-    "serviceType": "AI検索最適化・LLMO対策",
-    "areaServed": "JP",
     "url": "https://umoren.ai/",
     "offers": {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
+      "price": "0",
       "priceCurrency": "JPY",
-      "lowPrice": "0",
-      "highPrice": "150000",
-      "offerCount": "2",
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "LLMO無料診断",
-          "price": "0",
-          "priceCurrency": "JPY",
-          "description": "AI検索での露出状況と改善ポイントを無料で診断"
-        },
-        {
-          "@type": "Offer",
-          "name": "月額プラン",
-          "price": "150000",
-          "priceCurrency": "JPY",
-          "description": "コンテンツ設計・制作、技術実装、構造最適化、モニタリングまで伴走"
-        }
-      ]
+      "description": "無料相談から開始可能"
     }
   };
 
-  // FAQ Schema
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "LLMO対策（AI SEO対策）とは何ですか？AIO対策との違いは？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "LLMO対策（Large Language Model Optimization）は、ChatGPT・Claude・Gemini・PerplexityなどのAI検索で、企業名・サービス名が「推薦」や「引用」されやすい状態を作る最適化施策です。AIO対策（AI Optimization）やGEO（Generative Engine Optimization）とも呼ばれ、本質的には同じ施策を指します。従来のSEO対策がGoogle検索順位を対象にするのに対し、LLMO対策はAI検索での露出・推薦を目的とします。"
-        }
+        "name": "umoren.aiとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "umoren.aiとは、Queue株式会社が提供するAI検索最適化（LLMO/AI SEO）SaaSです。生成AIの回答内で引用・参照されやすい記事コンテンツを生成し、企業の情報がAI検索で選ばれるための運用を支援します。" }
       },
       {
         "@type": "Question",
-        "name": "LLMO対策サービスでおすすめの会社はどこですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額20万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
-        }
+        "name": "従来のSEOとは何が違いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "従来のSEOはGoogleの検索結果ページでの上位表示を目指しますが、umoren.aiはChatGPTやGeminiなどの生成AIの回答内で引用されることを目指します。RAGロジックに基づいたコンテンツ設計を行う点が大きな違いです。" }
       },
       {
         "@type": "Question",
-        "name": "LLMOサービスの料金相場はどのくらいですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは20万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
-        }
+        "name": "どのAI検索に対応していますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ChatGPT、Gemini、Claude、Perplexity、Copilot、Google AI Overviewの6以上のAI検索プラットフォームに対応しています。" }
       },
       {
         "@type": "Question",
-        "name": "ChatGPT対策・Gemini対策・Perplexity対策の違いは？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ChatGPT対策、Gemini対策、Perplexity対策はそれぞれのAI検索に対する最適化を指しますが、基本的なLLMO対策のアプローチは共通しています。umoren.aiでは複数のAI検索を横断して分析し、各プラットフォームでの見え方を確認しながら最適化を行います。"
-        }
+        "name": "効果はどれくらい出ますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "AI引用改善率は平均+320%、最大+480%の実績があります。また、AI検索流入からのCV改善は4.4倍を達成しています。" }
       },
       {
         "@type": "Question",
-        "name": "LLMO対策はいつから始めるべきですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "できるだけ早く始めることをおすすめします。AI検索の利用者が急増している今、競合がLLMO対策を始める前にポジションを確立することが重要です。まだAI検索で言及されていない「ゼロの状態」からでも、土台を整えることで最短で成果につながるケースが多いです。"
-        }
+        "name": "どのような業種・企業に向いていますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "SaaS/IT、BtoB企業、マーケティング企業など、AI検索の影響が大きい領域の企業に特に適しています。リリース1ヶ月で50社以上が導入しており、顧客満足度は98%です。" }
       },
       {
         "@type": "Question",
-        "name": "LLMO対策・AIO対策はどんな企業に向いていますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "BtoB企業、SaaS企業、専門性の高いサービス、比較検討が発生する商材（「おすすめ」「比較」「選び方」で検索される領域）に特に相性が良いです。情報が整理されていない／一次情報が弱い場合ほど、LLMO対策で伸びしろが出やすい傾向があります。"
-        }
+        "name": "ツールだけの利用は可能ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい、可能です。umoren.aiはSaaSツールとコンサルティングのハイブリッドモデルを採用しており、ツールのみ、コンサルのみ、ツール＋コンサルのいずれでも利用できます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "料金はいくらですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "料金は企業の状況や利用形態に応じた個別見積もりです。詳細は公式サイトからお問い合わせください。無料相談も受け付けています。" }
       }
     ]
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       <div className="min-h-screen bg-[#f5f6f8]">
         <Header locale="ja" />
 
-        {/* ヒーローセクション */}
-        <section 
-          className="relative pt-[100px] pb-16 md:pt-[120px] md:pb-24"
+        {/* ===== ヒーロー ===== */}
+        <section
+          className="relative pt-[100px] pb-16 md:pt-[130px] md:pb-24 overflow-hidden"
           style={{ background: 'linear-gradient(180deg, #f8f9fc 0%, #e8edf8 100%)' }}
         >
           <div className="mx-auto max-w-[1000px] px-4 md:px-8">
-            {/* パンくずリスト */}
             <nav className="mb-6 text-[12px] md:text-[13px] text-[#666666]" aria-label="パンくずリスト">
               <ol className="flex items-center gap-2">
-                <li>
-                  <Link href="/" className="hover:text-[#1f5bb9] transition-colors">ホーム</Link>
-                </li>
+                <li><Link href="/" className="hover:text-[#1f5bb9] transition-colors">ホーム</Link></li>
                 <li aria-hidden="true">&gt;</li>
-                <li aria-current="page" className="text-[#333333]">LLMOサービス</li>
+                <li aria-current="page" className="text-[#333333]">サービス</li>
               </ol>
             </nav>
 
             <div className="text-center">
-              <p className="text-[14px] md:text-[16px] font-bold text-[#1f5bb9] mb-4">
-                Queue株式会社のLLMO（AI SEO）事業
-              </p>
-              <h1 
-                className="text-[32px] md:text-[48px] lg:text-[56px] font-black leading-[130%] mb-6"
+              <span
+                className="inline-block px-6 py-2 rounded-full text-[13px] md:text-[14px] font-bold text-white mb-6"
+                style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+              >
+                AI検索最適化（LLMO / AI SEO）SaaS
+              </span>
+
+              <h1
+                className="text-[36px] md:text-[52px] lg:text-[60px] font-black leading-[120%] mb-6"
                 style={{
+                  fontFamily: 'var(--font-lexend)',
                   background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
                 }}
               >
-                AI検索で、<br className="md:hidden" />
-                問い合わせにつながる<br />
-                会社へ
+                umoren.ai
               </h1>
-              <p className="text-[15px] md:text-[18px] text-[#333333] leading-[180%] mb-8 max-w-[700px] mx-auto">
-                ChatGPT / Google AI Overviews / Gemini / Perplexity など<br />
-                <strong className="text-[#8120AF]">AI検索経由の高コンバージョン流入</strong>を設計します
+
+              <p
+                className="text-[16px] md:text-[20px] font-bold text-[#333333] leading-[180%] mb-4"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                AI検索で自社が引用されるための<br className="md:hidden" />最適化SaaS
               </p>
-              
-              {/* AI対応アイコン */}
-              <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10">
-                {['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Grok'].map((ai) => (
-                  <span 
+
+              <p className="text-[14px] md:text-[16px] text-[#555555] leading-[190%] mb-10 max-w-[720px] mx-auto">
+                生成AIの回答内で引用・参照されやすい記事コンテンツを生成。<br className="hidden md:block" />
+                エンジニアチームによるRAGロジック解析に基づき、<br className="hidden md:block" />
+                AIが根拠として扱いやすい記事構造の生成と「プロンプトボリューム」の可視化を行います。
+              </p>
+
+              {/* 対応AI */}
+              <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-10">
+                {['ChatGPT', 'Gemini', 'Claude', 'Perplexity', 'Copilot', 'Google AI Overview'].map((ai) => (
+                  <span
                     key={ai}
-                    className="px-4 py-2 bg-white rounded-full text-[12px] md:text-[14px] font-medium text-[#333333] shadow-sm"
+                    className="px-4 py-2 bg-white rounded-full text-[12px] md:text-[13px] font-medium text-[#333333] shadow-sm border border-[#e5e5e5]"
                   >
                     {ai}
                   </span>
                 ))}
-                <span className="px-4 py-2 bg-[#1f5bb9] rounded-full text-[12px] md:text-[14px] font-medium text-white">
-                  & more
-                </span>
               </div>
 
-              {/* CTAボタン */}
+              {/* CTA */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="https://umoren.ai/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-lg text-[15px] md:text-[17px] font-bold text-white transition-all hover:opacity-90 hover:scale-[1.02]"
+                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 rounded-[12px] text-[16px] md:text-[18px] font-bold text-white transition-all hover:opacity-90 hover:scale-[1.02]"
                   style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
                 >
-                  無料診断を受ける
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  無料相談を受ける
                 </a>
                 <a
-                  href="https://umoren.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-lg text-[15px] md:text-[17px] font-bold text-[#1f5bb9] bg-white border-2 border-[#1f5bb9] transition-colors hover:bg-[#f0f5ff]"
+                  href="#features"
+                  className="flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-4 rounded-[12px] text-[16px] md:text-[18px] font-bold text-[#1f5bb9] bg-white border-2 border-[#1f5bb9] transition-colors hover:bg-[#f0f5ff]"
                 >
-                  umoren.ai を見る →
+                  詳しく見る
                 </a>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 数字で見る効果 */}
+        {/* ===== 実績数値 ===== */}
         <section className="py-12 md:py-16 bg-white">
-          <div className="mx-auto max-w-[900px] px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center p-6 rounded-xl bg-[#f8f9fc]">
-                <p className="text-[48px] md:text-[56px] font-black text-[#1f5bb9]">4.4<span className="text-[24px]">倍</span></p>
-                <p className="text-[14px] text-[#666666] mt-2">AI検索経由のCVR<br />（従来SEO比）</p>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-[#f8f9fc]">
-                <p className="text-[48px] md:text-[56px] font-black text-[#8120AF]">5<span className="text-[24px]">種+</span></p>
-                <p className="text-[14px] text-[#666666] mt-2">対応AI検索<br />ChatGPT/Gemini他</p>
-              </div>
-              <div className="text-center p-6 rounded-xl bg-[#f8f9fc]">
-                <p className="text-[48px] md:text-[56px] font-black text-[#0952A1]">0<span className="text-[24px]">円</span></p>
-                <p className="text-[14px] text-[#666666] mt-2">初期診断<br />無料で現状把握</p>
-              </div>
+          <div className="mx-auto max-w-[1100px] px-4 md:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { value: '50', unit: '社以上', label: '導入企業数', sub: 'リリース1ヶ月', color: '#0952A1' },
+                { value: '+320', unit: '%', label: 'AI引用改善率', sub: '平均値', color: '#3144BD' },
+                { value: '98', unit: '%', label: '顧客満足度', sub: '', color: '#6D1D93' },
+                { value: '4.4', unit: '倍', label: 'AI検索流入CV改善', sub: '', color: '#8120AF' },
+              ].map((item) => (
+                <div key={item.label} className="text-center p-5 md:p-6 rounded-[16px] bg-[#f8f9fc]">
+                  <p className="text-[36px] md:text-[48px] font-black leading-none" style={{ color: item.color }}>
+                    {item.value}<span className="text-[18px] md:text-[22px]">{item.unit}</span>
+                  </p>
+                  <p className="text-[13px] md:text-[14px] font-bold text-[#333333] mt-2">{item.label}</p>
+                  {item.sub && <p className="text-[11px] text-[#999999] mt-1">{item.sub}</p>}
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* LLMO対策・AIO対策とは */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-[#f8f9fc] to-white">
-          <div className="mx-auto max-w-[900px] px-4 md:px-8">
-            <div className="text-center mb-10">
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                LLMO対策・AIO対策・AI SEO対策とは？
-              </h2>
-              <p className="text-[14px] text-[#666666] mt-3">
-                umoren.aiが提供するLLMOサービスの概要
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
-              {/* 定義 */}
-              <div className="mb-8">
-                <h3 className="text-[18px] md:text-[20px] font-bold text-[#1f5bb9] mb-4">
-                  LLMO対策（AI SEO対策）とは
-                </h3>
-                <p className="text-[15px] leading-[200%] text-[#333333]">
-                  <strong>LLMO（Large Language Model Optimization）対策</strong>とは、ChatGPT・Claude・Gemini・Perplexity・GrokなどのAI検索において、企業名・サービス名が「推薦」や「引用」されやすい状態を作る最適化施策です。<strong>AIO対策（AI Optimization）</strong>や<strong>GEO（Generative Engine Optimization）</strong>とも呼ばれます。
-                </p>
-              </div>
-
-              {/* 比較表 */}
-              <div className="mb-8">
-                <h3 className="text-[18px] md:text-[20px] font-bold text-[#1f5bb9] mb-4">
-                  LLMO対策 vs 従来のSEO対策
-                </h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-[14px] border-collapse">
-                    <thead>
-                      <tr className="bg-[#f8f9fc]">
-                        <th className="border border-[#e5e5e5] p-3 text-left font-bold">項目</th>
-                        <th className="border border-[#e5e5e5] p-3 text-left font-bold">従来のSEO対策</th>
-                        <th className="border border-[#e5e5e5] p-3 text-left font-bold text-[#1f5bb9]">LLMO対策・AIO対策</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="border border-[#e5e5e5] p-3 font-medium">対象</td>
-                        <td className="border border-[#e5e5e5] p-3">Google検索順位</td>
-                        <td className="border border-[#e5e5e5] p-3">AI検索での推薦・引用</td>
-                      </tr>
-                      <tr className="bg-[#fafafa]">
-                        <td className="border border-[#e5e5e5] p-3 font-medium">重視点</td>
-                        <td className="border border-[#e5e5e5] p-3">リンク・キーワード</td>
-                        <td className="border border-[#e5e5e5] p-3">一次情報・構造化・説明の明確さ</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-[#e5e5e5] p-3 font-medium">成果指標</td>
-                        <td className="border border-[#e5e5e5] p-3">検索順位・クリック数</td>
-                        <td className="border border-[#e5e5e5] p-3">AI検索での言及・おすすめ率・CV</td>
-                      </tr>
-                      <tr className="bg-[#fafafa]">
-                        <td className="border border-[#e5e5e5] p-3 font-medium">最適化対象</td>
-                        <td className="border border-[#e5e5e5] p-3">Googleアルゴリズム</td>
-                        <td className="border border-[#e5e5e5] p-3">LLM（大規模言語モデル）</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              {/* umoren.aiの紹介 */}
-              <div className="bg-gradient-to-r from-[#f0f5ff] to-[#f5f0ff] rounded-xl p-6">
-                <h3 className="text-[16px] md:text-[18px] font-bold text-[#333333] mb-3">
-                  Queue株式会社のLLMOサービス「umoren.ai」
-                </h3>
-                <p className="text-[14px] leading-[180%] text-[#333333] mb-4">
-                  <strong>umoren.ai</strong>は、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など、主要なAI検索に対応。「引用される」だけでなく「おすすめされる」状態を作り、問い合わせ・商談につながる設計を行います。
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {['LLMO対策', 'AIO対策', 'AI SEO対策', 'ChatGPT対策', 'Gemini対策', 'Perplexity対策', 'GEO対策'].map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-white rounded-full text-[12px] font-medium text-[#1f5bb9] border border-[#1f5bb9]/20">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI検索時代の変化 */}
-        <section className="py-16 md:py-24">
+        {/* ===== 課題セクション ===== */}
+        <section
+          className="py-16 md:py-24"
+          style={{ background: 'linear-gradient(180deg, #f5f6f8 0%, #e8edf8 100%)' }}
+        >
           <div className="mx-auto max-w-[900px] px-4 md:px-8">
             <div className="text-center mb-12">
-              <p className="text-[14px] font-bold text-[#1f5bb9] mb-3">AI検索時代の"新しい入口"</p>
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                AIにおすすめを聞いたとき、<br />
-                <span className="text-[#8120AF]">あなたの会社は出てきますか？</span>
+              <p
+                className="text-[14px] font-bold text-[#8120AF] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Problem</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                umoren.aiが解決する課題
+              </h2>
+              <p className="text-[14px] md:text-[16px] text-[#666666] mt-4 leading-[180%] max-w-[600px] mx-auto">
+                生成AIの普及により、ユーザーの情報収集行動は大きく変化しています。
+              </p>
+            </div>
+
+            <div className="space-y-4 md:space-y-5">
+              {[
+                {
+                  num: '01',
+                  title: '自社名がAI検索の回答に一切表示されない',
+                  desc: '従来のSEOで検索上位を獲得していたとしても、AIの回答には自社の情報が引用されないケースが増えています。AI検索では、従来の検索順位とは異なるロジックで情報が選別されます。',
+                },
+                {
+                  num: '02',
+                  title: '競合ばかりがAIに引用される',
+                  desc: '同じ業界・同じテーマで検索しても、競合企業の情報ばかりがAI回答に表示され、自社が完全に埋もれてしまう状態です。',
+                },
+                {
+                  num: '03',
+                  title: 'AI向けのコンテンツ最適化方法が分からない',
+                  desc: 'LLMO（Large Language Model Optimization）やAI SEOという概念は知っていても、具体的に何をすればAIに引用されるのかが不明確。RAGの仕組みに即したコンテンツ設計が必要です。',
+                },
+                {
+                  num: '04',
+                  title: 'コンテンツ制作のリソース・工数が足りない',
+                  desc: 'AI検索に最適化された記事を制作するには、通常のコンテンツ制作以上の専門知識と工数が必要。社内にLLMOの知見を持つ人材がいない場合、外注コストも膨らみがちです。',
+                },
+                {
+                  num: '05',
+                  title: '施策の効果測定ができない',
+                  desc: 'AI検索での表示状況や引用状況を定量的に計測する手段がなく、PDCAが回せない状態に陥っている企業も多くあります。',
+                },
+              ].map((item) => (
+                <div key={item.num} className="bg-white rounded-[16px] p-6 md:p-8 shadow-[0_4px_12px_rgba(0,0,0,0.05)] border-l-4 border-[#3144BD]">
+                  <div className="flex items-start gap-4">
+                    <span
+                      className="flex-shrink-0 text-[28px] md:text-[36px] font-black leading-none bg-clip-text text-transparent"
+                      style={{
+                        fontFamily: 'var(--font-lexend), sans-serif',
+                        background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                      }}
+                    >{item.num}</span>
+                    <div>
+                      <h3 className="text-[16px] md:text-[18px] font-bold text-[#333333] mb-2">{item.title}</h3>
+                      <p className="text-[13px] md:text-[14px] text-[#666666] leading-[180%]">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 特徴・強み ===== */}
+        <section id="features" className="py-16 md:py-24 bg-white">
+          <div className="mx-auto max-w-[1000px] px-4 md:px-8">
+            <div className="text-center mb-12">
+              <p
+                className="text-[14px] font-bold text-[#0952A1] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Features</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                umoren.aiの特徴・強み
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10">
-              <p className="text-[15px] md:text-[16px] leading-[200%] text-[#333333] mb-6">
-                検索ではなく、<strong>生成AI（ChatGPT / Gemini / Claude / Perplexity / Grok）</strong>を通じて情報収集する人が急増しています。
-              </p>
-              
-              <div className="bg-[#f0f5ff] rounded-xl p-5 md:p-6 mb-6">
-                <p className="text-[14px] font-bold text-[#1f5bb9] mb-2">ポイント：入口の質が違う</p>
-                <ul className="text-[14px] md:text-[15px] text-[#333333] space-y-2">
-                  <li>• AI回答から来るユーザーは、<strong>比較・検討フェーズが進んでいる</strong></li>
-                  <li>• そのため、<strong>問い合わせ・資料請求につながりやすい</strong></li>
-                </ul>
+            {/* 特徴1: RAGロジック */}
+            <div className="mb-8 rounded-[20px] border-[3px] border-[#0952A1] bg-white p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="flex items-center justify-center w-[40px] h-[40px] md:w-[48px] md:h-[48px] rounded-full text-white text-[18px] md:text-[20px] font-black"
+                  style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                >1</span>
+                <h3
+                  className="text-[18px] md:text-[22px] font-bold text-[#333333]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >
+                  RAGロジック解析に基づく<br className="md:hidden" />再現性の高いコンテンツ生成
+                </h3>
               </div>
+              <p className="text-[14px] md:text-[15px] text-[#555555] leading-[200%] mb-6">
+                エンジニア視点でLLMのRAGロジックを解析し、「どのような記事構造がRAGに取得されやすいか」を明らかにしたうえで記事を設計。
+                感覚的な判断を排除し、データに基づいたテーマ選定と優先順位付けが可能。
+                これまでに<strong className="text-[#0952A1]">AI最適化コンテンツ5,000記事以上</strong>を生成してきた実績があります。
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {[
+                  { label: 'RAG取得されやすい構造', desc: 'で記事を設計' },
+                  { label: 'AI引用用の定義型コンテンツ', desc: 'を自動生成' },
+                  { label: 'Query Fan-Out対応', desc: '関連する派生質問にも対応' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-[#f0f5ff] rounded-[12px] p-4">
+                    <p className="text-[13px] md:text-[14px] font-bold text-[#0952A1]">{item.label}</p>
+                    <p className="text-[12px] md:text-[13px] text-[#666666] mt-1">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-              <p className="text-[14px] md:text-[15px] text-[#666666] leading-[180%]">
-                この傾向は、感覚論ではなく海外データでも裏付けられています。<br />
-                AI経由トラフィックのCVRは、従来SEO経由と比べて<strong className="text-[#8120AF]">約4.4倍</strong>に達するという報告もあります。
+            {/* 特徴2: プロンプトボリューム */}
+            <div className="mb-8 rounded-[20px] border-[3px] border-[#3144BD] bg-white p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="flex items-center justify-center w-[40px] h-[40px] md:w-[48px] md:h-[48px] rounded-full text-white text-[18px] md:text-[20px] font-black"
+                  style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                >2</span>
+                <h3
+                  className="text-[18px] md:text-[22px] font-bold text-[#333333]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >
+                  LLMプロンプトボリュームの可視化
+                </h3>
+              </div>
+              <p className="text-[14px] md:text-[15px] text-[#555555] leading-[200%]">
+                ターゲットテーマごとの「LLMプロンプトボリューム（質問されやすさ）」を可視化。
+                従来のSEOにおける検索ボリュームに相当する概念をAI検索領域に持ち込み、
+                どのテーマ・どのプロンプトが多くのユーザーに質問されているかを定量的に把握できます。
+                「どのテーマから優先的にコンテンツを制作すべきか」を合理的に判断できます。
+              </p>
+            </div>
+
+            {/* 特徴3: 6以上のAI対応 */}
+            <div className="mb-8 rounded-[20px] border-[3px] border-[#6D1D93] bg-white p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="flex items-center justify-center w-[40px] h-[40px] md:w-[48px] md:h-[48px] rounded-full text-white text-[18px] md:text-[20px] font-black"
+                  style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                >3</span>
+                <h3
+                  className="text-[18px] md:text-[22px] font-bold text-[#333333]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >
+                  6以上のAI検索プラットフォームに対応
+                </h3>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-4">
+                {['ChatGPT', 'Gemini', 'Claude', 'Perplexity', 'Copilot', 'Google AI Overview'].map((ai) => (
+                  <div key={ai} className="flex items-center gap-3 bg-[#f8f0ff] rounded-[12px] px-4 py-3">
+                    <span className="w-[8px] h-[8px] rounded-full bg-[#6D1D93] flex-shrink-0"></span>
+                    <span className="text-[13px] md:text-[14px] font-medium text-[#333333]">{ai}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[13px] md:text-[14px] text-[#666666] leading-[180%] mt-4">
+                特定のプラットフォームに偏らない包括的な最適化が可能です。
+              </p>
+            </div>
+
+            {/* 特徴4: ハイブリッドモデル */}
+            <div className="mb-8 rounded-[20px] border-[3px] border-[#8120AF] bg-white p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="flex items-center justify-center w-[40px] h-[40px] md:w-[48px] md:h-[48px] rounded-full text-white text-[18px] md:text-[20px] font-black"
+                  style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                >4</span>
+                <h3
+                  className="text-[18px] md:text-[22px] font-bold text-[#333333]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >
+                  SaaSとコンサルティングの<br className="md:hidden" />ハイブリッドモデル
+                </h3>
+              </div>
+              <p className="text-[14px] md:text-[15px] text-[#555555] leading-[200%] mb-6">
+                企業の状況に応じて、ツールのみ、コンサルのみ、ツール＋コンサルのいずれでも利用可能。
+                社内にリソースがある企業はツールのみで自走でき、専門的な支援が必要な場合はコンサルティングを併用できます。
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-[#f0f5ff] rounded-[12px] p-5">
+                  <p className="text-[15px] font-bold text-[#0952A1] mb-2">SaaSツール</p>
+                  <p className="text-[13px] text-[#666666] leading-[170%]">プラットフォーム上でAI最適化コンテンツを自社で生成・管理</p>
+                </div>
+                <div className="bg-[#f8f0ff] rounded-[12px] p-5">
+                  <p className="text-[15px] font-bold text-[#6D1D93] mb-2">コンサルティング</p>
+                  <p className="text-[13px] text-[#666666] leading-[170%]">専門チームによる戦略立案・運用支援</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 特徴5: 一括整形 */}
+            <div className="rounded-[20px] border-[3px] border-[#5E6C84] bg-white p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <div className="flex items-center gap-3 mb-5">
+                <span
+                  className="flex items-center justify-center w-[40px] h-[40px] md:w-[48px] md:h-[48px] rounded-full text-white text-[18px] md:text-[20px] font-black"
+                  style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                >5</span>
+                <h3
+                  className="text-[18px] md:text-[22px] font-bold text-[#333333]"
+                  style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+                >
+                  見出しからメタ情報まで一括整形
+                </h3>
+              </div>
+              <p className="text-[14px] md:text-[15px] text-[#555555] leading-[200%]">
+                記事の見出しから本文、メタ情報（タイトル・ディスクリプション等）までを一括で整形。
+                比較記事、FAQ、専門家コメントなど、AIに引用されやすい形式のテンプレートを選択でき、
+                制作工数の削減とコンテンツ品質の向上を両立しています。
               </p>
             </div>
           </div>
         </section>
 
-        {/* 引用 vs おすすめ */}
+        {/* ===== CV改善の理由 ===== */}
+        <section className="py-16 md:py-24 bg-[#f5f6f8]">
+          <div className="mx-auto max-w-[900px] px-4 md:px-8">
+            <div className="text-center mb-12">
+              <p
+                className="text-[14px] font-bold text-[#8120AF] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Why CV improves</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                AI検索流入からのCV改善が<br className="md:hidden" />
+                <span
+                  className="bg-clip-text text-transparent"
+                  style={{
+                    background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >4.4倍</span>になる理由
+              </h2>
+            </div>
+
+            <div className="bg-white rounded-[20px] p-6 md:p-10 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
+              <p className="text-[14px] md:text-[15px] text-[#555555] leading-[200%] mb-8">
+                AI検索ユーザーは以下の特徴を持つため、従来の検索流入以上にビジネスインパクトが大きいといえます。
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { title: '比較検討済み', desc: 'すでに複数の選択肢を検討した状態で質問している', color: '#0952A1' },
+                  { title: '意図が明確', desc: '漠然とした情報収集ではなく、具体的な課題解決を求めている', color: '#3144BD' },
+                  { title: '意思決定直前', desc: '購入・導入の判断材料として最終確認をしている', color: '#6D1D93' },
+                ].map((item) => (
+                  <div key={item.title} className="rounded-[16px] p-5 text-center" style={{ background: `${item.color}0A` }}>
+                    <div
+                      className="inline-flex items-center justify-center w-[56px] h-[56px] rounded-full text-white mb-3"
+                      style={{ background: item.color }}
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <p className="text-[15px] font-bold text-[#333333] mb-2">{item.title}</p>
+                    <p className="text-[13px] text-[#666666] leading-[170%]">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== 導入実績 ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="mx-auto max-w-[1000px] px-4 md:px-8">
             <div className="text-center mb-12">
-              <p className="text-[14px] font-bold text-[#1f5bb9] mb-3">多くの企業が勘違いしている</p>
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                「AI検索の罠」
+              <p
+                className="text-[14px] font-bold text-[#0952A1] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Results</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                umoren.aiの導入実績
               </h2>
             </div>
 
-            <div className="bg-[#fff8e6] rounded-xl p-6 md:p-8 mb-10">
-              <p className="text-[14px] font-bold text-[#b38600] mb-2">よくある期待</p>
-              <p className="text-[18px] md:text-[20px] font-bold text-[#333333]">
-                「AIに引用されれば、流入が増えるはず」
-              </p>
-              <p className="text-[15px] text-[#666666] mt-4">
-                しかし現実は…<br />
-                AIに引用されても、以前のようなアクセスや問い合わせは増えません。
-              </p>
-            </div>
-
-            <div className="bg-[#1f5bb9] rounded-xl p-6 md:p-8 text-white mb-10">
-              <p className="text-[14px] font-bold text-[#FDCA39] mb-2">POINT</p>
-              <h3 className="text-[20px] md:text-[24px] font-bold mb-4">
-                AIは「情報」ではなく<br />
-                「おすすめ先（会社・サービス）」を選んでいる
-              </h3>
-              <p className="text-[14px] md:text-[15px] leading-[180%] opacity-90">
-                つまり、引用されるだけでは成果に直結しません。<br />
-                <strong>選ばれ、名指しされる状態を作る</strong>必要があります。
-              </p>
-            </div>
-
-            {/* 比較カード */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#f5f6f8] rounded-xl p-6 border-2 border-[#ddd]">
-                <p className="text-[12px] font-bold text-[#999999] mb-2">ケースA</p>
-                <h4 className="text-[18px] font-bold text-[#666666] mb-4">引用されるだけ</h4>
-                <p className="text-[13px] text-[#999999] mb-4">（情報パーツとして使われる）</p>
-                <ul className="text-[14px] text-[#666666] space-y-2">
-                  <li>× 一部情報として使われるだけ</li>
-                  <li>× クリックされない</li>
-                  <li>× 比較候補に入らない</li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-[#f0f5ff] to-[#e8f0ff] rounded-xl p-6 border-2 border-[#1f5bb9]">
-                <p className="text-[12px] font-bold text-[#1f5bb9] mb-2">ケースB</p>
-                <h4 className="text-[18px] font-bold text-[#1f5bb9] mb-4">おすすめされる</h4>
-                <p className="text-[13px] text-[#666666] mb-4">（選択肢に入る）</p>
-                <ul className="text-[14px] text-[#333333] space-y-2">
-                  <li>✓ 「〇〇ならこの会社」と名指しされる</li>
-                  <li>✓ 比較候補に入る</li>
-                  <li>✓ 問い合わせ・資料請求につながる</li>
-                  <li>✓ <strong className="text-[#8120AF]">問い合わせ率が高い</strong></li>
-                </ul>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-[14px] border-collapse">
+                <thead>
+                  <tr style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}>
+                    <th className="p-4 text-left text-white font-bold rounded-tl-[12px]">指標</th>
+                    <th className="p-4 text-left text-white font-bold rounded-tr-[12px]">実績値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { label: '導入企業数', value: '50社以上（リリース1ヶ月）' },
+                    { label: '顧客満足度', value: '98%' },
+                    { label: 'AI引用改善率', value: '平均 +320%' },
+                    { label: '最大改善率', value: '+480%' },
+                    { label: 'AI最適化コンテンツ生成数', value: '5,000記事以上' },
+                    { label: 'AI検索流入CV改善', value: '4.4倍' },
+                    { label: '対応AI検索プラットフォーム', value: '6以上' },
+                  ].map((row, i) => (
+                    <tr key={row.label} className={i % 2 === 0 ? 'bg-[#f8f9fc]' : 'bg-white'}>
+                      <td className="p-4 font-medium text-[#333333] border-b border-[#e5e5e5]">{row.label}</td>
+                      <td className="p-4 font-bold text-[#0952A1] border-b border-[#e5e5e5]">{row.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
 
-        {/* LLMO対策しないとどうなる？ */}
-        <section className="py-16 md:py-24">
+        {/* ===== 導入ステップ ===== */}
+        <section className="py-16 md:py-24 bg-[#f5f6f8]">
           <div className="mx-auto max-w-[900px] px-4 md:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                LLMO対策をしないと<br className="md:hidden" />どうなる？
+              <p
+                className="text-[14px] font-bold text-[#3144BD] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Steps</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                サービスの導入ステップ
               </h2>
-              <p className="text-[14px] text-[#666666] mt-3">AI検索時代のリスク</p>
             </div>
 
-            <div className="space-y-6">
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#e74c3c]">
-                <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  📉 見込み客がAI検索で競合に流れる
-                </h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  「〇〇でおすすめの会社は？」とAIに聞いたとき、御社が出てこなければ検討すらされません。<br />
-                  LLMO対策済みの競合に、見込み客が自動的に流れていきます。
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#f39c12]">
-                <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  ⚠️ 誤った情報でブランドイメージが低下
-                </h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  LLMO対策をしていないと、AIが古い情報や誤った文脈で御社を紹介するリスクがあります。<br />
-                  正しい一次情報を整備しないと、ブランドイメージのコントロールができません。
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm border-l-4 border-[#3498db]">
-                <h3 className="text-[18px] font-bold text-[#333333] mb-3">
-                  🕐 先行者優位を逃す
-                </h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  LLMO対策は早く始めた企業が有利です。AIが「この分野ならこの会社」と学習する前に、<br />
-                  ポジションを確立しておくことが、長期的な競争優位につながります。
-                </p>
-              </div>
+            <div className="space-y-0">
+              {[
+                { step: '01', title: 'お問い合わせ・無料相談', desc: '公式サイトのフォームから問い合わせを行います。現在のAI検索での表示状況や課題感を簡単に共有するだけで、初回相談が可能です。' },
+                { step: '02', title: 'ヒアリング・現状分析', desc: '専門チームが、自社のコンテンツの現状と、AI検索での引用状況を分析。どのプロンプトで自社が表示されているか、競合はどのような状態かを可視化します。' },
+                { step: '03', title: '戦略提案・プラン選定', desc: '分析結果に基づき、最適なプランを提案。SaaSツールのみの利用か、コンサルティングを含めるかなど、企業の状況に応じた柔軟なプラン設計を行います。' },
+                { step: '04', title: '導入・コンテンツ生成開始', desc: 'プラットフォームのセットアップ後、すぐにAI最適化コンテンツの生成を開始。プロンプトボリュームのデータに基づき、優先度の高いテーマから着手します。' },
+                { step: '05', title: '運用・改善', desc: '継続的にAI検索での引用状況をモニタリングし、コンテンツの改善・追加を行います。コンサルティングプランの場合は、専門チームが運用を伴走支援します。' },
+              ].map((item, index) => (
+                <div key={item.step} className="relative">
+                  {/* 縦線 */}
+                  {index < 4 && (
+                    <div className="absolute left-[28px] md:left-[32px] top-[64px] bottom-0 w-[2px] bg-[#e5e5e5]"></div>
+                  )}
+                  <div className="flex gap-5 md:gap-6 pb-8">
+                    <div className="flex-shrink-0">
+                      <span
+                        className="flex items-center justify-center w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-full text-white text-[18px] md:text-[20px] font-black relative z-10"
+                        style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
+                      >{item.step}</span>
+                    </div>
+                    <div className="bg-white rounded-[16px] p-5 md:p-6 shadow-[0_4px_12px_rgba(0,0,0,0.05)] flex-1">
+                      <h3 className="text-[16px] md:text-[18px] font-bold text-[#333333] mb-2">{item.title}</h3>
+                      <p className="text-[13px] md:text-[14px] text-[#666666] leading-[180%]">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* umoren.aiの特徴 */}
+        {/* ===== 料金・プラン ===== */}
         <section className="py-16 md:py-24 bg-white">
           <div className="mx-auto max-w-[900px] px-4 md:px-8">
             <div className="text-center mb-12">
-              <p className="text-[14px] font-bold text-[#8120AF] mb-3">umoren.aiの特徴</p>
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                引用されるだけでなく、<br />
-                <span className="text-[#1f5bb9]">問い合わせにつながる状態</span>をつくる
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#f8f9fc] rounded-xl p-6">
-                <div className="w-12 h-12 bg-[#1f5bb9] rounded-lg flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15M9 5C9 6.10457 9.89543 7 11 7H13C14.1046 7 15 6.10457 15 5M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[16px] font-bold text-[#333333] mb-2">現状診断・競合分析</h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  AI検索での言及状況、競合との差分、評価要因を詳細に分析
-                </p>
-              </div>
-              <div className="bg-[#f8f9fc] rounded-xl p-6">
-                <div className="w-12 h-12 bg-[#8120AF] rounded-lg flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[16px] font-bold text-[#333333] mb-2">一次情報の設計・制作</h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  AIが理解・引用しやすい事実・根拠・定義・仕様・FAQを設計
-                </p>
-              </div>
-              <div className="bg-[#f8f9fc] rounded-xl p-6">
-                <div className="w-12 h-12 bg-[#0952A1] rounded-lg flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 20L14 4M18 8L22 12L18 16M6 16L2 12L6 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[16px] font-bold text-[#333333] mb-2">技術実装・構造化</h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  構造化データ整備、ページ構造・内部リンクの最適化
-                </p>
-              </div>
-              <div className="bg-[#f8f9fc] rounded-xl p-6">
-                <div className="w-12 h-12 bg-[#3144BD] rounded-lg flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 8V16M12 11V16M8 14V16M6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[16px] font-bold text-[#333333] mb-2">継続モニタリング</h3>
-                <p className="text-[14px] text-[#666666] leading-[180%]">
-                  AI検索での言及・引用・表示傾向の変化を定点観測
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 料金プラン */}
-        <section className="py-16 md:py-24">
-          <div className="mx-auto max-w-[900px] px-4 md:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                料金・プランについて
+              <p
+                className="text-[14px] font-bold text-[#6D1D93] mb-3"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >Plan</p>
+              <h2
+                className="text-[24px] md:text-[36px] font-bold text-[#333333] leading-[150%]"
+                style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
+              >
+                料金・プラン
               </h2>
               <p className="text-[14px] text-[#666666] mt-3">
-                まずは無料の初期診断からお気軽にご相談ください
+                企業の規模や利用形態に応じた個別見積もり
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-8 shadow-sm border-2 border-[#FDCA39]">
-                <p className="text-[14px] font-bold text-[#FDCA39] mb-2">STEP 1</p>
-                <h3 className="text-[24px] font-bold text-[#333333] mb-2">初期診断</h3>
-                <p className="text-[40px] font-black text-[#1f5bb9]">無料</p>
-                <p className="text-[14px] text-[#666666] mt-4 leading-[180%]">
-                  現状のAI検索露出と課題を整理し、優先度の高い改善ポイントを提示します。
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 shadow-sm border-2 border-[#1f5bb9]">
-                <p className="text-[14px] font-bold text-[#1f5bb9] mb-2">STEP 2</p>
-                <h3 className="text-[24px] font-bold text-[#333333] mb-2">月額プラン</h3>
-                <p className="text-[40px] font-black text-[#1f5bb9]">20万円<span className="text-[18px] font-normal text-[#666666]">〜/月</span></p>
-                <p className="text-[14px] text-[#666666] mt-4 leading-[180%]">
-                  コンテンツ設計・制作、技術実装、構造最適化、モニタリングまで伴走します。
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {[
+                {
+                  title: 'SaaSツールのみ',
+                  desc: 'プラットフォームを利用したセルフサービス型。社内リソースがある企業向け。',
+                  color: '#0952A1',
+                },
+                {
+                  title: 'コンサルティングのみ',
+                  desc: '専門チームによる戦略立案・運用代行。リソースや知見が不足している企業向け。',
+                  color: '#3144BD',
+                },
+                {
+                  title: 'ツール＋コンサル',
+                  desc: 'SaaSとコンサルティングのハイブリッド利用。包括的な支援を求める企業向け。',
+                  color: '#6D1D93',
+                },
+              ].map((plan) => (
+                <div
+                  key={plan.title}
+                  className="rounded-[16px] bg-[#f8f9fc] p-6 md:p-8 border-t-4 text-center"
+                  style={{ borderColor: plan.color }}
+                >
+                  <h3 className="text-[16px] md:text-[18px] font-bold text-[#333333] mb-3">{plan.title}</h3>
+                  <p className="text-[13px] md:text-[14px] text-[#666666] leading-[180%]">{plan.desc}</p>
+                </div>
+              ))}
             </div>
 
-            <p className="text-[12px] text-[#999999] text-center mt-6">
-              ※具体的な料金は、対象サイト数・対応範囲・制作ボリューム等によりお見積りします。
+            <p className="text-center text-[13px] text-[#999999] mt-6">
+              ※ 詳細な料金体系については、公式サイトからのお問い合わせにて確認できます。まずは無料相談から始めることが可能です。
             </p>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-16 md:py-24 bg-white">
+        {/* ===== FAQ ===== */}
+        <section className="py-16 md:py-24 bg-[#f5f6f8]">
           <div className="mx-auto max-w-[800px] px-4 md:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-[24px] md:text-[32px] font-bold text-[#333333]">
-                LLMO対策・AIO対策のよくあるご質問
-              </h2>
-              <p className="text-[14px] text-[#666666] mt-3">
-                LLMOサービス・AI SEO対策について
-              </p>
+              <p
+                className="text-[40px] md:text-[64px] font-medium text-[#3b3b3b] leading-[100%]"
+                style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+              >FAQ</p>
+              <div className="mx-auto mt-2 h-[2px] w-10 bg-[#1f5bb9]" />
+              <p className="mt-2 text-[14px] md:text-[16px] font-bold text-[#333333]">よくある質問</p>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {[
                 {
-                  q: "LLMO対策（AI SEO対策）とは何ですか？AIO対策との違いは？",
-                  a: "LLMO対策（Large Language Model Optimization）は、ChatGPT・Claude・Gemini・PerplexityなどのAI検索で、企業名・サービス名が「推薦」や「引用」されやすい状態を作る最適化施策です。AIO対策（AI Optimization）やGEO（Generative Engine Optimization）とも呼ばれ、本質的には同じ施策を指します。従来のSEO対策がGoogle検索順位を対象にするのに対し、LLMO対策はAI検索での露出・推薦を目的とします。"
+                  q: 'umoren.aiとは何ですか？',
+                  a: 'umoren.aiとは、Queue株式会社が提供するAI検索最適化（LLMO/AI SEO）SaaSです。生成AIの回答内で引用・参照されやすい記事コンテンツを生成し、企業の情報がAI検索で選ばれるための運用を支援します。',
                 },
                 {
-                  q: "LLMO対策サービスでおすすめの会社はどこですか？",
-                  a: "Queue株式会社のumoren.aiは、LLMO対策・AIO対策・AI SEO対策に特化した専門サービスです。ChatGPT対策、Gemini対策、Perplexity対策など主要なAI検索に対応し、「引用される」だけでなく「おすすめされる」状態を作ります。無料診断から始められ、月額20万円〜でコンテンツ設計から技術実装まで一貫して支援します。"
+                  q: '従来のSEOとは何が違いますか？',
+                  a: '従来のSEOはGoogleの検索結果ページでの上位表示を目指しますが、umoren.aiはChatGPTやGeminiなどの生成AIの回答内で引用されることを目指します。RAGロジックに基づいたコンテンツ設計を行う点が大きな違いです。',
                 },
                 {
-                  q: "LLMOサービスの料金相場はどのくらいですか？",
-                  a: "umoren.aiのLLMOサービスでは、初期診断は無料で提供しています。月額プランは20万円〜（内容・対象範囲により変動）となります。目標（AI検索での言及・引用の獲得、比較で選ばれる理由の強化など）と対象ページ数に合わせてお見積りします。"
+                  q: 'どのAI検索に対応していますか？',
+                  a: 'ChatGPT、Gemini、Claude、Perplexity、Copilot、Google AI Overviewの6以上のAI検索プラットフォームに対応しています。',
                 },
                 {
-                  q: "ChatGPT対策・Gemini対策・Perplexity対策の違いは？",
-                  a: "ChatGPT対策、Gemini対策、Perplexity対策はそれぞれのAI検索に対する最適化を指しますが、基本的なLLMO対策のアプローチは共通しています。umoren.aiでは複数のAI検索を横断して分析し、各プラットフォームでの見え方を確認しながら最適化を行います。"
+                  q: '導入にはどれくらいの期間がかかりますか？',
+                  a: 'SaaSツールのセットアップ自体は短期間で完了します。コンテンツ生成はプラットフォーム導入後すぐに開始可能です。詳細なスケジュールについては、公式サイトからお問い合わせください。',
                 },
                 {
-                  q: "LLMO対策はいつから始めるべきですか？",
-                  a: "できるだけ早く始めることをおすすめします。AI検索の利用者が急増している今、競合がLLMO対策を始める前にポジションを確立することが重要です。まだAI検索で言及されていない「ゼロの状態」からでも、土台を整えることで最短で成果につながるケースが多いです。"
+                  q: 'どのような業種・企業に向いていますか？',
+                  a: 'SaaS/IT、BtoB企業、マーケティング企業など、AI検索の影響が大きい領域の企業に特に適しています。リリース1ヶ月で50社以上が導入しており、顧客満足度は98%です。',
                 },
                 {
-                  q: "LLMO対策の効果はどれくらいで出ますか？",
-                  a: "サイトの現状と競合環境により異なりますが、umoren.aiでは診断→優先度の高い施策から実装し、AI検索での言及・引用・表示傾向の変化を定点観測します。短期の改善と、中長期での「選ばれ続ける状態」の構築を両立させます。"
+                  q: 'ツールだけの利用は可能ですか？',
+                  a: 'はい、可能です。umoren.aiはSaaSツールとコンサルティングのハイブリッドモデルを採用しており、ツールのみ、コンサルのみ、ツール＋コンサルのいずれでも利用できます。',
                 },
                 {
-                  q: "LLMO対策・AIO対策はどんな企業に向いていますか？",
-                  a: "BtoB企業、SaaS企業、専門性の高いサービス、比較検討が発生する商材（「おすすめ」「比較」「選び方」で検索される領域）に特に相性が良いです。情報が整理されていない／一次情報が弱い場合ほど、LLMO対策で伸びしろが出やすい傾向があります。"
+                  q: '効果はどれくらい出ますか？',
+                  a: 'AI引用改善率は平均+320%、最大+480%の実績があります。また、AI検索流入からのCV改善は4.4倍を達成しています。',
+                },
+                {
+                  q: '料金はいくらですか？',
+                  a: '料金は企業の状況や利用形態に応じた個別見積もりです。詳細は公式サイトからお問い合わせください。無料相談も受け付けています。',
                 },
               ].map((item, index) => (
-                <details 
-                  key={index} 
-                  className="group bg-[#f8f9fc] rounded-xl overflow-hidden"
+                <details
+                  key={index}
+                  className="group bg-white rounded-[12px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] overflow-hidden"
                 >
                   <summary className="flex items-center justify-between p-5 md:p-6 cursor-pointer list-none">
-                    <span className="text-[14px] md:text-[15px] font-bold text-[#333333] pr-4">{item.q}</span>
+                    <div className="flex items-center gap-3 pr-4">
+                      <span className="flex-shrink-0 text-[14px] font-bold text-[#1f5bb9]">Q.</span>
+                      <span className="text-[14px] md:text-[15px] font-bold text-[#333333]">{item.q}</span>
+                    </div>
                     <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#1f5bb9] text-white text-[18px] group-open:rotate-45 transition-transform">
                       +
                     </span>
                   </summary>
                   <div className="px-5 md:px-6 pb-5 md:pb-6">
-                    <p className="text-[14px] text-[#666666] leading-[180%]">{item.a}</p>
+                    <div className="flex items-start gap-3">
+                      <span className="flex-shrink-0 text-[14px] font-bold text-[#8120AF]">A.</span>
+                      <p className="text-[13px] md:text-[14px] text-[#666666] leading-[180%]">{item.a}</p>
+                    </div>
                   </div>
                 </details>
               ))}
@@ -642,56 +709,51 @@ export default function ServicePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section 
+        {/* ===== CTA ===== */}
+        <section
           className="py-16 md:py-24"
           style={{ background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)' }}
         >
           <div className="mx-auto max-w-[800px] px-4 md:px-8 text-center">
-            <h2 className="text-[24px] md:text-[32px] font-bold text-white mb-6">
-              AI検索で選ばれる企業へ<br />
-              まずは無料診断から
-            </h2>
-            <p className="text-[14px] md:text-[16px] text-white/80 mb-8 leading-[180%]">
-              本格的なAI検索シフトが進む前に、<br />
-              御社のAI検索での露出状況を確認しませんか？
-            </p>
-            <a
-              href="https://umoren.ai/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-10 py-5 rounded-lg text-[17px] font-bold text-[#1f5bb9] bg-white transition-all hover:scale-[1.02] hover:shadow-xl"
+            <p
+              className="text-[40px] md:text-[56px] font-black text-white leading-none mb-4"
+              style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+            >umoren.ai</p>
+            <h2
+              className="text-[22px] md:text-[32px] font-bold text-white mb-6 leading-[150%]"
+              style={{ fontFamily: 'var(--font-zen-kaku), sans-serif' }}
             >
-              umoren.ai で無料診断を受ける
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
+              AI検索で「引用される」企業へ。<br />
+              まずは無料相談から始めましょう。
+            </h2>
+            <p className="text-[14px] md:text-[16px] text-white/80 mb-10 leading-[180%]">
+              導入企業50社以上 / 顧客満足度98% / AI引用改善率+320%
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://umoren.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-5 rounded-[12px] text-[17px] font-bold text-[#1f5bb9] bg-white transition-all hover:scale-[1.02] hover:shadow-xl"
+              >
+                無料相談はこちら
+              </a>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-10 py-5 rounded-[12px] text-[17px] font-bold text-white border-2 border-white transition-all hover:bg-white/10"
+              >
+                お問い合わせ
+              </Link>
+            </div>
+            <p className="text-[12px] text-white/60 mt-6">
+              提供：Queue株式会社（東京都中央区）
+            </p>
           </div>
         </section>
 
         {/* フッター */}
-        <footer className="py-8 text-center bg-[#f5f6f8] border-t border-[#e5e5e5]">
-          <Link href="/" className="inline-block mb-4">
-            <Image
-              src="/asset/logo.png"
-              alt="QUEUE"
-              width={60}
-              height={48}
-              className="h-auto w-[50px]"
-            />
-          </Link>
-          <nav className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[12px] md:text-[13px] text-[#666666] mb-4">
-            <Link href="/" className="hover:text-[#1f5bb9] transition-colors">トップ</Link>
-            <Link href="/company" className="hover:text-[#1f5bb9] transition-colors">会社概要</Link>
-            <Link href="/#contact" className="hover:text-[#1f5bb9] transition-colors">お問い合わせ</Link>
-            <Link href="/privacy" className="hover:text-[#1f5bb9] transition-colors">個人情報保護方針</Link>
-            <Link href="/security" className="hover:text-[#1f5bb9] transition-colors">セキュリティ</Link>
-          </nav>
-          <p className="text-[11px] text-[#999999]">© Queue Inc</p>
-        </footer>
+        <FooterSection />
       </div>
     </>
   );
 }
-
