@@ -1,5 +1,10 @@
 import { MetadataRoute } from 'next'
-import { supabase } from './lib/supabase'
+import { createClient } from '@supabase/supabase-js'
+
+// Sitemap用のsupabaseクライアント（cache: 'no-store'なし、静的レンダリング対応）
+const supabaseUrl = 'https://tauktlyjhposmxktqdbh.supabase.co'
+const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhdWt0bHlqaHBvc214a3RxZGJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg4MTk2MjIsImV4cCI6MjA4NDM5NTYyMn0.EemTw0xSHtYXWq756ySRzCvNaBFAMMS17eYNE4SXim0'
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 interface BlogPost {
   slug: string
@@ -92,6 +97,8 @@ function getPostUrl(post: BlogPost, lang: 'ja' | 'en'): string {
   // Standalone post
   return `${baseUrl}${langPrefix}/blog/${post.slug}`
 }
+
+export const dynamic = 'force-dynamic'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://queue-tech.jp'
