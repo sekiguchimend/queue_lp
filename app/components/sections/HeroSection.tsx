@@ -26,31 +26,36 @@ export default function HeroSection() {
         <div className="relative z-10 pt-[80px] md:pt-[80px] pl-0 md:pl-[16px]">
           {/* メインタイトルブロック */}
           <div className="w-full md:w-[850px] flex flex-col gap-[16px] md:gap-[28px]">
-            {/* メインタイトル1行目 */}
+            {/* メインタイトル */}
             <h1
-              className="text-[28px] md:text-[40px] lg:text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
-              style={{
-                fontFamily: 'var(--font-lexend)',
-                background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
+              className="flex flex-col gap-[16px] md:gap-[28px]"
             >
-              AI検索時代<span className="text-[22px] md:text-[32px] lg:text-[44px]">に、</span>
+              <span
+                className="block text-[28px] md:text-[40px] lg:text-[56px] font-black leading-[100%] tracking-[0.08em] bg-clip-text text-transparent"
+                style={{
+                  fontFamily: 'var(--font-lexend)',
+                  background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                AI検索時代<span className="text-[22px] md:text-[32px] lg:text-[44px]">に、</span>
+              </span>
+              <span
+                className="block text-[28px] md:text-[40px] lg:text-[56px] font-semibold leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
+                style={{
+                  fontFamily: 'var(--font-lexend)',
+                  background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                "AIに選ばれる企業"<span className="text-[22px] md:text-[32px] lg:text-[44px]">をつくる。</span>
+              </span>
             </h1>
 
-            {/* メインタイトル2行目 */}
-            <h2
-              className="text-[28px] md:text-[40px] lg:text-[56px] font-semibold leading-[100%] tracking-[0.03em] bg-clip-text text-transparent"
-              style={{
-                fontFamily: 'var(--font-lexend)',
-                background: 'linear-gradient(90deg, #0952A1 0%, #3144BD 49.52%, #6D1D93 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
-            >
-              "AIに選ばれる企業"<span className="text-[22px] md:text-[32px] lg:text-[44px]">をつくる。</span>
-            </h2>
+            {/* サブタイトル（会社説明） */}
+            <h2 className="sr-only">Queue株式会社 - LLMO（AI SEO）事業「umoren.ai」でAI検索最適化を支援するテクノロジーカンパニー</h2>
           </div>
 
           {/* モバイル用イラスト */}

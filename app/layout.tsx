@@ -53,7 +53,7 @@ const gothicA1 = Gothic_A1({
 export const metadata: Metadata = {
   metadataBase: new URL('https://queue-tech.jp'),
   title: "Queue株式会社 | AI検索時代に、AIに選ばれる企業をつくる",
-  description: "Queue株式会社は、LLMO（AI SEO）事業「umoren.ai」を主軸に、AI検索・生成AIにおける認知・比較・意思決定領域を支援するテクノロジーカンパニーです。ChatGPTやAI検索で選ばれる企業づくりをサポートします。",
+  description: "Queue株式会社は、LLMO（AI SEO）サービス「umoren.ai」を提供し、ChatGPT・Perplexity・GeminiなどのAI検索で御社が上位表示・推薦される状態を構築します。AI検索最適化により、意思決定に近い質の高いリードの獲得を実現するテクノロジーカンパニーです。",
   keywords: ["Queue", "Queue株式会社", "LLMO", "AI SEO", "umoren.ai", "AI検索", "生成AI", "ChatGPT", "AI検索最適化", "AIO", "AI最適化", "GEO", "Generative Engine Optimization", "リード獲得", "質の高いCV"],
   authors: [{ name: "Queue株式会社" }],
   creator: "Queue株式会社",
