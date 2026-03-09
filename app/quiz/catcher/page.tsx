@@ -205,7 +205,7 @@ export default function CatcherQuizPage() {
       const res = await fetch("/api/quiz/slack", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: fullName.trim() }),
+        body: JSON.stringify({ name: fullName.trim(), quizType: "キャッチャー営業確認テスト", score, totalQuestions: questions.length }),
       });
       if (!res.ok) throw new Error();
       setNameSent(true);

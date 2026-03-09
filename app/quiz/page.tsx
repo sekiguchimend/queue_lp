@@ -227,7 +227,7 @@ export default function QuizPage() {
       const res = await fetch("/api/quiz/slack", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: fullName.trim() }),
+        body: JSON.stringify({ name: fullName.trim(), quizType: "umoren.ai サービス理解度テスト", score, totalQuestions: questions.length }),
       });
       if (!res.ok) throw new Error();
       setNameSent(true);
